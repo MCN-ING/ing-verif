@@ -24,7 +24,7 @@ Application mobile qui permet d'effecter des demandes de preuve dans un écosyst
    cd ing-verif
    npm install
    ```
-3. Installer les  spécifique pour iOS:
+3. Si vous voulez déployer sur iOS:
     * Installez les Pods iOS:
     ```sh
     cd ios
