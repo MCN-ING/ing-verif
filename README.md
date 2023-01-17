@@ -13,3 +13,6 @@
 
 # ING Vérif
 Application mobile qui permet d'effecter des demandes de preuve dans un écosystème d'identité auto-souveraine (self-sovereign identity - SSI) basé sur Hypeledger ARIES. L'application joue le rôle de vérificateur garantissant que les déclarations faite par un détenteur d'identité numérique sont exactes et dignes de confiance.
+
+## Licence
+Distribué sous Licence Libre du Québec – Réciprocité (LiLiQ-R). Voir [LICENCE](LICENSE) pour plus d'informations.
