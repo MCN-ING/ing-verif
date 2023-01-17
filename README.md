@@ -12,7 +12,7 @@
 <!-- FIN ENTETE -->
 
 # ING Vérif
-Application mobile qui permet d'effecter des demandes de preuve dans un écosystème d'identité auto-souveraine (self-sovereign identity - SSI) basé sur Hypeledger ARIES. L'application joue le rôle de vérificateur garantissant que les déclarations faite par un détenteur d'identité numérique sont exactes et dignes de confiance.
+Application mobile qui permet d'effecter des demandes de preuve dans un écosystème d'identité auto-souveraine ([SSI](https://sovrin.org/faq/what-is-self-sovereign-identity)) basé sur [Hyperledger Aries](https://www.hyperledger.org/use/aries). L'application joue le rôle de vérificateur garantissant que les déclarations faite par un détenteur d'identité numérique sont exactes et dignes de confiance.
 
 ## Installation
 1. Clonez le dépôt
