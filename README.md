@@ -1,6 +1,6 @@
 <!-- ENTETE -->
 
-[![img](https://img.shields.io/badge/Cycle%20de%20Vie-B%C3%AAta-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques#collapse-59354)
+[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9B%C3%AAta-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques#collapse-59354)
 
 ---
 
