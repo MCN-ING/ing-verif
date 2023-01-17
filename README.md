@@ -25,12 +25,12 @@ Application mobile qui permet d'effecter des demandes de preuve dans un écosyst
    npm install
    ```
 3. Installer les  spécifique pour iOS:
-* Install iOS Pods:
-```sh
-cd app/ios
-pod install
-```
-* In the /ios directory, open the project workspace file in Xcode. Once the project is open, navigate to the project's Signing & Capabilities tab and apply your personal Apple Developer Account or your organization's team to target AriesBifold and target AriesBifoldTests.
-* Adjust the bundle identifier if needed.
+    * Installez les Pods iOS:
+    ```sh
+    cd ios
+    pod install
+    ```
+    * Dans le répertoire "ios", ouvrez le fichier de l'espace de travail du projet dans Xcode. Une fois le projet ouvert, accédez à l'onglet Signing & Capabilities du projet et appliquez votre compte personnel de développeur Apple ou l'équipe de votre organisation.
+    * Ajuster l'identifiant du paquet si nécessaire.
 ## Licence
 Distribué sous Licence Libre du Québec – Réciprocité (LiLiQ-R). Voir [LICENCE](https://forge.gouv.qc.ca/licence/liliq-r/) pour plus d'informations.
