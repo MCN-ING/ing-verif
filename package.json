@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "pre-commit-lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@aries-framework/core": "^0.3.2",
@@ -31,6 +33,7 @@
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
+    "husky": "^8.0.3",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
     "react-test-renderer": "18.1.0",
