@@ -274,6 +274,7 @@ jobs:
           VERSION_NAME: ${{ env.appBuildVersion }}
 
         run: |
+          chmod +x gradlew
           ./gradlew buildDebug
 
       - name: Create release keystore
