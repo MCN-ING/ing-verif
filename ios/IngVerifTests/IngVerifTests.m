@@ -29,7 +29,8 @@
 - (void)testRendersWelcomeScreen
 {
   UIViewController *vc = [[[RCTSharedApplication() delegate] window] rootViewController];
-  NSDate *date = [NSDate dateWithTimeIntervalSinceNow:TIMEOUT_SECONDS];
+  NSDate *date = [NSDate 
+  :TIMEOUT_SECONDS];
   BOOL foundElement = NO;
 
   __block NSString *redboxError = nil;
