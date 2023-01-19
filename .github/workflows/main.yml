@@ -254,7 +254,7 @@ jobs:
       - name: Install dependencies
         working-directory: ./
         run: |
-          npm ci
+          npm install
 
         # Actual environment variables are not being picked up
         # by the build so they're put into an .env file.
@@ -379,7 +379,7 @@ jobs:
           LEDGER_URL_CONFIG: "http://test.bcovrin.vonx.io"
           REGION: "us-west-1"
         with:
-          MOBILE_WALLET: "-w bc_wallet"
+          MOBILE_WALLET: "-w ing_verif"
           ISSUER_AGENT: '-i "AATH;http://0.0.0.0:9020"'
           VERIFIER_AGENT: '-v "AATH;http://0.0.0.0:9030"'
           DEVICE_CLOUD: "-d SauceLabs"
