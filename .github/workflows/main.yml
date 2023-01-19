@@ -10,11 +10,11 @@ on:
   push:
     branches: [main]
     paths:
-      - ./**
+      - /**
   pull_request:
     branches: [main]
     paths:
-      - ./**
+      - /**
 
 jobs:
   check-android-secrets:
@@ -99,7 +99,7 @@ jobs:
             ${{ runner.os }}-dd-xcode-${{ env.cacheId }}-
 
       - name: Install react native dependencies
-        working-directory: ./
+        working-directory: /
         run: |
           npm ci && \
           git status
@@ -126,7 +126,7 @@ jobs:
         # by the build so they're put into an .env file.
       - name: Create environment settings
         if: env.MEDIATOR_URL != null
-        working-directory: ./
+        working-directory: /
         env:
           MEDIATOR_URL: ${{ secrets.MEDIATOR_URL }}
         run: |
