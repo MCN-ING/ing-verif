@@ -8,26 +8,18 @@
  * @format
  */
 
-import React, {type PropsWithChildren, useState, useEffect} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React, {type PropsWithChildren, useState, useEffect} from 'react'
+import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View} from 'react-native'
+import {Colors, Header} from 'react-native/Libraries/NewAppScreen'
 
-import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
-import {agent} from './src/agent/agent';
+import {agent} from './src/agent/agent'
 
 const Section: React.FC<
   PropsWithChildren<{
-    title: string;
+    title: string
   }>
 > = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'dark'
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -49,28 +41,28 @@ const Section: React.FC<
         {children}
       </Text>
     </View>
-  );
-};
+  )
+}
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-  const [agentMediator, setAgentMediator] = useState<string>('');
+  const isDarkMode = useColorScheme() === 'dark'
+  const [agentMediator, setAgentMediator] = useState<string>('')
 
   useEffect(() => {
     if (agent.isInitialized) {
       //Alert.alert('Agent initialized');
-      setAgentMediator('Agent already initialized');
+      setAgentMediator('Agent already initialized')
     } else {
       agent.initialize().then(() => {
         //Alert.alert('Agent initialized');
-        setAgentMediator('Agent already initialized');
-      });
+        setAgentMediator('Agent already initialized')
+      })
     }
-  }, []);
+  }, [])
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  }
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -78,9 +70,7 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
         <Header />
         <View
           style={{
@@ -92,8 +82,8 @@ const App = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -112,6 +102,6 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
-});
+})
 
-export default App;
+export default App
