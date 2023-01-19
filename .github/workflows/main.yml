@@ -101,7 +101,7 @@ jobs:
       - name: Install react native dependencies
         working-directory: ./
         run: |
-          npm ci && \
+          npm install && \
           git status
 
       - name: Install iOS dependencies
