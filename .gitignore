@@ -2,6 +2,17 @@
 #
 .DS_Store
 
+# Secrets
+*.mobileprovision
+*.p12
+*.p8
+pc-api*.json
+api*.json
+*secret*
+*secrets*
+.env
+.idea/
+
 # Xcode
 #
 build/
