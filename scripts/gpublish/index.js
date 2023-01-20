@@ -4,16 +4,15 @@
 // the Google Developer API documentation reference here:
 // https://developers.google.com/android-publisher/api-ref/rest
 
-const {google} = require('googleapis')
 const fs = require('fs')
+const {google} = require('googleapis')
+
 const pjson = require('./package.json')
 
 if (typeof process.env.GOOGLE_API_CREDENTIALS === 'undefined') {
   console.log(`
   Google Publish v${pjson.version}
-
   GOOGLE_API_CREDENTIALS cannot be empty
-
   Set the env var GOOGLE_API_CREDENTIALS to the full path of the
   JSON credentials (keys) downloaded from the GCP console.
   eg: /path/to/some/credentials.json
@@ -24,9 +23,7 @@ if (typeof process.env.GOOGLE_API_CREDENTIALS === 'undefined') {
 if (typeof process.env.ANDROID_PACKAGE_NAME === 'undefined') {
   console.log(`
   Google Publish v${pjson.version}
-
   ANDROID_PACKAGE_NAME cannot be empty
-
   Set the env var ANDROID_PACKAGE_NAME to the full package name
   used in the Android project.
   eg: ca.fullboar.BifoldWallet
@@ -37,9 +34,7 @@ if (typeof process.env.ANDROID_PACKAGE_NAME === 'undefined') {
 if (typeof process.env.ANDROID_BUNDLE_PATH === 'undefined') {
   console.log(`
   Google Publish v${pjson.version}
-
   ANDROID_BUNDLE_PATH cannot be empty
-
   Set the env var ANDROID_BUNDLE_PATH to the full path to the
   bundle (aab) file produced by the build.
   eg: /path/to/some/bundle.aab
@@ -50,9 +45,7 @@ if (typeof process.env.ANDROID_BUNDLE_PATH === 'undefined') {
 if (typeof process.env.VERSION_NAME === 'undefined') {
   console.log(`
   Google Publish v${pjson.version}
-
   VERSION_NAME cannot be empty
-
   Set the env var VERSION_NAME to the full version name
   eg: 1.0.2
   `)
