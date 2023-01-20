@@ -10,11 +10,11 @@ on:
   push:
     branches: [main]
     paths:
-      - /**
+      - ./**
   pull_request:
     branches: [main]
     paths:
-      - /**
+      - ./**
 
 jobs:
   check-android-secrets:
@@ -99,9 +99,9 @@ jobs:
             ${{ runner.os }}-dd-xcode-${{ env.cacheId }}-
 
       - name: Install react native dependencies
-        working-directory: /
+        working-directory: ./
         run: |
-          npm ci && \
+          npm install && \
           git status
 
       - name: Install iOS dependencies
@@ -126,7 +126,7 @@ jobs:
         # by the build so they're put into an .env file.
       - name: Create environment settings
         if: env.MEDIATOR_URL != null
-        working-directory: /
+        working-directory: .
         env:
           MEDIATOR_URL: ${{ secrets.MEDIATOR_URL }}
         run: |
@@ -252,15 +252,15 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        working-directory: 8419042284190422Ada
+        working-directory: ./
         run: |
-          npm ci
+          npm install
 
         # Actual environment variables are not being picked up
         # by the build so they're put into an .env file.
       - name: Create environment settings
         if: env.MEDIATOR_URL != null
-        working-directory: .
+        working-directory: ./
         env:
           MEDIATOR_URL: ${{ secrets.MEDIATOR_URL }}
         run: |
@@ -274,6 +274,7 @@ jobs:
           VERSION_NAME: ${{ env.appBuildVersion }}
 
         run: |
+          chmod +x gradlew
           ./gradlew buildDebug
 
       - name: Create release keystore
@@ -379,7 +380,7 @@ jobs:
           LEDGER_URL_CONFIG: "http://test.bcovrin.vonx.io"
           REGION: "us-west-1"
         with:
-          MOBILE_WALLET: "-w bc_wallet"
+          MOBILE_WALLET: "-w ing_verif"
           ISSUER_AGENT: '-i "AATH;http://0.0.0.0:9020"'
           VERIFIER_AGENT: '-v "AATH;http://0.0.0.0:9030"'
           DEVICE_CLOUD: "-d SauceLabs"
