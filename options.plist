@@ -16,7 +16,7 @@
 	<true/>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>ca.qc.gouv.portefeuilleqc</key>
+		<key>ca.qc.gouv.ingverif</key>
 		<string>c578b644-c99a-46ac-aac2-f21ece5ca5b9</string>
 	</dict>
 </dict>
