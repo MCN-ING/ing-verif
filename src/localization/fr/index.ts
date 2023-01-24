@@ -1,5 +1,5 @@
 const translation = {
-  welcome: "Bienvenue sur l'application !",
+  welcome: 'Bienvenue',
 }
 
 export default translation

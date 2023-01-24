@@ -10,22 +10,34 @@
 import {Agent} from '@aries-framework/core'
 import AgentProvider from '@aries-framework/react-hooks'
 import {NavigationContainer} from '@react-navigation/native'
-import React, {useState, useMemo} from 'react'
+import React, {useState, useMemo, useEffect} from 'react'
 import {useColorScheme} from 'react-native'
+import SplashScreen from 'react-native-splash-screen'
 
 import {ThemeProvider} from './contexts/theme'
 import {initStoredLanguage, translationResources, initLanguages} from './localization'
 import RootStack from './navigators/RootStack'
+import InitializeAgent from './services/initializeAgent'
 import {defaultColorSheme} from './theme'
 
 initLanguages(translationResources)
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark'
-  const [agent] = useState<Agent | undefined>(undefined)
+  const [agent, setAgent] = useState<Agent | undefined>(undefined)
 
   useMemo(() => {
     initStoredLanguage().then()
+  }, [])
+
+  useEffect(() => {
+    const initAgent = async () => {
+      const newAgent = await InitializeAgent()
+      setAgent(newAgent)
+    }
+
+    initAgent()
+    SplashScreen.hide()
   }, [])
 
   return (
