@@ -6,4 +6,4 @@ When you make changes, make sure it publish it to npm with
 
 Usage:
 
-`npx @bcgov/gpublish`
+`npx @mcn/gpublish`
