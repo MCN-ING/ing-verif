@@ -6,15 +6,13 @@ env:
   appBuildVersion: "1.0.0"
 
 on:
-  issues:
-    types:
-      - opened
-  workflow_dispatch:
   push:
     branches: [main]
     paths:
       - ./**
   pull_request:
+    types:
+      - closed
     branches: [main]
     paths:
       - ./**
