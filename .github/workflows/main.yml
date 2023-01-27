@@ -6,16 +6,16 @@ env:
   appBuildVersion: "1.0.0"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - ./**
+      - app/**
+      - bifold
   pull_request:
-    types:
-      - closed
     branches: [main]
     paths:
-      - ./**
+      - app/**
 
 jobs:
   check-android-secrets:
