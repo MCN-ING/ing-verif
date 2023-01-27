@@ -8,14 +8,8 @@ env:
 on:
   push:
     branches: [main]
-    paths:
-      - ./**
   pull_request:
-    types:
-      - closed
     branches: [main]
-    paths:
-      - ./**
 
 jobs:
   check-android-secrets:
