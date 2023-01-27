@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const fs = require('fs')
 const {google} = require('googleapis')
 
