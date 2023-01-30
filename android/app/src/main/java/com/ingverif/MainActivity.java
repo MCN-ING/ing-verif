@@ -1,4 +1,4 @@
-package com.ingverif;
+package ca.qc.gouv.ingverif;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

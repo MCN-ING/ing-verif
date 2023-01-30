@@ -1,4 +1,4 @@
-package com.ingverif.newarchitecture;
+package ca.qc.gouv.ingverif.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
