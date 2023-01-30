@@ -1,4 +1,4 @@
-package ca.qc.gouv.ingverif.newarchitecture.components;
+package com.ingverif.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
