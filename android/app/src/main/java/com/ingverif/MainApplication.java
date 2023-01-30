@@ -1,4 +1,4 @@
-package ca.qc.gouv.ingverif;
+package com.ingverif;
 
 import android.app.Application;
 import android.content.Context;
