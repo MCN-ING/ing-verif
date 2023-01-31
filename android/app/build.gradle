@@ -219,9 +219,9 @@ android {
         }
         release {
             storeFile file('ing-verif.keystore')
-            storePassword System.getenv("PLAY_STORE_JKS_PASSWD")
-            keyAlias System.getenv("PLAY_STORE_JKS_ALIAS")
-            keyPassword System.getenv("PLAY_STORE_JKS_PASSWD")
+            storePassword "M@seck84"
+            keyAlias "ing-verif"
+            keyPassword "M@seck84"
         }
     }
     buildTypes {
