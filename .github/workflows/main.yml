@@ -297,19 +297,18 @@ jobs:
 
       - name: Ship to Google Play
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: scripts/gpublish
+        working-directory: android
         env:
           GOOGLE_API_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_API_CREDENTIALS_BASE64 }}
           GOOGLE_API_CREDENTIALS: "api_keys.json"
           ANDROID_PACKAGE_NAME: "com.ingverif"
-          ANDROID_BUNDLE_PATH: "app-release.aab"
+          ANDROID_BUNDLE_PATH: "./app/build/outputs/bundle/release/app-release.aab"
           VERSION_CODE: ${{ env.appBuildNumber }}
           VERSION_NAME: ${{ env.appBuildVersion }}
         run: |
           echo "${GOOGLE_API_CREDENTIALS_BASE64}" | base64 -d >${GOOGLE_API_CREDENTIALS} && \
-          npm i
-          chmod +x index.js
-          node index.js
+          chmod +x deploy-to-playstore.js
+          node ./deploy-to-playstore.js
 
       - name: Ship to SauceLabs
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
