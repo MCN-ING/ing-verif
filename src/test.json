@@ -1,0 +1,18 @@
+{
+  "@type": "https://didcomm.org/present-proof/1.0/request-presentation",
+  "@id": "8d48f664-aa36-4ff6-a804-3477af1ada92",
+  "request_presentations~attach": [
+    {
+      "@id": "libindy-request-presentation-0",
+      "mime-type": "application/json",
+      "data": {
+        "base64": "eyJuYW1lIjoidGVzdC1wcm9vZi1yZXF1ZXN0IiwidmVyc2lvbiI6IjEuMCIsIm5vbmNlIjoiMTIzNDU2Nzg5MDEiLCJyZXF1ZXN0ZWRfYXR0cmlidXRlcyI6eyJuYW1lIjp7Im5hbWUiOiJuYW1lIiwicmVzdHJpY3Rpb25zIjpbXX19LCJyZXF1ZXN0ZWRfcHJlZGljYXRlcyI6e319"
+      }
+    }
+  ],
+  "~service": {
+    "recipientKeys": ["AT4eJwdkJjWUaahip5z6tPLtvjXB9oB1Y2C4QNH3qGks"],
+    "routingKeys": ["7yzfWsAbekrMLHB59hTytU4EHMrudC5bxho28mXLzaTW"],
+    "serviceEndpoint": "https://aries-mediator.apps.exp.openshift.cqen.ca"
+  }
+}

@@ -1,6 +1,6 @@
-import {Confirmation} from './Confirmation'
 import {Home} from './Home'
 import {QRCodeScreen} from './QRCode'
 import {Settings} from './Settings'
+import {ValidationResult} from './ValidationResult'
 
-export {Home, Settings, Confirmation, QRCodeScreen}
+export {Home, Settings, ValidationResult, QRCodeScreen}
