@@ -1,7 +1,7 @@
 import {createStackNavigator} from '@react-navigation/stack'
 import React from 'react'
 
-import {Home, Settings, Confirmation, QRCodeScreen} from '../screens'
+import {Home, Settings, QRCodeScreen, ValidationResult} from '../screens'
 
 const RootStack = () => {
   const Stack = createStackNavigator()
@@ -11,8 +11,7 @@ const RootStack = () => {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="QRCode" component={QRCodeScreen} />
       <Stack.Screen name="Settings" component={Settings} />
-
-      <Stack.Screen name="Confirmation" component={Confirmation} options={{presentation: 'modal'}} />
+      <Stack.Screen name="ValidationResult" component={ValidationResult} options={{presentation: 'modal'}} />
     </Stack.Navigator>
   )
 }

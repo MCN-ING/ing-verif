@@ -1,8 +1,6 @@
 import {
   Agent,
   AutoAcceptCredential,
-  ConsoleLogger,
-  LogLevel,
   MediatorPickupStrategy,
   WsOutboundTransport,
   HttpOutboundTransport,
@@ -13,18 +11,19 @@ import Config from 'react-native-config'
 import ledgers from '../configs/ledgers/indy'
 
 const InitializeAgent = async () => {
+  const indyLedgers = ledgers.filter((item) => !item.id.startsWith('Indicio'))
+
   try {
     const newAgent = new Agent({
       config: {
-        label: 'QC Wallet',
+        label: 'Verification App',
         mediatorConnectionsInvite: Config.MEDIATOR_URL,
         mediatorPickupStrategy: MediatorPickupStrategy.Implicit,
-        walletConfig: {id: 'id001', key: 'key001'},
+        walletConfig: {id: '001', key: 'credentials.key'},
         autoAcceptConnections: true,
         autoAcceptCredentials: AutoAcceptCredential.ContentApproved,
-        logger: new ConsoleLogger(LogLevel.trace),
-        indyLedgers: ledgers,
-        connectToIndyLedgersOnStartup: false,
+        indyLedgers,
+        connectToIndyLedgersOnStartup: true,
         autoUpdateStorageOnStartup: true,
       },
       dependencies: agentDependencies,
@@ -37,7 +36,6 @@ const InitializeAgent = async () => {
     newAgent.registerOutboundTransport(httpTransport)
 
     await newAgent.initialize()
-    await newAgent.ledger.connectToPools()
     return newAgent
   } catch (error) {
     return undefined
