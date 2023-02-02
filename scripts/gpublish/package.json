@@ -1,5 +1,5 @@
 {
-  "name": "@bcgov/gpublish",
+  "name": "@mcn/gpublish",
   "version": "1.2.0",
   "description": "Scripts to help automate Google Play API access",
   "main": "index.js",

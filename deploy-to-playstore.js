@@ -109,7 +109,7 @@ const main = async () => {
             releaseNotes: [
               {
                 language: 'en-CA',
-                text: 'This is what to test.',
+                text: `Release ${process.env.VERSION_NAME}-${process.env.GITHUB_RUN_NUMBER}`,
               },
             ],
           },
