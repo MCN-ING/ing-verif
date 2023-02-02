@@ -1,5 +1,8 @@
 const translation = {
-  welcome: "Bienvenue sur l'application !",
+  welcome: 'Bienvenue',
+  sections: {
+    schema: 'Schémas',
+  },
 }
 
 export default translation
