@@ -31,13 +31,13 @@ const App = () => {
   }, [])
 
   useEffect(() => {
+    SplashScreen.hide()
     const initAgent = async () => {
       const newAgent = await InitializeAgent()
       setAgent(newAgent)
     }
 
     initAgent()
-    SplashScreen.hide()
   }, [])
 
   return (
