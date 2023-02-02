@@ -138,8 +138,10 @@ android {
         applicationId "com.ingverif"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        //versionCode 1
+        //versionName "1.0
+        versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1
+        versionName System.getenv("VERSION_NAME") ? System.getenv("VERSION_NAME").toString() : "0.0.1"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         if (isNewArchitectureEnabled()) {
@@ -217,6 +219,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('ing-verif.keystore')
+            storePassword System.getenv("PLAY_STORE_JKS_PASSWD")
+            keyAlias System.getenv("PLAY_STORE_JKS_ALIAS")
+            keyPassword System.getenv("PLAY_STORE_JKS_PASSWD")
+        }
     }
     buildTypes {
         debug {
@@ -225,7 +233,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

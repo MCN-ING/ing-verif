@@ -6,15 +6,10 @@ env:
   appBuildVersion: "1.0.0"
 
 on:
-  workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - ./**
   pull_request:
     branches: [main]
-    paths:
-      - ./**
 
 jobs:
   check-android-secrets:
@@ -285,8 +280,8 @@ jobs:
           PLAY_STORE_JKS_ALIAS: ${{ secrets.PLAY_STORE_JKS_ALIAS }}
           PLAY_STORE_JKS_PASSWD: ${{ secrets.PLAY_STORE_JKS_PASSWD }}
         run: |
-          echo "${PLAY_STORE_JKS_BASE64}" | base64 -d >release.keystore && \
-          keytool -list -v -keystore release.keystore -alias ${PLAY_STORE_JKS_ALIAS} -storepass:env PLAY_STORE_JKS_PASSWD | \
+          echo "${PLAY_STORE_JKS_BASE64}" | base64 -d >ing-verif.keystore && \
+          keytool -list -v -keystore ing-verif.keystore -alias ${PLAY_STORE_JKS_ALIAS} -storepass:env PLAY_STORE_JKS_PASSWD | \
           grep "SHA1"
 
       - name: Android release build
@@ -302,17 +297,19 @@ jobs:
 
       - name: Ship to Google Play
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: android
+        working-directory: ./
         env:
           GOOGLE_API_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_API_CREDENTIALS_BASE64 }}
           GOOGLE_API_CREDENTIALS: "api_keys.json"
-          ANDROID_PACKAGE_NAME: "ca.qc.gouv.ingverif"
-          ANDROID_BUNDLE_PATH: "./app/build/outputs/bundle/release/app-release.aab"
+          ANDROID_PACKAGE_NAME: "com.ingverif"
+          ANDROID_BUNDLE_PATH: "./android/app/build/outputs/bundle/release/app-release.aab"
           VERSION_CODE: ${{ env.appBuildNumber }}
           VERSION_NAME: ${{ env.appBuildVersion }}
         run: |
           echo "${GOOGLE_API_CREDENTIALS_BASE64}" | base64 -d >${GOOGLE_API_CREDENTIALS} && \
-          ./deploy-to-playstore.js
+          npm i
+          chmod +x deploy-to-playstore.js
+          node ./deploy-to-playstore.js
 
       - name: Ship to SauceLabs
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
