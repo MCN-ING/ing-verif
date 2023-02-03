@@ -17,7 +17,7 @@ const translation = {
   },
   Screens: {
     Home: 'Home',
-    QRCode: 'Connection'
+    QRCode: 'Connection',
   },
 }
 

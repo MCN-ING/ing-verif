@@ -5,7 +5,6 @@ import {View} from 'react-native'
 import {HorizontalSlider} from '../components/HorizontalSlider/HorizontalSlider'
 import {ItemInfo} from '../components/HorizontalSlider/SliderItem'
 import {Header} from '../components/PageHeader'
-import {SchemaSection} from '../components/SchemaSection'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 import {ActivityLog} from './ActivityLog'
