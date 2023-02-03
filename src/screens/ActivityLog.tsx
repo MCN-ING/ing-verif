@@ -1,4 +1,3 @@
-import {t} from 'i18next'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
 import {StyleSheet, Text, View} from 'react-native'
@@ -8,7 +7,7 @@ import DefaultComponentsThemes from '../defaultComponentsThemes'
 export const ActivityLog = () => {
   const {t} = useTranslation()
   const defaultStyle = DefaultComponentsThemes()
-  const [activities, setActivities] = React.useState([])
+  const [activities] = React.useState([])
 
   const styles = StyleSheet.create({
     container: {
