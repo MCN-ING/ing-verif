@@ -140,7 +140,7 @@ jobs:
       # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
       - name: Build Keychain
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: scripts
+        working-directory: ./scripts
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
         run:
@@ -149,7 +149,7 @@ jobs:
 
       - name: Release build
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ios
+        working-directory: ./ios
         run: |
           xcodebuild \
           -workspace IngVerif.xcworkspace \
@@ -164,7 +164,7 @@ jobs:
 
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
-        working-directory: ios
+        working-directory: ./ios
         run: |
           xcodebuild \
           -workspace IngVerif.xcworkspace \
@@ -177,7 +177,7 @@ jobs:
 
       - name: Archive & Sign
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ios
+        working-directory: ./ios
         run: |
           xcodebuild \
           -exportArchive \
@@ -194,7 +194,7 @@ jobs:
 
       - name: Ship to iTunes
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ios
+        working-directory: ./ios
         env:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
@@ -211,7 +211,7 @@ jobs:
 
       - name: Ship to SauceLabs
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ios
+        working-directory: ./ios
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
