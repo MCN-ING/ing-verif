@@ -22,7 +22,7 @@ export const ActivityLog = () => {
   return (
     <View style={styles.container}>
       <Text style={defaultStyle.title}>
-        {activities.length < 1 ? t('ActivityLog.Title') : t('ActivityLog.EmptyTitle')}
+        {activities.length < 1 ? t('ActivityLog.EmptyTitle') : t('ActivityLog.Title')}
       </Text>
       <View style={{paddingTop: 15}}>
         {activities.length < 1 && <Text style={defaultStyle.text}>{t('ActivityLog.EmptyBody')}</Text>}
