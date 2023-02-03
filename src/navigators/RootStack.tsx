@@ -3,7 +3,7 @@ import React from 'react'
 import {useTranslation} from 'react-i18next'
 
 import {useTheme} from '../contexts/theme'
-import {Home, Settings, QRCodeScreen, ValidationResult} from '../screens'
+import {Home, Settings, QRCodeScreen, ValidationResult, Splash} from '../screens'
 
 const RootStack = () => {
   const {t} = useTranslation()
@@ -12,12 +12,13 @@ const RootStack = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Splash"
       screenOptions={{
         headerStyle: {
           backgroundColor: ColorPallet.primary,
         },
       }}>
+      <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen
         name="Home"
         options={{
