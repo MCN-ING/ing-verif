@@ -28,7 +28,7 @@ const ColorPalletLight: ColorPallet = {
   tertiary: '#2D9CDB',
   quaternary: '#BFD8FF',
   quinary: '#F2F2F2',
-  titleHighlight: '#E5AD77',
+  titleHighlight: '#E58271',
   white: '#FFFFFF',
   lightGray: '#b8b8b8',
 }
@@ -41,7 +41,7 @@ const ColorPalletDark: ColorPallet = {
   tertiary: '#2D9CDB',
   quaternary: '#BFD8FF',
   quinary: '#F2F2F2',
-  titleHighlight: '#E5AD77',
+  titleHighlight: '#E58271',
   white: '#FFFFFF',
   lightGray: '#b8b8b8',
 }
