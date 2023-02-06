@@ -15,26 +15,35 @@ interface ColorPallet {
   tertiary: string
   quaternary: string
   quinary: string
+  titleHighlight: string
+  white: string
+  lightGray: string
 }
 
 const ColorPalletLight: ColorPallet = {
   primaryBackground: '#F2EFEF',
   primaryText: '#000000',
-  primary: '#0A84FF',
+  primary: '#095797',
   secondary: '#0C2550',
   tertiary: '#2D9CDB',
   quaternary: '#BFD8FF',
   quinary: '#F2F2F2',
+  titleHighlight: '#E58271',
+  white: '#FFFFFF',
+  lightGray: '#b8b8b8',
 }
 
 const ColorPalletDark: ColorPallet = {
   primaryBackground: '#575757',
   primaryText: '#FFFFFF',
-  primary: '#0A84FF',
+  primary: '#095797',
   secondary: '#0C2550',
   tertiary: '#2D9CDB',
   quaternary: '#BFD8FF',
   quinary: '#F2F2F2',
+  titleHighlight: '#E58271',
+  white: '#FFFFFF',
+  lightGray: '#b8b8b8',
 }
 
 const themeLight: Theme = {
