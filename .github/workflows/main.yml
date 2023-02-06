@@ -157,7 +157,7 @@ jobs:
           -scheme IngVerif \
           -configuration Release \
           -derivedDataPath xbuild \
-          -xcconfig ../../release.xcconfig \
+          -xcconfig ../release.xcconfig \
           -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
@@ -184,7 +184,7 @@ jobs:
           -exportArchive \
           -archivePath IngVerif.xcarchive \
           -exportPath export \
-          -exportOptionsPlist ../../options.plist \
+          -exportOptionsPlist ../options.plist \
           -verbose
 
       # https://blog.codemagic.io/app-store-connect-api-codemagic-cli-tools/
