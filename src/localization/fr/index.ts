@@ -10,6 +10,13 @@ const translation = {
       Body3: 'Utilisez Bluetooth pour vérifier l’identité d’une personne.',
     },
   },
+  QRCode: {
+    Title: 'Connectez-vous avec un code QR',
+    Instructions:
+      "Numérisez le code QR depuis l'application de portefeuille numérique pour créer une connexion et partager des informations.",
+    GenerateNew: 'Générer un nouveau code QR',
+    UseBluetooth: 'Utiliser Bluetooth',
+  },
   ActivityLog: {
     EmptyTitle: 'Activité',
     Title: 'Nouvelles activités',
