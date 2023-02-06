@@ -1,11 +1,15 @@
-import {ConnectionRecord, DidExchangeState, ProofAttributeInfo} from '@aries-framework/core'
-import {uuid} from '@aries-framework/core/build/utils/uuid'
+import {DidExchangeState, ProofAttributeInfo} from '@aries-framework/core'
 import {useAgent, useConnectionByState} from '@aries-framework/react-hooks'
 import React, {useEffect, useState} from 'react'
-import {Text, SafeAreaView} from 'react-native'
+import {useTranslation} from 'react-i18next'
+import {Text, View, StyleSheet} from 'react-native'
 import QRCode from 'react-native-qrcode-svg'
 
+import {LargeButton} from '../components/LargeButton'
+import {Header} from '../components/PageHeader'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
+import {createLegacyInvitation} from '../utils/createLegacyInvitation'
+import {sendProofExchange} from '../utils/sendProofExchange'
 
 export const QRCodeScreen = ({navigation}: any) => {
   const defaultStyles = DefaultComponentsThemes()
@@ -14,13 +18,21 @@ export const QRCodeScreen = ({navigation}: any) => {
   const [isLoading, setIsLoading] = useState(true)
   const [invitationId, setInvitationId] = useState<string | undefined>(undefined)
   const connections = [...useConnectionByState(DidExchangeState.Completed)]
+  const {t} = useTranslation()
 
-  const makeConnectionConfig = {
-    goal: 'To make a connection',
-    goalCode: 'p2p-messaging',
-    label: 'Verification app',
-    alias: `Verification app`,
-  }
+  const styles = StyleSheet.create({
+    headerSection: {
+      flex: 1,
+    },
+    mainSection: {
+      flex: 2,
+    },
+    bottomSection: {
+      flex: 1.8,
+      justifyContent: 'space-between',
+      paddingVertical: 50,
+    },
+  })
 
   const attributes = {
     name: new ProofAttributeInfo({
@@ -29,51 +41,56 @@ export const QRCodeScreen = ({navigation}: any) => {
     }),
   }
 
-  useEffect(() => {
-    const unlock = async () => {
-      if (agent == undefined) {
-        return
-      }
-      const invitation = await agent.oob.createLegacyInvitation(makeConnectionConfig)
-      setInvitationId(invitation.outOfBandRecord.id)
-      const invitationUrl = invitation?.invitation.toUrl({domain: 'https://example.org'})
-      if (invitationUrl) {
-        setInvitationUrl(invitationUrl)
-        setIsLoading(false)
-      }
+  const handleCreateInvitation = async () => {
+    if (agent == undefined) {
+      return undefined
     }
-    unlock()
-  }, [])
 
-  const createProof = async (connection: ConnectionRecord) => {
-    const parentThreadId = uuid()
-    const proofExchangeRecord = await agent!.proofs.requestProof({
-      connectionId: connection.id,
-      parentThreadId,
-      protocolVersion: 'v1',
-      proofFormats: {
-        indy: {
-          name: 'proof-request',
-          version: '1.0',
-          nonce: '1298236324864',
-          requestedAttributes: attributes,
-        },
-      },
-    })
-    navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.id})
+    setIsLoading(true)
+    const invitation = await createLegacyInvitation(agent)
+    if (invitation) {
+      setInvitationUrl(invitation.invitationUrl)
+      setInvitationId(invitation.invitationId)
+      setIsLoading(false)
+    }
+  }
+
+  const handleProofExchange = async () => {
+    for (let i = 0; i < connections.length; i++) {
+      if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
+        const proofExchangeRecord = await sendProofExchange(agent, attributes, connections[i])
+        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId})
+      }
+      break
+    }
   }
 
   useEffect(() => {
-    for (let i = 0; i < connections.length; i++) {
-      if (connections[i].outOfBandId == invitationId && agent) {
-        createProof(connections[i])
-      }
-    }
+    handleCreateInvitation()
+  }, [])
+
+  useEffect(() => {
+    handleProofExchange()
   }, [connections])
 
   return (
-    <SafeAreaView style={defaultStyles.container}>
-      {isLoading ? <Text>Loading...</Text> : <QRCode value={invitationUrl} size={300} />}
-    </SafeAreaView>
+    <View style={defaultStyles.container}>
+      <View style={styles.headerSection}>
+        <Header title={t('QRCode.Title')} />
+      </View>
+      <View style={styles.mainSection}>
+        {isLoading ? <Text>Loading...</Text> : <QRCode value={invitationUrl} size={300} />}
+      </View>
+      <View style={styles.bottomSection}>
+        <Text style={[defaultStyles.text, {paddingHorizontal: 10}]}>{t('QRCode.Instructions')}</Text>
+        <LargeButton title={t('QRCode.GenerateNew')} action={handleCreateInvitation} isPrimary={true} />
+        <LargeButton
+          title={t('QRCode.UseBluetooth')}
+          action={() => {
+            navigation.navigate('#')
+          }}
+        />
+      </View>
+    </View>
   )
 }
