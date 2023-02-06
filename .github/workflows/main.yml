@@ -1,4 +1,4 @@
-# deploy ios
+# deploy ios app
 name: Native Build & Test
 
 env:
