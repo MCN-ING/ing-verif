@@ -225,7 +225,7 @@ jobs:
           --form "description=iOS QC Wallet app"
 
   build-android:
-    # if: ${{ false }}  # disable for now
+   if: ${{ false }}  # disable for now
     needs: [check-android-secrets]
     runs-on: ubuntu-latest
     # container:
