@@ -5,6 +5,8 @@ import {useTranslation} from 'react-i18next'
 import {useTheme} from '../contexts/theme'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash} from '../screens'
 
+import TermsStack from './TermsStack'
+
 const RootStack = () => {
   const {t} = useTranslation()
   const Stack = createStackNavigator()
@@ -19,6 +21,17 @@ const RootStack = () => {
         },
       }}>
       <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen
+        name="Terms"
+        component={TermsStack}
+        options={{
+          title: t('Screens.Terms') || '',
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: false,
+          headerLeft: () => false,
+        }}
+      />
       <Stack.Screen
         name="Home"
         options={{
