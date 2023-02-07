@@ -1,4 +1,4 @@
-# deploy ios app
+# deploy ios
 name: Native Build & Test
 
 env:
@@ -275,8 +275,8 @@ jobs:
           VERSION_NAME: ${{ env.appBuildVersion }}
 
         run: |
-          # chmod +x gradlew
-          # ./gradlew buildDebug
+           chmod +x gradlew
+           ./gradlew buildDebug
 
       - name: Create release keystore
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
@@ -299,7 +299,7 @@ jobs:
           VERSION_CODE: ${{ env.appBuildNumber }}
           VERSION_NAME: ${{ env.appBuildVersion }}
         run: |
-          # ./gradlew bundleRelease
+           ./gradlew bundleRelease
 
       - name: Ship to Google Play
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
