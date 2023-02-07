@@ -62,18 +62,6 @@ const Terms: React.FC = () => {
     navigation.navigate('Home' as never)
   }, [])
 
-  const onBackPressed = useCallback(() => {
-    //TODO:(jl) goBack() does not unwind the navigation stack but rather goes
-    //back to the splash screen. Needs fixing before the following code will
-    //work as expected.
-
-    // if (nav.canGoBack()) {
-    //   nav.goBack()
-    // }
-
-    navigation.navigate('Home' as never)
-  }, [])
-
   const openLink = async (url: string) => {
     // Only `https://` is allowed. Update manifest as needed.
     const supported = await Linking.canOpenURL(url)
