@@ -18,6 +18,7 @@ interface ColorPallet {
   titleHighlight: string
   white: string
   lightGray: string
+  link: string
 }
 
 const ColorPalletLight: ColorPallet = {
@@ -31,6 +32,7 @@ const ColorPalletLight: ColorPallet = {
   titleHighlight: '#E58271',
   white: '#FFFFFF',
   lightGray: '#b8b8b8',
+  link: '#095797',
 }
 
 const ColorPalletDark: ColorPallet = {
@@ -44,6 +46,7 @@ const ColorPalletDark: ColorPallet = {
   titleHighlight: '#E58271',
   white: '#FFFFFF',
   lightGray: '#b8b8b8',
+  link: '#095797',
 }
 
 const themeLight: Theme = {
