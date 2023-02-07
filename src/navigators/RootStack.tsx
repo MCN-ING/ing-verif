@@ -26,10 +26,8 @@ const RootStack = () => {
         component={TermsStack}
         options={{
           title: t('Screens.Terms') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
+          headerShown: false,
           gestureEnabled: false,
-          headerLeft: () => false,
         }}
       />
       <Stack.Screen

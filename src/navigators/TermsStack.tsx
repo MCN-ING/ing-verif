@@ -8,10 +8,7 @@ const TermsStack: React.FC = () => {
   const routeName = 'Terms'
 
   return (
-    <StackTerms.Navigator
-      initialRouteName={routeName}
-      //screenOptions={{headerShown: false }}
-    >
+    <StackTerms.Navigator initialRouteName={routeName} screenOptions={{headerShown: false}}>
       <StackTerms.Screen name={routeName} component={Terms} />
     </StackTerms.Navigator>
   )

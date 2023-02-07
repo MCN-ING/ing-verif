@@ -25,7 +25,7 @@ export const Splash = () => {
 
   useEffect(() => {
     if (agent) {
-      navigation.navigate('Home' as never)
+      navigation.navigate('Terms' as never)
     }
   }, [agent])
   return (

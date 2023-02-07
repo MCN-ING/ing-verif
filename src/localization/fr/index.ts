@@ -1,4 +1,7 @@
 const translation = {
+  Global: {
+    Continue: 'Continuer',
+  },
   Home: {
     Title: 'Vérifier une identité',
     Slider: {
@@ -30,6 +33,9 @@ const translation = {
     QRCode: 'Connexion',
   },
   TermsV2: {
+    title: "Conditions d'utilisation",
+    Attestation: "J'ai lu, je comprends et j'accepte les conditions.",
+    IAgree: "J'accepte",
     Consent: {
       IAgree: "J'accepte",
       title: 'Consentement',
