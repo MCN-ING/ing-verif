@@ -8,9 +8,10 @@ interface Props {
   isPrimary?: boolean
   title: string
   action: () => void
+  disabled?: boolean
 }
 
-export const LargeButton = ({title, action, isPrimary = false}: Props) => {
+export const LargeButton = ({title, action, isPrimary = false, disabled = false}: Props) => {
   const {ColorPallet} = useTheme()
 
   const styles = StyleSheet.create({
@@ -33,7 +34,7 @@ export const LargeButton = ({title, action, isPrimary = false}: Props) => {
     },
   })
   return (
-    <TouchableOpacity style={styles.buttonContainer} onPress={action}>
+    <TouchableOpacity style={styles.buttonContainer} onPress={action} disabled={disabled}>
       <Text style={styles.textStyles}>{title}</Text>
     </TouchableOpacity>
   )
