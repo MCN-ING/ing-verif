@@ -7,6 +7,7 @@ import QRCode from 'react-native-qrcode-svg'
 
 import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
+import {Spinner} from '../components/Spinner'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {createLegacyInvitation} from '../utils/createLegacyInvitation'
 import {sendProofExchange} from '../utils/sendProofExchange'
@@ -78,9 +79,7 @@ export const QRCodeScreen = ({navigation}: any) => {
       <View style={styles.headerSection}>
         <Header title={t('QRCode.Title')} />
       </View>
-      <View style={styles.mainSection}>
-        {isLoading ? <Text>Loading...</Text> : <QRCode value={invitationUrl} size={300} />}
-      </View>
+      <View style={styles.mainSection}>{isLoading ? <Spinner /> : <QRCode value={invitationUrl} size={300} />}</View>
       <View style={styles.bottomSection}>
         <Text style={[defaultStyles.text, {paddingHorizontal: 10}]}>{t('QRCode.Instructions')}</Text>
         <LargeButton title={t('QRCode.GenerateNew')} action={handleCreateInvitation} isPrimary={true} />

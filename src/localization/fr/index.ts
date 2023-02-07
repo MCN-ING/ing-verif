@@ -1,4 +1,7 @@
 const translation = {
+  Global: {
+    Back: 'Retour',
+  },
   Home: {
     Title: 'Vérifier une identité',
     Slider: {
@@ -17,6 +20,11 @@ const translation = {
     GenerateNew: 'Générer un nouveau code QR',
     UseBluetooth: 'Utiliser Bluetooth',
   },
+  ValidationLoading: {
+    Title: 'Réception en cours',
+    Footer: 'Réception des informations en cours...',
+    CancelButton: 'Annuler',
+  },
   ActivityLog: {
     EmptyTitle: 'Activité',
     Title: 'Nouvelles activités',
@@ -28,6 +36,7 @@ const translation = {
   Screens: {
     Home: 'Accueil',
     QRCode: 'Connexion',
+    Validation: 'Vérification',
   },
 }
 
