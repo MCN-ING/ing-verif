@@ -3,9 +3,11 @@ import {DidCommMessageRepository} from '@aries-framework/core/build/storage'
 import {useAgent, useProofById} from '@aries-framework/react-hooks'
 import Base64 from 'js-base64'
 import React, {useEffect, useState} from 'react'
-import {SafeAreaView, Text, View} from 'react-native'
+import {Text, View} from 'react-native'
 
 import DefaultComponentsThemes from '../defaultComponentsThemes'
+
+import {ValidationLoading} from './ValidationLoading'
 
 export const ValidationResult = ({route}: any) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -40,9 +42,9 @@ export const ValidationResult = ({route}: any) => {
   }, [proof])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       {isLoading ? (
-        <Text style={styles.text}>Loading...</Text>
+        <ValidationLoading />
       ) : (
         <View>
           {proofResponse && (
@@ -59,6 +61,6 @@ export const ValidationResult = ({route}: any) => {
           )}
         </View>
       )}
-    </SafeAreaView>
+    </View>
   )
 }
