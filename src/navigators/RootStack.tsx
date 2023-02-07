@@ -18,7 +18,15 @@ const RootStack = () => {
           backgroundColor: ColorPallet.primary,
         },
       }}>
-      <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          headerLeft: () => false,
+        }}
+      />
       <Stack.Screen
         name="Home"
         options={{
@@ -41,7 +49,18 @@ const RootStack = () => {
         }}
       />
       <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen name="ValidationResult" component={ValidationResult} options={{presentation: 'modal'}} />
+      <Stack.Screen
+        name="ValidationResult"
+        component={ValidationResult}
+        options={{
+          presentation: 'modal',
+          title: t('Screens.Validation') || '',
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
+        }}
+      />
     </Stack.Navigator>
   )
 }
