@@ -3,11 +3,12 @@ import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {ScrollView, StyleSheet, Text, View, Linking} from 'react-native'
 
+import CheckBoxRow from '../components/CheckBoxRow'
+import {LargeButton} from '../components/LargeButton'
+import {Header} from '../components/PageHeader'
 import {AccordionItem} from '../components/react-native-accordion-list-view'
 import {useTheme} from '../contexts/theme'
 import defaultComponentsThemes from '../defaultComponentsThemes'
-import {LargeButton} from '../components/LargeButton'
-import CheckBoxRow from '../components/CheckBoxRow'
 
 const Terms: React.FC = () => {
   // const [store, dispatch] = useStore()
@@ -30,7 +31,7 @@ const Terms: React.FC = () => {
       textDecorationLine: 'underline',
     },
     title: {
-      ...defaultStyle.title,
+      ...defaultStyle.subtitle,
     },
     controlsContainer: {
       marginTop: 'auto',
@@ -86,6 +87,7 @@ const Terms: React.FC = () => {
   return (
     <View style={[style.container]}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <Header title={t('TermsV2.title')}></Header>
         <Text>{t('TermsV2.Consent.body')}</Text>
         <Text style={[style.title, {marginTop: 20}]}>{t('TermsV2.Consent.title')}</Text>
         <Text style={[style.bodyText, {marginTop: 20}]}>{t('TermsV2.Consent.body')}</Text>
@@ -124,8 +126,8 @@ const Terms: React.FC = () => {
             /*!(store.onboarding.didAgreeToTerms && store.authentication.didAuthenticate) && */
             <>
               <CheckBoxRow
-                title={t('Terms.Attestation')}
-                accessibilityLabel={t('Terms.IAgree') || ''}
+                title={t('TermsV2.Attestation')}
+                accessibilityLabel={t('TermsV2.IAgree') || ''}
                 checked={checked}
                 onPress={() => setChecked(!checked)}
               />

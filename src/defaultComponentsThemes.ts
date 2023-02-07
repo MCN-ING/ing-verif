@@ -20,6 +20,10 @@ const DefaultComponentsThemes = () => {
       fontSize: 30,
       fontWeight: 'bold',
     },
+    subtitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
   })
 }
 
