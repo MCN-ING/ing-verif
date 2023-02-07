@@ -28,7 +28,7 @@ export const Spinner = () => {
       height: 200,
       borderRadius: 200 / 2,
       borderWidth: 7,
-      borderColor: ColorPallet.primaryBackground,
+      borderColor: ColorPallet.lightGray,
       zIndex: 1,
       borderLeftColor: ColorPallet.primary,
     },
