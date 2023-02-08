@@ -1,6 +1,7 @@
 const translation = {
   Global: {
     Back: 'Back',
+    Attributes: 'Attributes',
   },
   Home: {
     Title: 'Verify an identity',

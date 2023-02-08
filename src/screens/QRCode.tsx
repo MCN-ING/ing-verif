@@ -40,6 +40,9 @@ export const QRCodeScreen = ({navigation}: any) => {
       names: ['Nom'],
       restrictions: [],
     }),
+    prenom: new ProofAttributeInfo({
+      names: ['Prénom'],
+    }),
   }
 
   const handleCreateInvitation = async () => {
@@ -57,10 +60,11 @@ export const QRCodeScreen = ({navigation}: any) => {
   }
 
   const handleProofExchange = async () => {
+    const proofName = "Requête d'age"
     for (let i = 0; i < connections.length; i++) {
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
-        const proofExchangeRecord = await sendProofExchange(agent, attributes, connections[i])
-        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId})
+        const proofExchangeRecord = await sendProofExchange(agent, attributes, connections[i], proofName)
+        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId, proofName: proofName})
       }
       break
     }
