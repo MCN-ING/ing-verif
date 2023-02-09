@@ -135,8 +135,8 @@ jobs:
           KEYCHIAN_PASSWD: ${{ secrets.KEYCHIAN_PASSWD }}
         run: |
           # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          CERTIFICATE_PATH=$RUNNER_TEMP/Certificats.p12
+          PP_PATH=$RUNNER_TEMP/ingverif1.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
           
           # import certificate and provisioning profile from secrets
