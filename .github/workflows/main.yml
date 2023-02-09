@@ -1,4 +1,3 @@
-# deploy ios app
 name: Native Build & Test
 
 env:
@@ -86,6 +85,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ env.cacheId }}-
 
+      - name: Cache pod dependencies
+        id: pod-cache
+        uses: actions/cache@v1
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ env.cacheId }}-${{ hashFiles('**/Podfile.lock ') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-${{ env.cacheId }}-
+
       - name: Cache derived data
         uses: actions/cache@v1
         with:
@@ -128,53 +136,39 @@ jobs:
         run: |
           echo "MEDIATOR_URL=${MEDIATOR_URL}" >.env
       # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
-      - name: Install the Apple certificate and provisioning profile
+      - name: Create Provisioning Profile
+        if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
-          KEYCHIAN_PASSWD: ${{ secrets.KEYCHIAN_PASSWD }}
+          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
         run: |
-          # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/Certificats.p12
-          PP_PATH=$RUNNER_TEMP/ingverif1.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-          
-          # import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode -o $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode -o $PP_PATH
-          
-          # create temporary keychain
-          security create-keychain -p "$KEYCHIAN_PASSWD" $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHIAN_PASSWD" $KEYCHAIN_PATH
-          
-          # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$KEYCHIAN_PASSWD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-          
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+          scripts/makepp.sh
+
+      # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
+      - name: Build Keychain
+        if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
+        env:
+          CERTIFICATE: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+        run: |
+          scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
       - name: Release build
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ./ios
+        working-directory: app/ios
         run: |
-          pod install
           xcodebuild \
-          -workspace IngVerif.xcworkspace \
-          -scheme IngVerif \
+          -workspace AriesBifold.xcworkspace \
+          -scheme AriesBifold \
           -configuration Release \
           -derivedDataPath xbuild \
-          -xcconfig ../release.xcconfig \
-          -archivePath IngVerif.xcarchive \
+          -xcconfig ../../release.xcconfig \
+          -archivePath AriesBifold.xcarchive \
           -sdk iphoneos \
           -verbose \
           archive
 
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
-        working-directory: ./ios
+        working-directory: ios
         run: |
           xcodebuild \
           -workspace IngVerif.xcworkspace \
@@ -209,6 +203,8 @@ jobs:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
           APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY_95 }}
+          VERSION_CODE: ${{ env.appBuildNumber }}
+          VERSION_NAME: ${{ env.appBuildVersion }}
         run: |
           export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
           app-store-connect publish \
