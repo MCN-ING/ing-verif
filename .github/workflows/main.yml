@@ -26,17 +26,17 @@ jobs:
           PLAY_STORE_JKS_PASSWD: ${{ secrets.PLAY_STORE_JKS_PASSWD }}
 
   check-ios-secrets:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       isReleaseBuild: ${{ steps.isReleaseBuild.outputs.defined }}
     steps:
       - id: isReleaseBuild
-        if: env.BUILD_CERTIFICATE_BASE64 != null && env.KEYCHIAN_PASSWD != null && env.BUILD_PROVISION_PROFILE_BASE64 != null
+        if: env.CERTIFICATE != null && env.KEYCHIAN_PASSWD != null && env.PROVISIONING_PROFILE != null
         run: echo "::set-output name=defined::true"
         env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          CERTIFICATE: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
           KEYCHIAN_PASSWD: ${{ secrets.KEYCHIAN_PASSWD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
 
   build-ios:
     # if: ${{ false }}  # disable for now
