@@ -5650,15 +5650,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		022B01510FA1E3DDB717552D6B10D11A /* Pods-IngVerif */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-IngVerif"; path = "libPods-IngVerif.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		15912309AA610251329D74FA111DE5CA /* RNLocalize */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNLocalize; path = libRNLocalize.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1936453FF2A7E3A13063C4917C4D5598 /* RCT-Folly */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "RCT-Folly"; path = "libRCT-Folly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2577F299FCB0A19824FE989BE77B8E8F /* React-jsinspector */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-jsinspector"; path = "libReact-jsinspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		269BE773C9482484B70949A40F4EA525 /* React-RCTSettings */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTSettings"; path = "libReact-RCTSettings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3566E29624F4738A4953CE7ABF635C5E /* react-native-config */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "react-native-config"; path = "libreact-native-config.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37592FDAD45752511010F4B06AC57355 /* React-cxxreact */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-cxxreact"; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		396DAFDC3DCFBF31A37A3CC9488C0DDC /* Flipper-Fmt */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Flipper-Fmt"; path = "libFlipper-Fmt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CA7A9404CCDD6BA22C97F8348CE3209 /* glog */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = glog; path = libglog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		022B01510FA1E3DDB717552D6B10D11A /* libPods-IngVerif.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IngVerif.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15912309AA610251329D74FA111DE5CA /* libRNLocalize.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNLocalize.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1936453FF2A7E3A13063C4917C4D5598 /* libRCT-Folly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libRCT-Folly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2577F299FCB0A19824FE989BE77B8E8F /* libReact-jsinspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-jsinspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		269BE773C9482484B70949A40F4EA525 /* libReact-RCTSettings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTSettings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3566E29624F4738A4953CE7ABF635C5E /* libreact-native-config.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-config.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37592FDAD45752511010F4B06AC57355 /* libReact-cxxreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		396DAFDC3DCFBF31A37A3CC9488C0DDC /* libFlipper-Fmt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFlipper-Fmt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA7A9404CCDD6BA22C97F8348CE3209 /* libglog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libglog.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EB2E000004B0 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		46EB2E000004C0 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
 		46EB2E000004D0 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -9187,51 +9187,51 @@
 		46EB2E0001D730 /* Pods-IngVerif-IngVerifTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IngVerif-IngVerifTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		46EB2E0001D740 /* Pods-IngVerif-IngVerifTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IngVerif-IngVerifTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		46EB2E0001D750 /* Pods-IngVerif-IngVerifTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IngVerif-IngVerifTests-dummy.m"; sourceTree = "<group>"; };
-		50B5347C9A6E93B7D4CFC3673BA6FB7E /* RNScreens */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNScreens; path = libRNScreens.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		52FCF98CEFF94C742080B6965D537AD0 /* react-native-safe-area-context */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "react-native-safe-area-context"; path = "libreact-native-safe-area-context.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53402A93E4B0727A0B51A202B7F5BF9A /* Pods-IngVerif-IngVerifTests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-IngVerif-IngVerifTests"; path = "libPods-IngVerif-IngVerifTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5737DDB4BC95AD399B3206838AB97095 /* RNCAsyncStorage */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNCAsyncStorage; path = libRNCAsyncStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B3357A1CE67C0BF4AE31936A1BE6888 /* YogaKit */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = YogaKit; path = libYogaKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		65234B3E668A42D9137B2C7AB051EE37 /* FlipperKit */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = FlipperKit; path = libFlipperKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		65D0A19C165FA1126B1360680FE6DB12 /* Yoga */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = Yoga; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		666E72807891C591E025A75410CD2A26 /* React-perflogger */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-perflogger"; path = "libReact-perflogger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6771D231F4C8C5976470A369C474B32E /* React-CoreModules */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-CoreModules"; path = "libReact-CoreModules.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		68D0E680E3D787063C2716E812E2A5AE /* React-bridging */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-bridging"; path = "libReact-bridging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = CocoaAsyncSocket; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FFB7B2992BB53405E6B771A5BA1E97D /* DoubleConversion */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = DoubleConversion; path = libDoubleConversion.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		802121F5B756ACBFDD6D08C36246DADD /* React-RCTLinking */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTLinking"; path = "libReact-RCTLinking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85A01882ED06DFEA2E0CE78BCDB204A7 /* SocketRocket */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = SocketRocket; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8998273719FDD789E6F9C7541AFD0B33 /* RNVectorIcons */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNVectorIcons; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F65F9361F2069CF9E9D751272968DE4 /* RNGestureHandler */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNGestureHandler; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FD3DD8368ED4B6E773ABAA49C117D42 /* Flipper-Boost-iOSX */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Flipper-Boost-iOSX"; path = "libFlipper-Boost-iOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		90EE8D3C082C157169540FC8F5913DAD /* RNSVG */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNSVG; path = libRNSVG.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		99D5CD245388DC76AAEF6E1E351A90ED /* Flipper-Folly */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Flipper-Folly"; path = "libFlipper-Folly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A70011370B46387FBFE517906404002 /* RNFS */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNFS; path = libRNFS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A084CF2F6DEEE50562350F6B7A9FA9D0 /* indy-sdk-react-native */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "indy-sdk-react-native"; path = "libindy-sdk-react-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5B49761F8D1EB12585DD45CAA2E489F /* React-logger */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-logger"; path = "libReact-logger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68E5A9B69A3BA0FD52CAF7A354EC93B /* React-RCTNetwork */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTNetwork"; path = "libReact-RCTNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACBB7F62B267CC7C9BBBAE41DE94743B /* Flipper-PeerTalk */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Flipper-PeerTalk"; path = "libFlipper-PeerTalk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8CD4B9B578CE9FA38114B638C9CAA78 /* RNCMaskedView */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNCMaskedView; path = libRNCMaskedView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD71E2539823621820F84384064C253A /* React-Core */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-Core"; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1A919103EAC9813D236486C34FC0A21 /* React-RCTVibration */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTVibration"; path = "libReact-RCTVibration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C777CF2FB1E39A45CBBDB54E8693F471 /* RNReanimated */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RNReanimated; path = libRNReanimated.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C88D8F609983AB0002AA796EE4C108C4 /* react-native-get-random-values */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "react-native-get-random-values"; path = "libreact-native-get-random-values.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C775614AC76D44CECB6BE08B022F1F /* ReactCommon */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = ReactCommon; path = libReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9F334F2E90E3EE462FC4192AF5C03BD /* React-jsi */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-jsi"; path = "libReact-jsi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD8B71DF2DFCF15AAF98C06D37D5703 /* React-hermes */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-hermes"; path = "libReact-hermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6A16705C69FC7DE11C2469A4A0F8358 /* React-RCTText */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTText"; path = "libReact-RCTText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7178FECB829C9576A3723658B07F087 /* React-Codegen */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-Codegen"; path = "libReact-Codegen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93F701CA8EB196D77AE99E094D873E4 /* Flipper */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = Flipper; path = libFlipper.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEDBF403E8E0B3885E65C2741B536BC5 /* React-RCTImage */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTImage"; path = "libReact-RCTImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2E7C88DFCD460A4B46B913ADEB8A641 /* React-jsiexecutor */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-jsiexecutor"; path = "libReact-jsiexecutor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4BDA69E3BCB0166D49FB679ABADCA00 /* fmt */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = fmt; path = libfmt.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6B923B5A106791D9D52196A67E572B3 /* react-native-splash-screen */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "react-native-splash-screen"; path = "libreact-native-splash-screen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F71EBF73F354B475D465FF6DE9A66707 /* React-RCTBlob */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTBlob"; path = "libReact-RCTBlob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F958876A082BF810B342435CE3FB5AF6 /* RCTTypeSafety */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = RCTTypeSafety; path = libRCTTypeSafety.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB6FAD8F0183E86ACBFBD8A81BA7BF3A /* libevent */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libevent; path = liblibevent.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE6D792B6328AAF68E46924D7F466631 /* React-Core-AccessibilityResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "React-Core-AccessibilityResources"; path = AccessibilityResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE7B9294FF05AAFD1653E2104E10844A /* React-RCTAnimation */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "React-RCTAnimation"; path = "libReact-RCTAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFDC7746794AB17CFB7150820479DF40 /* Flipper-RSocket */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Flipper-RSocket"; path = "libFlipper-RSocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B5347C9A6E93B7D4CFC3673BA6FB7E /* libRNScreens.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNScreens.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		52FCF98CEFF94C742080B6965D537AD0 /* libreact-native-safe-area-context.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-safe-area-context.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53402A93E4B0727A0B51A202B7F5BF9A /* libPods-IngVerif-IngVerifTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IngVerif-IngVerifTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5737DDB4BC95AD399B3206838AB97095 /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCAsyncStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3357A1CE67C0BF4AE31936A1BE6888 /* libYogaKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYogaKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65234B3E668A42D9137B2C7AB051EE37 /* libFlipperKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFlipperKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D0A19C165FA1126B1360680FE6DB12 /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		666E72807891C591E025A75410CD2A26 /* libReact-perflogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-perflogger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6771D231F4C8C5976470A369C474B32E /* libReact-CoreModules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-CoreModules.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D0E680E3D787063C2716E812E2A5AE /* libReact-bridging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-bridging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CBEFE4F9E22AFDC6347A739BB35FF8C /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFB7B2992BB53405E6B771A5BA1E97D /* libDoubleConversion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDoubleConversion.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		802121F5B756ACBFDD6D08C36246DADD /* libReact-RCTLinking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTLinking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A01882ED06DFEA2E0CE78BCDB204A7 /* libSocketRocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8998273719FDD789E6F9C7541AFD0B33 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F65F9361F2069CF9E9D751272968DE4 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FD3DD8368ED4B6E773ABAA49C117D42 /* libFlipper-Boost-iOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFlipper-Boost-iOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EE8D3C082C157169540FC8F5913DAD /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSVG.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D5CD245388DC76AAEF6E1E351A90ED /* libFlipper-Folly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFlipper-Folly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A70011370B46387FBFE517906404002 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNFS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A084CF2F6DEEE50562350F6B7A9FA9D0 /* libindy-sdk-react-native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libindy-sdk-react-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B49761F8D1EB12585DD45CAA2E489F /* libReact-logger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-logger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68E5A9B69A3BA0FD52CAF7A354EC93B /* libReact-RCTNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBB7F62B267CC7C9BBBAE41DE94743B /* libFlipper-PeerTalk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFlipper-PeerTalk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CD4B9B578CE9FA38114B638C9CAA78 /* libRNCMaskedView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCMaskedView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD71E2539823621820F84384064C253A /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1A919103EAC9813D236486C34FC0A21 /* libReact-RCTVibration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTVibration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C777CF2FB1E39A45CBBDB54E8693F471 /* libRNReanimated.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReanimated.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C88D8F609983AB0002AA796EE4C108C4 /* libreact-native-get-random-values.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-get-random-values.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C775614AC76D44CECB6BE08B022F1F /* libReactCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F334F2E90E3EE462FC4192AF5C03BD /* libReact-jsi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-jsi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAD8B71DF2DFCF15AAF98C06D37D5703 /* libReact-hermes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-hermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A16705C69FC7DE11C2469A4A0F8358 /* libReact-RCTText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7178FECB829C9576A3723658B07F087 /* libReact-Codegen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-Codegen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93F701CA8EB196D77AE99E094D873E4 /* libFlipper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFlipper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEDBF403E8E0B3885E65C2741B536BC5 /* libReact-RCTImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2E7C88DFCD460A4B46B913ADEB8A641 /* libReact-jsiexecutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-jsiexecutor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BDA69E3BCB0166D49FB679ABADCA00 /* libfmt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfmt.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B923B5A106791D9D52196A67E572B3 /* libreact-native-splash-screen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-splash-screen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71EBF73F354B475D465FF6DE9A66707 /* libReact-RCTBlob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTBlob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F958876A082BF810B342435CE3FB5AF6 /* libRCTTypeSafety.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTTypeSafety.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB6FAD8F0183E86ACBFBD8A81BA7BF3A /* liblibevent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibevent.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6D792B6328AAF68E46924D7F466631 /* AccessibilityResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE7B9294FF05AAFD1653E2104E10844A /* libReact-RCTAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReact-RCTAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDC7746794AB17CFB7150820479DF40 /* libFlipper-RSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFlipper-RSocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -9631,60 +9631,60 @@
 		46EB2E00000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket */,
-				6FFB7B2992BB53405E6B771A5BA1E97D /* DoubleConversion */,
-				E93F701CA8EB196D77AE99E094D873E4 /* Flipper */,
-				8FD3DD8368ED4B6E773ABAA49C117D42 /* Flipper-Boost-iOSX */,
-				396DAFDC3DCFBF31A37A3CC9488C0DDC /* Flipper-Fmt */,
-				99D5CD245388DC76AAEF6E1E351A90ED /* Flipper-Folly */,
-				ACBB7F62B267CC7C9BBBAE41DE94743B /* Flipper-PeerTalk */,
-				FFDC7746794AB17CFB7150820479DF40 /* Flipper-RSocket */,
-				65234B3E668A42D9137B2C7AB051EE37 /* FlipperKit */,
-				F4BDA69E3BCB0166D49FB679ABADCA00 /* fmt */,
-				3CA7A9404CCDD6BA22C97F8348CE3209 /* glog */,
-				A084CF2F6DEEE50562350F6B7A9FA9D0 /* indy-sdk-react-native */,
-				FB6FAD8F0183E86ACBFBD8A81BA7BF3A /* libevent */,
-				022B01510FA1E3DDB717552D6B10D11A /* Pods-IngVerif */,
-				53402A93E4B0727A0B51A202B7F5BF9A /* Pods-IngVerif-IngVerifTests */,
-				1936453FF2A7E3A13063C4917C4D5598 /* RCT-Folly */,
-				F958876A082BF810B342435CE3FB5AF6 /* RCTTypeSafety */,
-				68D0E680E3D787063C2716E812E2A5AE /* React-bridging */,
-				E7178FECB829C9576A3723658B07F087 /* React-Codegen */,
-				BD71E2539823621820F84384064C253A /* React-Core */,
-				FE6D792B6328AAF68E46924D7F466631 /* React-Core-AccessibilityResources */,
-				6771D231F4C8C5976470A369C474B32E /* React-CoreModules */,
-				37592FDAD45752511010F4B06AC57355 /* React-cxxreact */,
-				DAD8B71DF2DFCF15AAF98C06D37D5703 /* React-hermes */,
-				D9F334F2E90E3EE462FC4192AF5C03BD /* React-jsi */,
-				F2E7C88DFCD460A4B46B913ADEB8A641 /* React-jsiexecutor */,
-				2577F299FCB0A19824FE989BE77B8E8F /* React-jsinspector */,
-				A5B49761F8D1EB12585DD45CAA2E489F /* React-logger */,
-				3566E29624F4738A4953CE7ABF635C5E /* react-native-config */,
-				C88D8F609983AB0002AA796EE4C108C4 /* react-native-get-random-values */,
-				52FCF98CEFF94C742080B6965D537AD0 /* react-native-safe-area-context */,
-				F6B923B5A106791D9D52196A67E572B3 /* react-native-splash-screen */,
-				666E72807891C591E025A75410CD2A26 /* React-perflogger */,
-				FE7B9294FF05AAFD1653E2104E10844A /* React-RCTAnimation */,
-				F71EBF73F354B475D465FF6DE9A66707 /* React-RCTBlob */,
-				EEDBF403E8E0B3885E65C2741B536BC5 /* React-RCTImage */,
-				802121F5B756ACBFDD6D08C36246DADD /* React-RCTLinking */,
-				A68E5A9B69A3BA0FD52CAF7A354EC93B /* React-RCTNetwork */,
-				269BE773C9482484B70949A40F4EA525 /* React-RCTSettings */,
-				E6A16705C69FC7DE11C2469A4A0F8358 /* React-RCTText */,
-				C1A919103EAC9813D236486C34FC0A21 /* React-RCTVibration */,
-				D5C775614AC76D44CECB6BE08B022F1F /* ReactCommon */,
-				5737DDB4BC95AD399B3206838AB97095 /* RNCAsyncStorage */,
-				B8CD4B9B578CE9FA38114B638C9CAA78 /* RNCMaskedView */,
-				9A70011370B46387FBFE517906404002 /* RNFS */,
-				8F65F9361F2069CF9E9D751272968DE4 /* RNGestureHandler */,
-				15912309AA610251329D74FA111DE5CA /* RNLocalize */,
-				C777CF2FB1E39A45CBBDB54E8693F471 /* RNReanimated */,
-				50B5347C9A6E93B7D4CFC3673BA6FB7E /* RNScreens */,
-				90EE8D3C082C157169540FC8F5913DAD /* RNSVG */,
-				8998273719FDD789E6F9C7541AFD0B33 /* RNVectorIcons */,
-				85A01882ED06DFEA2E0CE78BCDB204A7 /* SocketRocket */,
-				65D0A19C165FA1126B1360680FE6DB12 /* Yoga */,
-				5B3357A1CE67C0BF4AE31936A1BE6888 /* YogaKit */,
+				6CBEFE4F9E22AFDC6347A739BB35FF8C /* libCocoaAsyncSocket.a */,
+				6FFB7B2992BB53405E6B771A5BA1E97D /* libDoubleConversion.a */,
+				E93F701CA8EB196D77AE99E094D873E4 /* libFlipper.a */,
+				8FD3DD8368ED4B6E773ABAA49C117D42 /* libFlipper-Boost-iOSX.a */,
+				396DAFDC3DCFBF31A37A3CC9488C0DDC /* libFlipper-Fmt.a */,
+				99D5CD245388DC76AAEF6E1E351A90ED /* libFlipper-Folly.a */,
+				ACBB7F62B267CC7C9BBBAE41DE94743B /* libFlipper-PeerTalk.a */,
+				FFDC7746794AB17CFB7150820479DF40 /* libFlipper-RSocket.a */,
+				65234B3E668A42D9137B2C7AB051EE37 /* libFlipperKit.a */,
+				F4BDA69E3BCB0166D49FB679ABADCA00 /* libfmt.a */,
+				3CA7A9404CCDD6BA22C97F8348CE3209 /* libglog.a */,
+				A084CF2F6DEEE50562350F6B7A9FA9D0 /* libindy-sdk-react-native.a */,
+				FB6FAD8F0183E86ACBFBD8A81BA7BF3A /* liblibevent.a */,
+				022B01510FA1E3DDB717552D6B10D11A /* libPods-IngVerif.a */,
+				53402A93E4B0727A0B51A202B7F5BF9A /* libPods-IngVerif-IngVerifTests.a */,
+				1936453FF2A7E3A13063C4917C4D5598 /* libRCT-Folly.a */,
+				F958876A082BF810B342435CE3FB5AF6 /* libRCTTypeSafety.a */,
+				68D0E680E3D787063C2716E812E2A5AE /* libReact-bridging.a */,
+				E7178FECB829C9576A3723658B07F087 /* libReact-Codegen.a */,
+				BD71E2539823621820F84384064C253A /* libReact-Core.a */,
+				FE6D792B6328AAF68E46924D7F466631 /* AccessibilityResources.bundle */,
+				6771D231F4C8C5976470A369C474B32E /* libReact-CoreModules.a */,
+				37592FDAD45752511010F4B06AC57355 /* libReact-cxxreact.a */,
+				DAD8B71DF2DFCF15AAF98C06D37D5703 /* libReact-hermes.a */,
+				D9F334F2E90E3EE462FC4192AF5C03BD /* libReact-jsi.a */,
+				F2E7C88DFCD460A4B46B913ADEB8A641 /* libReact-jsiexecutor.a */,
+				2577F299FCB0A19824FE989BE77B8E8F /* libReact-jsinspector.a */,
+				A5B49761F8D1EB12585DD45CAA2E489F /* libReact-logger.a */,
+				3566E29624F4738A4953CE7ABF635C5E /* libreact-native-config.a */,
+				C88D8F609983AB0002AA796EE4C108C4 /* libreact-native-get-random-values.a */,
+				52FCF98CEFF94C742080B6965D537AD0 /* libreact-native-safe-area-context.a */,
+				F6B923B5A106791D9D52196A67E572B3 /* libreact-native-splash-screen.a */,
+				666E72807891C591E025A75410CD2A26 /* libReact-perflogger.a */,
+				FE7B9294FF05AAFD1653E2104E10844A /* libReact-RCTAnimation.a */,
+				F71EBF73F354B475D465FF6DE9A66707 /* libReact-RCTBlob.a */,
+				EEDBF403E8E0B3885E65C2741B536BC5 /* libReact-RCTImage.a */,
+				802121F5B756ACBFDD6D08C36246DADD /* libReact-RCTLinking.a */,
+				A68E5A9B69A3BA0FD52CAF7A354EC93B /* libReact-RCTNetwork.a */,
+				269BE773C9482484B70949A40F4EA525 /* libReact-RCTSettings.a */,
+				E6A16705C69FC7DE11C2469A4A0F8358 /* libReact-RCTText.a */,
+				C1A919103EAC9813D236486C34FC0A21 /* libReact-RCTVibration.a */,
+				D5C775614AC76D44CECB6BE08B022F1F /* libReactCommon.a */,
+				5737DDB4BC95AD399B3206838AB97095 /* libRNCAsyncStorage.a */,
+				B8CD4B9B578CE9FA38114B638C9CAA78 /* libRNCMaskedView.a */,
+				9A70011370B46387FBFE517906404002 /* libRNFS.a */,
+				8F65F9361F2069CF9E9D751272968DE4 /* libRNGestureHandler.a */,
+				15912309AA610251329D74FA111DE5CA /* libRNLocalize.a */,
+				C777CF2FB1E39A45CBBDB54E8693F471 /* libRNReanimated.a */,
+				50B5347C9A6E93B7D4CFC3673BA6FB7E /* libRNScreens.a */,
+				90EE8D3C082C157169540FC8F5913DAD /* libRNSVG.a */,
+				8998273719FDD789E6F9C7541AFD0B33 /* libRNVectorIcons.a */,
+				85A01882ED06DFEA2E0CE78BCDB204A7 /* libSocketRocket.a */,
+				65D0A19C165FA1126B1360680FE6DB12 /* libYoga.a */,
+				5B3357A1CE67C0BF4AE31936A1BE6888 /* libYogaKit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -18191,7 +18191,7 @@
 			);
 			name = fmt;
 			productName = fmt;
-			productReference = F4BDA69E3BCB0166D49FB679ABADCA00 /* fmt */;
+			productReference = F4BDA69E3BCB0166D49FB679ABADCA00 /* libfmt.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		04A30E186743192DFB26B0FD7DB8F250 /* libevent */ = {
@@ -18208,7 +18208,7 @@
 			);
 			name = libevent;
 			productName = libevent;
-			productReference = FB6FAD8F0183E86ACBFBD8A81BA7BF3A /* libevent */;
+			productReference = FB6FAD8F0183E86ACBFBD8A81BA7BF3A /* liblibevent.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		083B602EA19B4AD50EC53C0602F29A7D /* React-logger */ = {
@@ -18226,7 +18226,7 @@
 			);
 			name = "React-logger";
 			productName = "React-logger";
-			productReference = A5B49761F8D1EB12585DD45CAA2E489F /* React-logger */;
+			productReference = A5B49761F8D1EB12585DD45CAA2E489F /* libReact-logger.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		0A38628B0123A2EC8A0183D4A2B2747E /* Flipper-Fmt */ = {
@@ -18243,7 +18243,7 @@
 			);
 			name = "Flipper-Fmt";
 			productName = "Flipper-Fmt";
-			productReference = 396DAFDC3DCFBF31A37A3CC9488C0DDC /* Flipper-Fmt */;
+			productReference = 396DAFDC3DCFBF31A37A3CC9488C0DDC /* libFlipper-Fmt.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		1467B2CB665E9E6A20029045D066FDE4 /* react-native-splash-screen */ = {
@@ -18261,7 +18261,7 @@
 			);
 			name = "react-native-splash-screen";
 			productName = "react-native-splash-screen";
-			productReference = F6B923B5A106791D9D52196A67E572B3 /* react-native-splash-screen */;
+			productReference = F6B923B5A106791D9D52196A67E572B3 /* libreact-native-splash-screen.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		1948D0B63D2CF6A48E18B0B292BC6091 /* SocketRocket */ = {
@@ -18278,7 +18278,7 @@
 			);
 			name = SocketRocket;
 			productName = SocketRocket;
-			productReference = 85A01882ED06DFEA2E0CE78BCDB204A7 /* SocketRocket */;
+			productReference = 85A01882ED06DFEA2E0CE78BCDB204A7 /* libSocketRocket.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		1A0445474DA11CA659C4BCC5AB64B1BF /* RNCMaskedView */ = {
@@ -18296,7 +18296,7 @@
 			);
 			name = RNCMaskedView;
 			productName = RNCMaskedView;
-			productReference = B8CD4B9B578CE9FA38114B638C9CAA78 /* RNCMaskedView */;
+			productReference = B8CD4B9B578CE9FA38114B638C9CAA78 /* libRNCMaskedView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		1FAAE067C1BFDEA17DFB657C3379AB56 /* Flipper-RSocket */ = {
@@ -18314,7 +18314,7 @@
 			);
 			name = "Flipper-RSocket";
 			productName = "Flipper-RSocket";
-			productReference = FFDC7746794AB17CFB7150820479DF40 /* Flipper-RSocket */;
+			productReference = FFDC7746794AB17CFB7150820479DF40 /* libFlipper-RSocket.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		20F066A71CEA5EECC7463413442F2B77 /* React-hermes */ = {
@@ -18340,7 +18340,7 @@
 			);
 			name = "React-hermes";
 			productName = "React-hermes";
-			productReference = DAD8B71DF2DFCF15AAF98C06D37D5703 /* React-hermes */;
+			productReference = DAD8B71DF2DFCF15AAF98C06D37D5703 /* libReact-hermes.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		214E42634D1E187D876346D36184B655 /* RNScreens */ = {
@@ -18359,7 +18359,7 @@
 			);
 			name = RNScreens;
 			productName = RNScreens;
-			productReference = 50B5347C9A6E93B7D4CFC3673BA6FB7E /* RNScreens */;
+			productReference = 50B5347C9A6E93B7D4CFC3673BA6FB7E /* libRNScreens.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		2AB2EF542954AB1C999E03BFEF8DE806 /* DoubleConversion */ = {
@@ -18376,7 +18376,7 @@
 			);
 			name = DoubleConversion;
 			productName = DoubleConversion;
-			productReference = 6FFB7B2992BB53405E6B771A5BA1E97D /* DoubleConversion */;
+			productReference = 6FFB7B2992BB53405E6B771A5BA1E97D /* libDoubleConversion.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		2B25F90D819B9ADF2AF2D8733A890333 /* Yoga */ = {
@@ -18393,7 +18393,7 @@
 			);
 			name = Yoga;
 			productName = Yoga;
-			productReference = 65D0A19C165FA1126B1360680FE6DB12 /* Yoga */;
+			productReference = 65D0A19C165FA1126B1360680FE6DB12 /* libYoga.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		32CA4CBD6B28983076BD93DA221AD027 /* YogaKit */ = {
@@ -18412,7 +18412,7 @@
 			);
 			name = YogaKit;
 			productName = YogaKit;
-			productReference = 5B3357A1CE67C0BF4AE31936A1BE6888 /* YogaKit */;
+			productReference = 5B3357A1CE67C0BF4AE31936A1BE6888 /* libYogaKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		430D7C4A9EC9AB29B0505AFA151AABBF /* RNFS */ = {
@@ -18430,7 +18430,7 @@
 			);
 			name = RNFS;
 			productName = RNFS;
-			productReference = 9A70011370B46387FBFE517906404002 /* RNFS */;
+			productReference = 9A70011370B46387FBFE517906404002 /* libRNFS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		463F41A7E8B252F8AC5024DA1F4AF6DA /* React-cxxreact */ = {
@@ -18457,7 +18457,7 @@
 			);
 			name = "React-cxxreact";
 			productName = "React-cxxreact";
-			productReference = 37592FDAD45752511010F4B06AC57355 /* React-cxxreact */;
+			productReference = 37592FDAD45752511010F4B06AC57355 /* libReact-cxxreact.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		4F265533AAB7C8985856EC78A33164BB /* React-RCTImage */ = {
@@ -18481,7 +18481,7 @@
 			);
 			name = "React-RCTImage";
 			productName = "React-RCTImage";
-			productReference = EEDBF403E8E0B3885E65C2741B536BC5 /* React-RCTImage */;
+			productReference = EEDBF403E8E0B3885E65C2741B536BC5 /* libReact-RCTImage.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		53D121F9F9BB0F8AC1C94A12C5A8572F /* React-RCTVibration */ = {
@@ -18503,7 +18503,7 @@
 			);
 			name = "React-RCTVibration";
 			productName = "React-RCTVibration";
-			productReference = C1A919103EAC9813D236486C34FC0A21 /* React-RCTVibration */;
+			productReference = C1A919103EAC9813D236486C34FC0A21 /* libReact-RCTVibration.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		57DEB84ED32430C867E149B1CFC228CD /* Pods-IngVerif */ = {
@@ -18584,7 +18584,7 @@
 			);
 			name = "Pods-IngVerif";
 			productName = "Pods-IngVerif";
-			productReference = 022B01510FA1E3DDB717552D6B10D11A /* Pods-IngVerif */;
+			productReference = 022B01510FA1E3DDB717552D6B10D11A /* libPods-IngVerif.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5D49FA97D16E84D298A7C7F5A6F1D615 /* React-bridging */ = {
@@ -18603,7 +18603,7 @@
 			);
 			name = "React-bridging";
 			productName = "React-bridging";
-			productReference = 68D0E680E3D787063C2716E812E2A5AE /* React-bridging */;
+			productReference = 68D0E680E3D787063C2716E812E2A5AE /* libReact-bridging.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */ = {
@@ -18620,7 +18620,7 @@
 			);
 			name = CocoaAsyncSocket;
 			productName = CocoaAsyncSocket;
-			productReference = 6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket */;
+			productReference = 6CBEFE4F9E22AFDC6347A739BB35FF8C /* libCocoaAsyncSocket.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		651511D7DA7F07F9FC9AA40A2E86270D /* React-RCTNetwork */ = {
@@ -18643,7 +18643,7 @@
 			);
 			name = "React-RCTNetwork";
 			productName = "React-RCTNetwork";
-			productReference = A68E5A9B69A3BA0FD52CAF7A354EC93B /* React-RCTNetwork */;
+			productReference = A68E5A9B69A3BA0FD52CAF7A354EC93B /* libReact-RCTNetwork.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		66B8F5758E6F90E16807A85C003CE61F /* React-Codegen */ = {
@@ -18668,7 +18668,7 @@
 			);
 			name = "React-Codegen";
 			productName = "React-Codegen";
-			productReference = E7178FECB829C9576A3723658B07F087 /* React-Codegen */;
+			productReference = E7178FECB829C9576A3723658B07F087 /* libReact-Codegen.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		680299219D3A48D42A648AF6706275A9 /* React-RCTSettings */ = {
@@ -18691,7 +18691,7 @@
 			);
 			name = "React-RCTSettings";
 			productName = "React-RCTSettings";
-			productReference = 269BE773C9482484B70949A40F4EA525 /* React-RCTSettings */;
+			productReference = 269BE773C9482484B70949A40F4EA525 /* libReact-RCTSettings.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		6FE9147F8AAA4DE676C190F680F47AE2 /* React-RCTLinking */ = {
@@ -18712,7 +18712,7 @@
 			);
 			name = "React-RCTLinking";
 			productName = "React-RCTLinking";
-			productReference = 802121F5B756ACBFDD6D08C36246DADD /* React-RCTLinking */;
+			productReference = 802121F5B756ACBFDD6D08C36246DADD /* libReact-RCTLinking.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		718DB7D0A7E90B531AD577B3356C4161 /* Flipper-PeerTalk */ = {
@@ -18729,7 +18729,7 @@
 			);
 			name = "Flipper-PeerTalk";
 			productName = "Flipper-PeerTalk";
-			productReference = ACBB7F62B267CC7C9BBBAE41DE94743B /* Flipper-PeerTalk */;
+			productReference = ACBB7F62B267CC7C9BBBAE41DE94743B /* libFlipper-PeerTalk.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		7284DD8194B9ED62B49591C0D6F28EED /* Pods-IngVerif-IngVerifTests */ = {
@@ -18810,7 +18810,7 @@
 			);
 			name = "Pods-IngVerif-IngVerifTests";
 			productName = "Pods-IngVerif-IngVerifTests";
-			productReference = 53402A93E4B0727A0B51A202B7F5BF9A /* Pods-IngVerif-IngVerifTests */;
+			productReference = 53402A93E4B0727A0B51A202B7F5BF9A /* libPods-IngVerif-IngVerifTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		7A020DAB6F3F0BA0A6D9946E84B38B7F /* React-Core-AccessibilityResources */ = {
@@ -18827,7 +18827,7 @@
 			);
 			name = "React-Core-AccessibilityResources";
 			productName = AccessibilityResources;
-			productReference = FE6D792B6328AAF68E46924D7F466631 /* React-Core-AccessibilityResources */;
+			productReference = FE6D792B6328AAF68E46924D7F466631 /* AccessibilityResources.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		7A7A635014693FC1703A9F6963C9C55A /* indy-sdk-react-native */ = {
@@ -18847,7 +18847,7 @@
 			);
 			name = "indy-sdk-react-native";
 			productName = "indy-sdk-react-native";
-			productReference = A084CF2F6DEEE50562350F6B7A9FA9D0 /* indy-sdk-react-native */;
+			productReference = A084CF2F6DEEE50562350F6B7A9FA9D0 /* libindy-sdk-react-native.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		7ACAA9BE580DD31A5CB9D97C45D9492D /* React-Core */ = {
@@ -18873,7 +18873,7 @@
 			);
 			name = "React-Core";
 			productName = "React-Core";
-			productReference = BD71E2539823621820F84384064C253A /* React-Core */;
+			productReference = BD71E2539823621820F84384064C253A /* libReact-Core.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		89F573A6B1292B3B2296B2206BFDC3D7 /* RNCAsyncStorage */ = {
@@ -18891,7 +18891,7 @@
 			);
 			name = RNCAsyncStorage;
 			productName = RNCAsyncStorage;
-			productReference = 5737DDB4BC95AD399B3206838AB97095 /* RNCAsyncStorage */;
+			productReference = 5737DDB4BC95AD399B3206838AB97095 /* libRNCAsyncStorage.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		938CCE22F6C4094B3FB6CF1478579E4B /* React-RCTAnimation */ = {
@@ -18914,7 +18914,7 @@
 			);
 			name = "React-RCTAnimation";
 			productName = "React-RCTAnimation";
-			productReference = FE7B9294FF05AAFD1653E2104E10844A /* React-RCTAnimation */;
+			productReference = FE7B9294FF05AAFD1653E2104E10844A /* libReact-RCTAnimation.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		95D98F901D07557EF7CA38D3F03832C5 /* React-RCTBlob */ = {
@@ -18937,7 +18937,7 @@
 			);
 			name = "React-RCTBlob";
 			productName = "React-RCTBlob";
-			productReference = F71EBF73F354B475D465FF6DE9A66707 /* React-RCTBlob */;
+			productReference = F71EBF73F354B475D465FF6DE9A66707 /* libReact-RCTBlob.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		96150F524B245896B800F84F369A9A5A /* RNVectorIcons */ = {
@@ -18955,7 +18955,7 @@
 			);
 			name = RNVectorIcons;
 			productName = RNVectorIcons;
-			productReference = 8998273719FDD789E6F9C7541AFD0B33 /* RNVectorIcons */;
+			productReference = 8998273719FDD789E6F9C7541AFD0B33 /* libRNVectorIcons.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		982644B5B647690B2E4F5B3F54EB5717 /* FlipperKit */ = {
@@ -18978,7 +18978,7 @@
 			);
 			name = FlipperKit;
 			productName = FlipperKit;
-			productReference = 65234B3E668A42D9137B2C7AB051EE37 /* FlipperKit */;
+			productReference = 65234B3E668A42D9137B2C7AB051EE37 /* libFlipperKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B51433D546A38C51AA781F192E8836F8 /* RNLocalize */ = {
@@ -18996,7 +18996,7 @@
 			);
 			name = RNLocalize;
 			productName = RNLocalize;
-			productReference = 15912309AA610251329D74FA111DE5CA /* RNLocalize */;
+			productReference = 15912309AA610251329D74FA111DE5CA /* libRNLocalize.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B6422EB0A585557ED42A07B5D023BD98 /* react-native-config */ = {
@@ -19015,7 +19015,7 @@
 			);
 			name = "react-native-config";
 			productName = "react-native-config";
-			productReference = 3566E29624F4738A4953CE7ABF635C5E /* react-native-config */;
+			productReference = 3566E29624F4738A4953CE7ABF635C5E /* libreact-native-config.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B6D39E083AE0FF45BA30D7CDF6198A03 /* Flipper-Folly */ = {
@@ -19038,7 +19038,7 @@
 			);
 			name = "Flipper-Folly";
 			productName = "Flipper-Folly";
-			productReference = 99D5CD245388DC76AAEF6E1E351A90ED /* Flipper-Folly */;
+			productReference = 99D5CD245388DC76AAEF6E1E351A90ED /* libFlipper-Folly.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B6D5DD49633DFF0657B8C3F08EB3ABA9 /* ReactCommon */ = {
@@ -19065,7 +19065,7 @@
 			);
 			name = ReactCommon;
 			productName = ReactCommon;
-			productReference = D5C775614AC76D44CECB6BE08B022F1F /* ReactCommon */;
+			productReference = D5C775614AC76D44CECB6BE08B022F1F /* libReactCommon.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B9E8F4CA2A4A8599389FEB665A9B96FF /* RNGestureHandler */ = {
@@ -19083,7 +19083,7 @@
 			);
 			name = RNGestureHandler;
 			productName = RNGestureHandler;
-			productReference = 8F65F9361F2069CF9E9D751272968DE4 /* RNGestureHandler */;
+			productReference = 8F65F9361F2069CF9E9D751272968DE4 /* libRNGestureHandler.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		BD9A27D8398DEB3205D3F8937B0672A0 /* react-native-safe-area-context */ = {
@@ -19105,7 +19105,7 @@
 			);
 			name = "react-native-safe-area-context";
 			productName = "react-native-safe-area-context";
-			productReference = 52FCF98CEFF94C742080B6965D537AD0 /* react-native-safe-area-context */;
+			productReference = 52FCF98CEFF94C742080B6965D537AD0 /* libreact-native-safe-area-context.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		C21297404131D607701C71A8A9959998 /* react-native-get-random-values */ = {
@@ -19123,7 +19123,7 @@
 			);
 			name = "react-native-get-random-values";
 			productName = "react-native-get-random-values";
-			productReference = C88D8F609983AB0002AA796EE4C108C4 /* react-native-get-random-values */;
+			productReference = C88D8F609983AB0002AA796EE4C108C4 /* libreact-native-get-random-values.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		CD7E4799597971CE1F9F7BB394E8DDD7 /* Flipper-Boost-iOSX */ = {
@@ -19140,7 +19140,7 @@
 			);
 			name = "Flipper-Boost-iOSX";
 			productName = "Flipper-Boost-iOSX";
-			productReference = 8FD3DD8368ED4B6E773ABAA49C117D42 /* Flipper-Boost-iOSX */;
+			productReference = 8FD3DD8368ED4B6E773ABAA49C117D42 /* libFlipper-Boost-iOSX.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D0EFEFB685D97280256C559792236873 /* glog */ = {
@@ -19157,7 +19157,7 @@
 			);
 			name = glog;
 			productName = glog;
-			productReference = 3CA7A9404CCDD6BA22C97F8348CE3209 /* glog */;
+			productReference = 3CA7A9404CCDD6BA22C97F8348CE3209 /* libglog.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D20469A9A1E5CFB26045EAEBE3F88E5E /* RCTTypeSafety */ = {
@@ -19177,7 +19177,7 @@
 			);
 			name = RCTTypeSafety;
 			productName = RCTTypeSafety;
-			productReference = F958876A082BF810B342435CE3FB5AF6 /* RCTTypeSafety */;
+			productReference = F958876A082BF810B342435CE3FB5AF6 /* libRCTTypeSafety.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		DA0709CAAD589C6E7963495210438021 /* React-jsiexecutor */ = {
@@ -19200,7 +19200,7 @@
 			);
 			name = "React-jsiexecutor";
 			productName = "React-jsiexecutor";
-			productReference = F2E7C88DFCD460A4B46B913ADEB8A641 /* React-jsiexecutor */;
+			productReference = F2E7C88DFCD460A4B46B913ADEB8A641 /* libReact-jsiexecutor.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		DBD2D83E10F8B7D3F4E0E34E6A9FCFA6 /* React-RCTText */ = {
@@ -19218,7 +19218,7 @@
 			);
 			name = "React-RCTText";
 			productName = "React-RCTText";
-			productReference = E6A16705C69FC7DE11C2469A4A0F8358 /* React-RCTText */;
+			productReference = E6A16705C69FC7DE11C2469A4A0F8358 /* libReact-RCTText.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		DE32677FA772BFFD0172EB7EE9E4E7E9 /* RNSVG */ = {
@@ -19236,7 +19236,7 @@
 			);
 			name = RNSVG;
 			productName = RNSVG;
-			productReference = 90EE8D3C082C157169540FC8F5913DAD /* RNSVG */;
+			productReference = 90EE8D3C082C157169540FC8F5913DAD /* libRNSVG.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		E16E206437995280D349D4B67695C894 /* React-CoreModules */ = {
@@ -19260,7 +19260,7 @@
 			);
 			name = "React-CoreModules";
 			productName = "React-CoreModules";
-			productReference = 6771D231F4C8C5976470A369C474B32E /* React-CoreModules */;
+			productReference = 6771D231F4C8C5976470A369C474B32E /* libReact-CoreModules.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		E63939AA6EFD3D6A8C09E45929F11DBD /* Flipper */ = {
@@ -19279,7 +19279,7 @@
 			);
 			name = Flipper;
 			productName = Flipper;
-			productReference = E93F701CA8EB196D77AE99E094D873E4 /* Flipper */;
+			productReference = E93F701CA8EB196D77AE99E094D873E4 /* libFlipper.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		EC55D52694092A9D0E6A78EB01207EB5 /* RCT-Folly */ = {
@@ -19301,7 +19301,7 @@
 			);
 			name = "RCT-Folly";
 			productName = "RCT-Folly";
-			productReference = 1936453FF2A7E3A13063C4917C4D5598 /* RCT-Folly */;
+			productReference = 1936453FF2A7E3A13063C4917C4D5598 /* libRCT-Folly.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		F1E2583679398CB5F4D2B3272E9B198F /* React-perflogger */ = {
@@ -19318,7 +19318,7 @@
 			);
 			name = "React-perflogger";
 			productName = "React-perflogger";
-			productReference = 666E72807891C591E025A75410CD2A26 /* React-perflogger */;
+			productReference = 666E72807891C591E025A75410CD2A26 /* libReact-perflogger.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		F7D033C4C128EECAA020990641FA985F /* React-jsinspector */ = {
@@ -19335,7 +19335,7 @@
 			);
 			name = "React-jsinspector";
 			productName = "React-jsinspector";
-			productReference = 2577F299FCB0A19824FE989BE77B8E8F /* React-jsinspector */;
+			productReference = 2577F299FCB0A19824FE989BE77B8E8F /* libReact-jsinspector.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		FA877ADC442CB19CF61793D234C8B131 /* React-jsi */ = {
@@ -19356,7 +19356,7 @@
 			);
 			name = "React-jsi";
 			productName = "React-jsi";
-			productReference = D9F334F2E90E3EE462FC4192AF5C03BD /* React-jsi */;
+			productReference = D9F334F2E90E3EE462FC4192AF5C03BD /* libReact-jsi.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		FF879E718031128A75E7DE54046E6219 /* RNReanimated */ = {
@@ -19397,7 +19397,7 @@
 			);
 			name = RNReanimated;
 			productName = RNReanimated;
-			productReference = C777CF2FB1E39A45CBBDB54E8693F471 /* RNReanimated */;
+			productReference = C777CF2FB1E39A45CBBDB54E8693F471 /* libRNReanimated.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -23208,6 +23208,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23240,6 +23241,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23272,6 +23274,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23305,6 +23308,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23339,6 +23343,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23365,6 +23370,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23390,6 +23396,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23416,6 +23423,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23472,6 +23480,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23504,6 +23513,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23537,6 +23547,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23570,6 +23581,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23595,6 +23607,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23618,6 +23631,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23651,6 +23665,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23716,6 +23731,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23749,6 +23765,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23774,6 +23791,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -23796,6 +23814,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23828,6 +23847,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23860,6 +23880,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23893,6 +23914,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23925,6 +23947,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23959,6 +23982,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -23994,6 +24018,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24020,6 +24045,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24044,6 +24070,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24069,6 +24096,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24091,6 +24119,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24123,6 +24152,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24157,6 +24187,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24183,6 +24214,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24206,6 +24238,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24240,6 +24273,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24272,6 +24306,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24304,6 +24339,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24335,6 +24371,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24367,6 +24404,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24398,6 +24436,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24430,6 +24469,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24461,6 +24501,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24493,6 +24534,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24524,6 +24566,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24556,6 +24599,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24587,6 +24631,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24619,6 +24664,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24650,6 +24696,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24682,6 +24729,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24713,6 +24761,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24745,6 +24794,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24776,6 +24826,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24808,6 +24859,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24842,6 +24894,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24868,6 +24921,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24891,6 +24945,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24925,6 +24980,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24958,6 +25014,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -24992,6 +25049,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25028,6 +25086,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/React-Core";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				IBSC_MODULE = React;
@@ -25047,6 +25106,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/React-Core";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				IBSC_MODULE = React;
@@ -25067,6 +25127,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25100,6 +25161,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25134,6 +25196,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -25160,6 +25223,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -25183,6 +25247,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25216,6 +25281,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25248,6 +25314,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25281,6 +25348,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25313,6 +25381,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25346,6 +25415,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25378,6 +25448,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25411,6 +25482,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25443,6 +25515,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25476,6 +25549,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25508,6 +25582,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25541,6 +25616,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25573,6 +25649,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25606,6 +25683,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25638,6 +25716,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25671,6 +25750,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25703,6 +25783,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25736,6 +25817,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25770,6 +25852,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -25796,6 +25879,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -25819,6 +25903,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25852,6 +25937,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25884,6 +25970,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25917,6 +26004,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25949,6 +26037,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -25982,6 +26071,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26014,6 +26104,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26047,6 +26138,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26079,6 +26171,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26112,6 +26205,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26144,6 +26238,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26177,6 +26272,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26209,6 +26305,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26242,6 +26339,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26276,6 +26374,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -26302,6 +26401,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -26325,6 +26425,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26359,6 +26460,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26391,6 +26493,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26423,6 +26526,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26455,6 +26559,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26489,6 +26594,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26521,6 +26627,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26554,6 +26661,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26640,6 +26748,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26673,6 +26782,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26705,6 +26815,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26738,6 +26849,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26772,6 +26884,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -26798,6 +26911,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -26821,6 +26935,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26855,6 +26970,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26888,6 +27004,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26921,6 +27038,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26952,6 +27070,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -26984,6 +27103,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27015,6 +27135,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27047,6 +27168,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27079,6 +27201,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27112,6 +27235,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27143,6 +27267,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27175,6 +27300,7 @@
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27208,6 +27334,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27234,6 +27361,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27259,6 +27387,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -27285,6 +27414,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
