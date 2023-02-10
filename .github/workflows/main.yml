@@ -158,12 +158,12 @@ jobs:
         working-directory: ios
         run: |
           xcodebuild \
-          -workspace AriesBifold.xcworkspace \
-          -scheme AriesBifold \
+          -workspace IngVerif.xcworkspace \
+          -scheme IngVerif \
           -configuration Release \
           -derivedDataPath xbuild \
-          -xcconfig ../../release.xcconfig \
-          -archivePath AriesBifold.xcarchive \
+          -xcconfig ../release.xcconfig \
+          -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
           archive
