@@ -155,7 +155,7 @@ jobs:
 
       - name: Release build
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: app/ios
+        working-directory: ios
         run: |
           xcodebuild \
           -workspace AriesBifold.xcworkspace \
@@ -183,7 +183,7 @@ jobs:
 
       - name: Archive & Sign
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ./ios
+        working-directory: ios
         run: |
           xcodebuild \
           -exportArchive \
@@ -200,7 +200,7 @@ jobs:
 
       - name: Ship to iTunes
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ./ios
+        working-directory: ios
         env:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
