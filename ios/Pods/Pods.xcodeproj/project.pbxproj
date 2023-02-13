@@ -26919,7 +26919,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_STYLE = Manual;
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
@@ -26948,7 +26948,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_STYLE = Manual;
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
