@@ -1,4 +1,3 @@
-# test deploy ios
 name: Native Build & Test
 
 env:
@@ -27,17 +26,17 @@ jobs:
           PLAY_STORE_JKS_PASSWD: ${{ secrets.PLAY_STORE_JKS_PASSWD }}
 
   check-ios-secrets:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       isReleaseBuild: ${{ steps.isReleaseBuild.outputs.defined }}
     steps:
       - id: isReleaseBuild
-        if: env.BUILD_CERTIFICATE_BASE64 != null && env.KEYCHIAN_PASSWD != null && env.BUILD_PROVISION_PROFILE_BASE64 != null
+        if: env.CERTIFICATE != null && env.KEYCHIAN_PASSWD != null && env.PROVISIONING_PROFILE != null
         run: echo "::set-output name=defined::true"
         env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          CERTIFICATE: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
           KEYCHIAN_PASSWD: ${{ secrets.KEYCHIAN_PASSWD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
 
   build-ios:
     # if: ${{ false }}  # disable for now
@@ -86,6 +85,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ env.cacheId }}-
 
+      - name: Cache pod dependencies
+        id: pod-cache
+        uses: actions/cache@v1
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ env.cacheId }}-${{ hashFiles('**/Podfile.lock ') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-${{ env.cacheId }}-
+
       - name: Cache derived data
         uses: actions/cache@v1
         with:
@@ -130,28 +138,26 @@ jobs:
       # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
       - name: Create Provisioning Profile
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: scripts
         env:
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
         run: |
-          chmod +x makepp.sh
-          ./makepp.sh
+          chmod +x scripts/makepp.sh && \
+          scripts/makepp.sh
 
       # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
       - name: Build Keychain
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: scripts
         env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-        run:
-          chmod +x makekc.sh
-          
-          ./makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
+          CERTIFICATE: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+        run: |
+          chmod +x scripts/makekc.sh && \
+          scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
       - name: Release build
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ./ios
+        working-directory: ios
         run: |
+          pod install
           xcodebuild \
           -workspace IngVerif.xcworkspace \
           -scheme IngVerif \
@@ -165,7 +171,7 @@ jobs:
 
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
-        working-directory: ./ios
+        working-directory: ios
         run: |
           xcodebuild \
           -workspace IngVerif.xcworkspace \
@@ -178,7 +184,7 @@ jobs:
 
       - name: Archive & Sign
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ./ios
+        working-directory: ios
         run: |
           xcodebuild \
           -exportArchive \
@@ -195,11 +201,13 @@ jobs:
 
       - name: Ship to iTunes
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
-        working-directory: ./ios
+        working-directory: ios
         env:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
           APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY_95 }}
+          VERSION_CODE: ${{ env.appBuildNumber }}
+          VERSION_NAME: ${{ env.appBuildVersion }}
         run: |
           export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
           app-store-connect publish \
@@ -225,7 +233,7 @@ jobs:
           --form "description=iOS QC Wallet app"
 
   build-android:
-    # if: ${{ false }}  # disable for now
+   # if: ${{ false }}  # disable for now
     needs: [check-android-secrets]
     runs-on: ubuntu-latest
     # container:
@@ -275,8 +283,8 @@ jobs:
           VERSION_NAME: ${{ env.appBuildVersion }}
 
         run: |
-          chmod +x gradlew
-          ./gradlew buildDebug
+           chmod +x gradlew
+           ./gradlew buildDebug
 
       - name: Create release keystore
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'
@@ -299,7 +307,7 @@ jobs:
           VERSION_CODE: ${{ env.appBuildNumber }}
           VERSION_NAME: ${{ env.appBuildVersion }}
         run: |
-          ./gradlew bundleRelease
+           ./gradlew bundleRelease
 
       - name: Ship to Google Play
         if: github.ref_name == 'main' && needs.check-android-secrets.outputs.isReleaseBuild == 'true'

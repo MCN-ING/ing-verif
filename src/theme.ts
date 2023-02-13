@@ -19,6 +19,7 @@ interface ColorPallet {
   success: string
   warning: string
   error: string
+  link: string
 }
 
 const ColorPalletLight: ColorPallet = {
@@ -33,6 +34,7 @@ const ColorPalletLight: ColorPallet = {
   success: '#5B8046',
   warning: '#D8AF3B',
   error: '#F8DCD8',
+  link: '#095797',
 }
 
 const ColorPalletDark: ColorPallet = {
@@ -47,6 +49,7 @@ const ColorPalletDark: ColorPallet = {
   success: '#5B8046',
   warning: '#D8AF3B',
   error: '#F8DCD8',
+  link: '#095797',
 }
 
 const themeLight: Theme = {
