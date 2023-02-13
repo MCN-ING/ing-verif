@@ -25,6 +25,12 @@ const translation = {
     Footer: 'Receiving information in progress...',
     CancelButton: 'Cancel',
   },
+  ValidationBanner: {
+    SuccessTitle: 'The information are valid',
+    SuccessBody: 'The user has successfully shared the information to you.',
+    ErrorTitle: 'The information is invalid',
+    ErrorBody: 'The user was unable to share the information with you.',
+  },
   ActivityLog: {
     EmptyTitle: 'Activity',
     Title: 'New activities',

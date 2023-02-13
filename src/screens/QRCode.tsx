@@ -37,11 +37,11 @@ export const QRCodeScreen = ({navigation}: any) => {
 
   const attributes = {
     name: new ProofAttributeInfo({
-      names: ['Nom'],
+      names: ['Nom', 'Prénom'],
       restrictions: [],
     }),
-    prenom: new ProofAttributeInfo({
-      names: ['Prénom'],
+    age: new ProofAttributeInfo({
+      names: ['Age'],
     }),
   }
 

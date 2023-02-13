@@ -6,8 +6,9 @@ import Base64 from 'js-base64'
 import React, {useEffect, useState} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 
-import {Attributes} from '../components/Attributes'
+import {Attestation} from '../components/Attestation'
 import {Header} from '../components/PageHeader'
+import {ValidationBanner} from '../components/ValidationBanner'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 import {ValidationLoading} from './ValidationLoading'
@@ -18,6 +19,8 @@ export const ValidationResult = ({route}: any) => {
   const proof = useProofById(route.params.proofId)
   const defaultStyles = DefaultComponentsThemes()
   const [proofResponse, setProofResponse] = useState<undefined | any>()
+  const [isVerified, setIsVerified] = useState<boolean | undefined>(false)
+  const [identifiers, setIdentifiers] = useState<any>([])
   const {agent} = useAgent()
 
   const styles = StyleSheet.create({
@@ -42,16 +45,41 @@ export const ValidationResult = ({route}: any) => {
   }
   useEffect(() => {
     if (proof?.state == ProofState.PresentationReceived) {
+      setIsVerified(proof.isVerified)
       findAgentMessage().then((response) => {
         if (response?.presentationAttachments[0].data.base64) {
-          const base64 = response?.presentationAttachments[0].data.base64
-          const attributesReceived = JSON.parse(Base64.decode(base64)).requested_proof.revealed_attr_groups
-          setProofResponse(attributesReceived)
+          const data = JSON.parse(Base64.decode(response?.presentationAttachments[0].data.base64))
+          const attributesReceived = data.requested_proof.revealed_attr_groups
+          sortAttributesByAttestation(attributesReceived)
+          setIdentifiers(data.identifiers)
+          setIsLoading(false)
         }
       })
-      setIsLoading(false)
     }
   }, [proof])
+
+  const sortAttributesByAttestation = (attributes: any) => {
+    const sortAttributesByAttestation: any = {}
+    if (attributes == undefined) {
+      return
+    }
+    Object.keys(attributes).forEach((key) => {
+      Object.keys(attributes[key].values).forEach((result) => {
+        const attestationIndex = attributes[key].sub_proof_index.toString()
+        if (sortAttributesByAttestation[attestationIndex]) {
+          sortAttributesByAttestation[attestationIndex] = {
+            ...sortAttributesByAttestation[attestationIndex],
+            [result]: attributes[key].values[result].raw,
+          }
+        } else {
+          sortAttributesByAttestation[attestationIndex] = {
+            [result]: attributes[key].values[result].raw,
+          }
+        }
+      })
+    })
+    setProofResponse(sortAttributesByAttestation)
+  }
 
   return (
     <View style={defaultStyles.container}>
@@ -60,18 +88,15 @@ export const ValidationResult = ({route}: any) => {
       ) : (
         <View style={{flex: 1, width: '100%'}}>
           <Header title={proofName} />
+          <ValidationBanner isVerified={isVerified} />
           {proofResponse && (
             <View style={styles.section}>
               <Text style={defaultStyles.subtitle}>{t('Global.Attributes')}</Text>
-              {Object.keys(proofResponse).map((key, i) => (
-                <View key={i}>
-                  {Object.keys(proofResponse[key].values).map((result, j) => (
-                    <View key={j}>
-                      <Attributes name={result} value={proofResponse[key].values[result].raw} />
-                    </View>
-                  ))}
-                </View>
-              ))}
+              {Object.keys(proofResponse).map((key, index) => {
+                return (
+                  <Attestation key={index.toString()} identifier={identifiers[key]} attributes={proofResponse[key]} />
+                )
+              })}
             </View>
           )}
         </View>

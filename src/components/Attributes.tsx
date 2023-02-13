@@ -18,8 +18,9 @@ export const Attributes = ({name, value}: Props) => {
 
   const styles = StyleSheet.create({
     AttributeContainer: {
+      width: '100%',
       justifyContent: 'flex-start',
-      padding: 10,
+      paddingVertical: 10,
       broderBottomWidth: 1,
       borderColor: ColorPallet.lightGray,
       borderStyle: 'solid',
