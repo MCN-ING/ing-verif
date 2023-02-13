@@ -11,7 +11,7 @@ import {Agent} from '@aries-framework/core'
 import AgentProvider from '@aries-framework/react-hooks'
 import {NavigationContainer} from '@react-navigation/native'
 import React, {useState, useMemo, useEffect} from 'react'
-import {useColorScheme} from 'react-native'
+import {StatusBar, useColorScheme} from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 
 import {ThemeProvider} from './contexts/theme'
@@ -44,6 +44,7 @@ const App = () => {
     <NavigationContainer>
       <AgentProvider agent={agent}>
         <ThemeProvider value={isDarkMode ? defaultColorSheme.dark : defaultColorSheme.light}>
+          <StatusBar></StatusBar>
           <RootStack />
         </ThemeProvider>
       </AgentProvider>
