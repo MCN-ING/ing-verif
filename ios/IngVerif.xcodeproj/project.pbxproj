@@ -570,7 +570,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2RST8749NS;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
