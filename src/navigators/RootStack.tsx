@@ -1,9 +1,11 @@
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {createStackNavigator} from '@react-navigation/stack'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {useTheme} from '../contexts/theme'
-import {Home, Settings, QRCodeScreen, ValidationResult, Splash} from '../screens'
+import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
 
 import TermsStack from './TermsStack'
 
@@ -21,7 +23,7 @@ const RootStack = () => {
         },
       }}>
       <Stack.Screen
-        name="Splash"
+        name="SplashStack"
         component={Splash}
         options={{
           headerShown: false,
@@ -41,13 +43,11 @@ const RootStack = () => {
       <Stack.Screen
         name="Home"
         options={{
-          title: t('Screens.Home') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          gestureEnabled: false,
+          headerTitle: 'Home',
           headerLeft: () => false,
+          headerTintColor: ColorPallet.white,
         }}
-        component={Home}
+        component={bottomNav}
       />
       <Stack.Screen
         name="QRCode"
@@ -57,6 +57,7 @@ const RootStack = () => {
           headerTintColor: ColorPallet.white,
           headerShown: true,
           gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
         }}
       />
       <Stack.Screen name="Settings" component={Settings} />
@@ -73,6 +74,39 @@ const RootStack = () => {
         }}
       />
     </Stack.Navigator>
+  )
+}
+
+const bottomNav = () => {
+  const {t} = useTranslation()
+  const {ColorPallet} = useTheme()
+  const Tab = createBottomTabNavigator()
+
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        header: () => null,
+      }}>
+      <Tab.Screen
+        name={t('Screens.Home') || ''}
+        component={Home}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Icon name={'home'} color={focused ? ColorPallet.primary : ColorPallet.lightGray} size={30} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={t('Screens.Requests') || ''}
+        component={Requests}
+        options={{
+          tabBarStyle: {},
+          tabBarIcon: ({focused}) => (
+            <Icon name={'list'} color={focused ? ColorPallet.primary : ColorPallet.lightGray} size={30} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   )
 }
 
