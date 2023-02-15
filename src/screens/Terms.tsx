@@ -5,6 +5,7 @@ import {ScrollView, StyleSheet, Text, View, Linking} from 'react-native'
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
+import {Notice} from '../components/Notice'
 import {Header} from '../components/PageHeader'
 import {AccordionItem} from '../components/react-native-accordion-list-view'
 import {useTheme} from '../contexts/theme'
@@ -13,6 +14,7 @@ import defaultComponentsThemes from '../defaultComponentsThemes'
 const Terms: React.FC = () => {
   // const [store, dispatch] = useStore()
   const [checked, setChecked] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false)
   const {t} = useTranslation()
   const navigation = useNavigation()
   const {ColorPallet} = useTheme()
@@ -58,9 +60,12 @@ const Terms: React.FC = () => {
       type: DispatchAction.DID_AGREE_TO_TERMS,
       payload: [{DidAgreeToTerms: checked}],
     })*/
+    setFormSubmitted(true)
+
+    if (!checked) return
 
     navigation.navigate('Home' as never)
-  }, [])
+  }, [checked, formSubmitted])
 
   const openLink = async (url: string) => {
     // Only `https://` is allowed. Update manifest as needed.
@@ -119,12 +124,18 @@ const Terms: React.FC = () => {
                 checked={checked}
                 onPress={() => setChecked(!checked)}
               />
+              {!checked && formSubmitted && (
+                <View style={{paddingVertical: 10}}>
+                  <Notice
+                    icon="close-circle-outline"
+                    iconBackground={{backgroundColor: '#EDBAB1'}}
+                    iconColor="#CB381F"
+                    message={t('TermsV2.AttestationError')}
+                  />
+                </View>
+              )}
               <View style={[{paddingTop: 10}]}>
-                <LargeButton
-                  title={t('Global.Continue')}
-                  action={onSubmitPressed}
-                  disabled={!checked}
-                  isPrimary></LargeButton>
+                <LargeButton title={t('Global.Continue')} action={onSubmitPressed} isPrimary></LargeButton>
               </View>
             </>
           }
