@@ -48,7 +48,7 @@ const translation = {
   },
   TermsV2: {
     title: "Conditions d'utilisation",
-    Attestation: "J'ai lu, je comprends et j'accepte les conditions.",
+    Credential: "J'ai lu, je comprends et j'accepte les conditions.",
     IAgree: "J'accepte",
     Consent: {
       IAgree: "J'accepte",
