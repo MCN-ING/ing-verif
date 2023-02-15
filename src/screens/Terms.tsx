@@ -59,7 +59,7 @@ const Terms: React.FC = () => {
       payload: [{DidAgreeToTerms: checked}],
     })*/
 
-    navigation.navigate('Home' as never)
+    navigation.navigate('HomeStack' as never)
   }, [])
 
   /* 

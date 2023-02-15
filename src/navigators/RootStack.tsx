@@ -41,7 +41,7 @@ const RootStack = () => {
         }}
       />
       <Stack.Screen
-        name="Home"
+        name="HomeStack"
         options={{
           headerTitle: 'Home',
           headerLeft: () => false,
@@ -78,7 +78,6 @@ const RootStack = () => {
 }
 
 const BottomNav = () => {
-  const {t} = useTranslation()
   const {ColorPallet} = useTheme()
   const Tab = createBottomTabNavigator()
 
@@ -88,7 +87,7 @@ const BottomNav = () => {
         header: () => null,
       }}>
       <Tab.Screen
-        name={t('Screens.Home') || ''}
+        name={'Home'}
         component={Home}
         options={{
           tabBarIcon: ({focused}) => (
@@ -97,7 +96,7 @@ const BottomNav = () => {
         }}
       />
       <Tab.Screen
-        name={t('Screens.Requests') || ''}
+        name={'Requests'}
         component={Requests}
         options={{
           tabBarStyle: {},
