@@ -7,8 +7,8 @@ import React, {useEffect, useState} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 
 import {Credential} from '../components/Credential'
+import {NotificationBox} from '../components/NotificationBox'
 import {Header} from '../components/PageHeader'
-import {ValidationBanner} from '../components/ValidationBanner'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 import {ValidationLoading} from './ValidationLoading'
@@ -88,7 +88,7 @@ export const ValidationResult = ({route}: any) => {
       ) : (
         <View style={{flex: 1, width: '100%'}}>
           <Header title={proofName} />
-          <ValidationBanner isVerified={isVerified} />
+          <NotificationBox isVerified={isVerified} />
           {proofResponse && (
             <View style={styles.section}>
               <Text style={defaultStyles.subtitle}>{t('Global.Attributes')}</Text>
