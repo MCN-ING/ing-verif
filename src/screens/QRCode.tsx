@@ -53,7 +53,13 @@ export const QRCodeScreen = ({route, navigation}: any) => {
   const handleProofExchange = async () => {
     for (let i = 0; i < connections.length; i++) {
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
-        const proofExchangeRecord = await sendProofExchange(agent, connections[i], item.attributes, item.predicates)
+        const proofExchangeRecord = await sendProofExchange(
+          agent,
+          connections[i],
+          item.title,
+          item.attributes,
+          item.predicates
+        )
         navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId})
       }
       break
