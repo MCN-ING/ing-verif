@@ -39,6 +39,7 @@ const translation = {
     title: 'Terms and Conditions',
     IAgree: 'I Agree',
     Attestation: 'I have read, understand and accept the terms of this EULA.',
+    AttestationError: 'Please check the box above to continue',
     Consent: {
       title: 'Consent',
       body: 'Please read the general conditions for the use of the digital portfolio of the Government of Quebec.',
