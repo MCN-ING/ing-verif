@@ -2,6 +2,7 @@ const translation = {
   Global: {
     Continue: 'Continuer',
     Back: 'Retour',
+    Attributes: 'Attributs',
   },
   Home: {
     Title: 'Vérifier une identité',
@@ -25,6 +26,12 @@ const translation = {
     Title: 'Réception en cours',
     Footer: 'Réception des informations en cours...',
     CancelButton: 'Annuler',
+  },
+  ValidationBanner: {
+    SuccessTitle: 'Les informations sont valides',
+    SuccessBody: "L'utilisateur vous a partagé les informations avec succès.",
+    ErrorTitle: 'Les informations ne sont pas valides',
+    ErrorBody: "L'utilisateur n'a pas pu partager les informations avec vous.",
   },
   ActivityLog: {
     EmptyTitle: 'Activité',
@@ -53,7 +60,7 @@ const translation = {
   },
   TermsV2: {
     title: "Conditions d'utilisation",
-    Attestation: "J'ai lu, je comprends et j'accepte les conditions.",
+    Credential: "J'ai lu, je comprends et j'accepte les conditions.",
     IAgree: "J'accepte",
     Consent: {
       IAgree: "J'accepte",

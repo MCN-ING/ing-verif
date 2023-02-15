@@ -116,7 +116,7 @@ const Terms: React.FC = () => {
             /*!(store.onboarding.didAgreeToTerms && store.authentication.didAuthenticate) && */
             <>
               <CheckBoxRow
-                title={t('TermsV2.Attestation')}
+                title={t('TermsV2.Credential')}
                 accessibilityLabel={t('TermsV2.IAgree') || ''}
                 checked={checked}
                 onPress={() => setChecked(!checked)}
