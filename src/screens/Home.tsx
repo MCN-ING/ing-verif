@@ -14,9 +14,9 @@ export const Home = () => {
   const styles = DefaultComponentsThemes()
 
   const items = [
-    {id: 0, title: t('Home.Slider.Title1'), body: t('Home.Slider.Body1'), action: 'QRCode'} as ItemInfo,
-    {id: 1, title: t('Home.Slider.Title2'), body: t('Home.Slider.Body2'), action: 'QRCode'} as ItemInfo,
-    {id: 2, title: t('Home.Slider.Title3'), body: t('Home.Slider.Body3'), action: 'QRCode'} as ItemInfo,
+    {id: 0, title: t('Home.Slider.Title1'), body: t('Home.Slider.Body1'), action: 'Requests'} as ItemInfo,
+    {id: 1, title: t('Home.Slider.Title2'), body: t('Home.Slider.Body2'), action: 'Requests'} as ItemInfo,
+    {id: 2, title: t('Home.Slider.Title3'), body: t('Home.Slider.Body3'), action: 'Requests'} as ItemInfo,
   ]
   return (
     <View style={styles.container}>
