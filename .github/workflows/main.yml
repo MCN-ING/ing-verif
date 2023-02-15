@@ -157,13 +157,12 @@ jobs:
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         working-directory: ios
         run: |
-          pod install
           xcodebuild \
           -workspace IngVerif.xcworkspace \
           -scheme IngVerif \
           -configuration Release \
-          -xcconfig ../release.xcconfig \ 
           -derivedDataPath xbuild \
+          -xcconfig ../release.xcconfig \
           -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
