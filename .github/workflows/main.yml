@@ -172,6 +172,7 @@ jobs:
           -scheme IngVerif \
           -configuration Release \
           -derivedDataPath xbuild \
+          -xcconfig ../release.xcconfig \
           -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
