@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { FlatList } from 'react-native'
+import React, {useState} from 'react'
+import {FlatList} from 'react-native'
 
-import { AccordionListProps } from '../../models/AccordionList'
+import {AccordionListProps} from '../../models/AccordionList'
 import AccordionItem from '../AccordionItem'
 
 const AccordionList = ({
@@ -16,7 +16,7 @@ const AccordionList = ({
   ...props
 }: AccordionListProps) => {
   const [currentlyOpen, setCurrentlyOpen] = useState<any>(null)
-  const renderItem = ({ item }: { item: any }) => (
+  const renderItem = ({item}: {item: any}) => (
     <AccordionItem
       containerStyle={containerItemStyle}
       customTitle={() => customTitle(item)}

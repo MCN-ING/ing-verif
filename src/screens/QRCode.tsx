@@ -60,7 +60,7 @@ export const QRCodeScreen = ({route, navigation}: any) => {
           item.attributes,
           item.predicates
         )
-        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId})
+        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId, proofName: item.title})
       }
       break
     }

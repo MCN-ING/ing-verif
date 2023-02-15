@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { View, Animated, LayoutAnimation, I18nManager, Pressable } from 'react-native'
+import React, {useEffect, useRef, useState} from 'react'
+import {View, Animated, LayoutAnimation, I18nManager, Pressable} from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
-import { toggleAnimation } from '../../animations/toggleAnimation'
-import { AccordionItemProps } from '../../models/AccordionItem'
+import {toggleAnimation} from '../../animations/toggleAnimation'
+import {AccordionItemProps} from '../../models/AccordionItem'
 
-import { styles } from './styles'
+import {styles} from './styles'
 
 const AccordionItem = ({
   customBody,
@@ -47,7 +47,7 @@ const AccordionItem = ({
       <Pressable onPress={() => toggleListItem()}>
         <View style={styles.titleContainer}>
           {(!isRTL || I18nManager.isRTL) && customTitle()}
-          <Animated.View style={{ transform: [{ rotateZ: arrowTransform }] }}>
+          <Animated.View style={{transform: [{rotateZ: arrowTransform}]}}>
             {!customIcon ? (
               <MaterialIcons name={isRTL ? 'keyboard-arrow-left' : 'keyboard-arrow-right'} size={30} />
             ) : (
