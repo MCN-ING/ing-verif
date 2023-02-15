@@ -6,7 +6,7 @@ import Base64 from 'js-base64'
 import React, {useEffect, useState} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 
-import {Attestation} from '../components/Attestation'
+import {Credential} from '../components/Credential'
 import {Header} from '../components/PageHeader'
 import {ValidationBanner} from '../components/ValidationBanner'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
@@ -50,7 +50,7 @@ export const ValidationResult = ({route}: any) => {
         if (response?.presentationAttachments[0].data.base64) {
           const data = JSON.parse(Base64.decode(response?.presentationAttachments[0].data.base64))
           const attributesReceived = data.requested_proof.revealed_attr_groups
-          sortAttributesByAttestation(attributesReceived)
+          sortAttributesByCredential(attributesReceived)
           setIdentifiers(data.identifiers)
           setIsLoading(false)
         }
@@ -58,27 +58,27 @@ export const ValidationResult = ({route}: any) => {
     }
   }, [proof])
 
-  const sortAttributesByAttestation = (attributes: any) => {
-    const sortAttributesByAttestation: any = {}
+  const sortAttributesByCredential = (attributes: any) => {
+    const sortAttributesByCredential: any = {}
     if (attributes == undefined) {
       return
     }
     Object.keys(attributes).forEach((key) => {
       Object.keys(attributes[key].values).forEach((result) => {
-        const attestationIndex = attributes[key].sub_proof_index.toString()
-        if (sortAttributesByAttestation[attestationIndex]) {
-          sortAttributesByAttestation[attestationIndex] = {
-            ...sortAttributesByAttestation[attestationIndex],
+        const credentialIndex = attributes[key].sub_proof_index.toString()
+        if (sortAttributesByCredential[credentialIndex]) {
+          sortAttributesByCredential[credentialIndex] = {
+            ...sortAttributesByCredential[credentialIndex],
             [result]: attributes[key].values[result].raw,
           }
         } else {
-          sortAttributesByAttestation[attestationIndex] = {
+          sortAttributesByCredential[credentialIndex] = {
             [result]: attributes[key].values[result].raw,
           }
         }
       })
     })
-    setProofResponse(sortAttributesByAttestation)
+    setProofResponse(sortAttributesByCredential)
   }
 
   return (
@@ -94,7 +94,7 @@ export const ValidationResult = ({route}: any) => {
               <Text style={defaultStyles.subtitle}>{t('Global.Attributes')}</Text>
               {Object.keys(proofResponse).map((key, index) => {
                 return (
-                  <Attestation key={index.toString()} identifier={identifiers[key]} attributes={proofResponse[key]} />
+                  <Credential key={index.toString()} identifier={identifiers[key]} attributes={proofResponse[key]} />
                 )
               })}
             </View>

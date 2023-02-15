@@ -11,7 +11,7 @@ interface Props {
   attributes: any
 }
 
-export const Attestation = ({identifier, attributes}: Props) => {
+export const Credential = ({identifier, attributes}: Props) => {
   const {ColorPallet} = useTheme()
   const defaultStyles = DefaultComponentsThemes()
   const [schemaName, setSchemaName] = useState('')
@@ -35,7 +35,7 @@ export const Attestation = ({identifier, attributes}: Props) => {
       borderWidth: 1,
       borderStyle: 'solid',
     },
-    attestationEmitterContainer: {
+    credentialEmitterContainer: {
       paddingBottom: 5,
     },
     schemaNameContainer: {
@@ -44,7 +44,7 @@ export const Attestation = ({identifier, attributes}: Props) => {
   })
   return (
     <View style={styles.container}>
-      <View style={styles.attestationEmitterContainer}>
+      <View style={styles.credentialEmitterContainer}>
         <Text style={[defaultStyles.text, {color: ColorPallet.darkGray}]}>{emitter}</Text>
       </View>
       <View style={styles.schemaNameContainer}>
