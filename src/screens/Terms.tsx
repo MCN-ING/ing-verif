@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/core'
+import {useNavigation} from '@react-navigation/native'
 import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, StyleSheet, Text, View, Linking} from 'react-native'
+import {ScrollView, StyleSheet, Text, View} from 'react-native'
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
@@ -62,6 +62,7 @@ const Terms: React.FC = () => {
     navigation.navigate('Home' as never)
   }, [])
 
+  /* 
   const openLink = async (url: string) => {
     // Only `https://` is allowed. Update manifest as needed.
     const supported = await Linking.canOpenURL(url)
@@ -71,6 +72,7 @@ const Terms: React.FC = () => {
       await Linking.openURL(url)
     }
   }
+  */
 
   return (
     <View style={[style.container]}>

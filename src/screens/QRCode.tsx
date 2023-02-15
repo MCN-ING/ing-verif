@@ -1,4 +1,4 @@
-import {DidExchangeState, ProofAttributeInfo} from '@aries-framework/core'
+import {DidExchangeState} from '@aries-framework/core'
 import {useAgent, useConnectionByState} from '@aries-framework/react-hooks'
 import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
@@ -12,9 +12,10 @@ import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {createLegacyInvitation} from '../utils/createLegacyInvitation'
 import {sendProofExchange} from '../utils/sendProofExchange'
 
-export const QRCodeScreen = ({navigation}: any) => {
+export const QRCodeScreen = ({route, navigation}: any) => {
   const defaultStyles = DefaultComponentsThemes()
   const {agent} = useAgent()
+  const [item] = useState(route.params.item)
   const [invitationUrl, setInvitationUrl] = useState<string | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(true)
   const [invitationId, setInvitationId] = useState<string | undefined>(undefined)
@@ -35,13 +36,6 @@ export const QRCodeScreen = ({navigation}: any) => {
     },
   })
 
-  const attributes = {
-    name: new ProofAttributeInfo({
-      names: ['Nom'],
-      restrictions: [],
-    }),
-  }
-
   const handleCreateInvitation = async () => {
     if (agent == undefined) {
       return undefined
@@ -59,7 +53,7 @@ export const QRCodeScreen = ({navigation}: any) => {
   const handleProofExchange = async () => {
     for (let i = 0; i < connections.length; i++) {
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
-        const proofExchangeRecord = await sendProofExchange(agent, attributes, connections[i])
+        const proofExchangeRecord = await sendProofExchange(agent, connections[i], item.attributes, item.predicates)
         navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId})
       }
       break
