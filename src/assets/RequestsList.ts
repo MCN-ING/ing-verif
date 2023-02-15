@@ -43,11 +43,11 @@ export const RequestsList = (t: any) => {
       description: t('RequestsList.Description3'),
       attributes: {
         name: new ProofAttributeInfo({
-          names: ['Name'],
+          names: ['Nom'],
           restrictions: [],
         }),
         prenom: new ProofAttributeInfo({
-          names: ['prenom'],
+          names: ['Prénom'],
           restrictions: [],
         }),
       },

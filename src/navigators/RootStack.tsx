@@ -23,7 +23,7 @@ const RootStack = () => {
         },
       }}>
       <Stack.Screen
-        name="SplashStack"
+        name="Splash"
         component={Splash}
         options={{
           headerShown: false,
@@ -32,7 +32,7 @@ const RootStack = () => {
         }}
       />
       <Stack.Screen
-        name="Terms"
+        name="TermsStack"
         component={TermsStack}
         options={{
           title: t('Screens.Terms') || '',
@@ -47,7 +47,7 @@ const RootStack = () => {
           headerLeft: () => false,
           headerTintColor: ColorPallet.white,
         }}
-        component={bottomNav}
+        component={BottomNav}
       />
       <Stack.Screen
         name="QRCode"
@@ -77,7 +77,7 @@ const RootStack = () => {
   )
 }
 
-const bottomNav = () => {
+const BottomNav = () => {
   const {t} = useTranslation()
   const {ColorPallet} = useTheme()
   const Tab = createBottomTabNavigator()
