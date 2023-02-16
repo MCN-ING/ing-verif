@@ -8,18 +8,19 @@ import QRCode from 'react-native-qrcode-svg'
 import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
 import {Spinner} from '../components/Spinner'
+import {useStore} from '../contexts/store'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {createLegacyInvitation} from '../utils/createLegacyInvitation'
 import {sendProofExchange} from '../utils/sendProofExchange'
 
-export const QRCodeScreen = ({route, navigation}: any) => {
+export const QRCodeScreen = ({navigation}: any) => {
   const defaultStyles = DefaultComponentsThemes()
   const {agent} = useAgent()
-  const [item] = useState(route.params.item)
   const [invitationUrl, setInvitationUrl] = useState<string | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(true)
   const [invitationId, setInvitationId] = useState<string | undefined>(undefined)
   const connections = [...useConnectionByState(DidExchangeState.Completed)]
+  const [state] = useStore()
   const {t} = useTranslation()
 
   const styles = StyleSheet.create({
@@ -51,16 +52,23 @@ export const QRCodeScreen = ({route, navigation}: any) => {
   }
 
   const handleProofExchange = async () => {
+    if (state.proofRequest == undefined) {
+      navigation.goBack()
+      return
+    }
     for (let i = 0; i < connections.length; i++) {
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
         const proofExchangeRecord = await sendProofExchange(
           agent,
           connections[i],
-          item.title,
-          item.attributes,
-          item.predicates
+          state.proofRequest.title,
+          state.proofRequest.attributes,
+          state.proofRequest.predicates
         )
-        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId, proofName: item.title})
+        navigation.navigate('ValidationResult', {
+          proofId: proofExchangeRecord.proofId,
+          proofName: state.proofRequest.title,
+        })
       }
       break
     }

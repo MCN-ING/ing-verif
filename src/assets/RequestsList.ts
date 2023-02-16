@@ -1,13 +1,15 @@
 import {PredicateType, ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
 
-export const RequestsList = (t: any) => {
+import {Request} from '../contexts/types'
+
+export const RequestsList = (t: any): Request[] => {
   return [
     {
       title: t('RequestsList.Title1'),
       description: t('RequestsList.Description1'),
       attributes: {
         name: new ProofAttributeInfo({
-          names: ['Name'],
+          names: ['Nom'],
           restrictions: [],
         }),
       },
@@ -25,7 +27,7 @@ export const RequestsList = (t: any) => {
       description: t('RequestsList.Description2'),
       attributes: {
         name: new ProofAttributeInfo({
-          names: ['Name'],
+          names: ['Nom'],
           restrictions: [],
         }),
       },
