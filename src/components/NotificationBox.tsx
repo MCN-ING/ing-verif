@@ -1,5 +1,4 @@
 import React from 'react'
-import {useTranslation} from 'react-i18next'
 import {StyleSheet, Text, View} from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 
@@ -7,13 +6,21 @@ import {useTheme} from '../contexts/theme'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 interface Props {
-  isVerified: boolean | undefined
+  type: 'checkcircle' | 'warning'
+  title?: string
+  body: string
 }
 
-export const NotificationBox = ({isVerified}: Props) => {
+export const NotificationBox = ({type, title, body}: Props) => {
   const {ColorPallet} = useTheme()
   const defaultTheme = DefaultComponentsThemes()
-  const {t} = useTranslation()
+
+  let bgColorPallet = ''
+  if (type == 'checkcircle') {
+    bgColorPallet = ColorPallet.success
+  } else {
+    bgColorPallet = ColorPallet.warning
+  }
 
   const styles = StyleSheet.create({
     container: {
@@ -33,7 +40,7 @@ export const NotificationBox = ({isVerified}: Props) => {
       flex: 1,
       paddingVertical: 20,
       alignItems: 'center',
-      backgroundColor: isVerified ? ColorPallet.success : ColorPallet.warning,
+      backgroundColor: bgColorPallet,
     },
     rightSection: {
       height: '100%',
@@ -48,15 +55,11 @@ export const NotificationBox = ({isVerified}: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
-        <Icon name={isVerified ? 'checkcircle' : 'warning'} size={25} color={ColorPallet.white} />
+        <Icon name={type} size={25} color={ColorPallet.white} />
       </View>
       <View style={styles.rightSection}>
-        <Text style={[defaultTheme.text, {fontWeight: 'bold'}]}>
-          {isVerified ? t('ValidationBanner.SuccessTitle') : t('ValidationBanner.ErrorTitle')}
-        </Text>
-        <Text style={defaultTheme.text}>
-          {isVerified ? t('ValidationBanner.SuccessBody') : t('ValidationBanner.ErrorBody')}
-        </Text>
+        {title && <Text style={[defaultTheme.text, {fontWeight: 'bold'}]}>{title}</Text>}
+        <Text style={defaultTheme.text}>{body}</Text>
       </View>
     </View>
   )

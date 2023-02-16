@@ -1,9 +1,9 @@
 import {ProofState, V1PresentationMessage} from '@aries-framework/core'
 import {DidCommMessageRepository} from '@aries-framework/core/build/storage'
 import {useAgent, useProofById} from '@aries-framework/react-hooks'
-import {t} from 'i18next'
 import Base64 from 'js-base64'
 import React, {useEffect, useState} from 'react'
+import {useTranslation} from 'react-i18next'
 import {StyleSheet, Text, View} from 'react-native'
 
 import {Credential} from '../components/Credential'
@@ -22,6 +22,7 @@ export const ValidationResult = ({route}: any) => {
   const [isVerified, setIsVerified] = useState<boolean | undefined>(false)
   const [identifiers, setIdentifiers] = useState<any>([])
   const {agent} = useAgent()
+  const {t} = useTranslation()
 
   const styles = StyleSheet.create({
     section: {
@@ -88,7 +89,11 @@ export const ValidationResult = ({route}: any) => {
       ) : (
         <View style={{flex: 1, width: '100%'}}>
           <Header title={proofName} />
-          <NotificationBox isVerified={isVerified} />
+          <NotificationBox
+            type={isVerified ? 'checkcircle' : 'warning'}
+            title={isVerified ? t('ValidationBanner.SuccessTitle') : t('ValidationBanner.ErrorTitle')}
+            body={isVerified ? t('ValidationBanner.SuccessBody') : t('ValidationBanner.ErrorBody')}
+          />
           {proofResponse && (
             <View style={styles.section}>
               <Text style={defaultStyles.subtitle}>{t('Global.Attributes')}</Text>
