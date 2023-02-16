@@ -1,5 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
+import {TFunction} from 'i18next'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -8,6 +10,18 @@ import {useTheme} from '../contexts/theme'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
 
 import TermsStack from './TermsStack'
+
+const getTitle = (route: any, t: TFunction<'translation', undefined, 'translation'>) => {
+  const routeName = getFocusedRouteNameFromRoute(route)
+  switch (routeName) {
+    case 'Home':
+      return t('Screens.Home') || ''
+    case 'Requests':
+      return t('Screens.Requests') || ''
+    default:
+      return t('Screens.Home') || ''
+  }
+}
 
 const RootStack = () => {
   const {t} = useTranslation()
@@ -42,11 +56,11 @@ const RootStack = () => {
       />
       <Stack.Screen
         name="HomeStack"
-        options={{
-          headerTitle: 'Home',
+        options={({route}) => ({
+          title: getTitle(route, t),
           headerLeft: () => false,
           headerTintColor: ColorPallet.white,
-        }}
+        })}
         component={BottomNav}
       />
       <Stack.Screen
@@ -80,9 +94,11 @@ const RootStack = () => {
 const BottomNav = () => {
   const {ColorPallet} = useTheme()
   const Tab = createBottomTabNavigator()
+  const {t} = useTranslation()
 
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={{
         header: () => null,
       }}>
@@ -90,6 +106,7 @@ const BottomNav = () => {
         name={'Home'}
         component={Home}
         options={{
+          title: t('Screens.Home') || '',
           tabBarIcon: ({focused}) => (
             <Icon name={'home'} color={focused ? ColorPallet.primary : ColorPallet.lightGray} size={30} />
           ),
@@ -99,7 +116,7 @@ const BottomNav = () => {
         name={'Requests'}
         component={Requests}
         options={{
-          tabBarStyle: {},
+          title: t('Screens.Requests') || '',
           tabBarIcon: ({focused}) => (
             <Icon name={'list'} color={focused ? ColorPallet.primary : ColorPallet.lightGray} size={30} />
           ),

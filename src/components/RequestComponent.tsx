@@ -3,7 +3,10 @@ import React from 'react'
 import {StyleSheet, Text, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+import {DispatchAction} from '../contexts/reducers/store'
+import {useStore} from '../contexts/store'
 import {useTheme} from '../contexts/theme'
+import {Request} from '../contexts/types'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 type itemProps = {
@@ -17,6 +20,7 @@ type itemProps = {
 
 export const RequestComponent = ({item}: itemProps) => {
   const defaultStyles = DefaultComponentsThemes()
+  const [, dispatch] = useStore()
   const {ColorPallet} = useTheme()
   const {navigate} = useNavigation()
 
@@ -36,7 +40,11 @@ export const RequestComponent = ({item}: itemProps) => {
   })
 
   const handleSelection = () => {
-    navigate('QRCode' as never, {item} as never)
+    dispatch({
+      type: DispatchAction.PROOF_REQUEST_CHANGED,
+      payload: item as never as Request,
+    })
+    navigate('QRCode' as never)
   }
 
   return (
