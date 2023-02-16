@@ -2,6 +2,7 @@ const translation = {
   Global: {
     Continue: 'Continuer',
     Back: 'Retour',
+    Attributes: 'Attributs',
   },
   Home: {
     Title: 'Vérifier une identité',
@@ -26,6 +27,12 @@ const translation = {
     Footer: 'Réception des informations en cours...',
     CancelButton: 'Annuler',
   },
+  ValidationBanner: {
+    SuccessTitle: 'Les informations sont valides',
+    SuccessBody: "L'utilisateur vous a partagé les informations avec succès.",
+    ErrorTitle: 'Les informations ne sont pas valides',
+    ErrorBody: "L'utilisateur n'a pas pu partager les informations avec vous.",
+  },
   ActivityLog: {
     EmptyTitle: 'Activité',
     Title: 'Nouvelles activités',
@@ -41,7 +48,7 @@ const translation = {
   },
   TermsV2: {
     title: "Conditions d'utilisation",
-    Attestation: "J'ai lu, je comprends et j'accepte les conditions.",
+    Credential: "J'ai lu, je comprends et j'accepte les conditions.",
     IAgree: "J'accepte",
     Consent: {
       IAgree: "J'accepte",
@@ -91,7 +98,7 @@ const translation = {
         title: 'Protection et vie privée',
         body: 'Le gouvernement du Québec se préoccupe de la protection de votre vie privée et des renseignements personnels et confidentiels qui sont contenus dans cette application. Vous avez la responsabilité de consulter *la Politique de confidentialité pour connaitre les pratiques du gouvernements du Québec à ce sujet.*',
         subsection: {
-          title: 'Protection of personal information',
+          title: 'Protection des données personnelles',
           body:
             'Si vous visitez le site Web de l’application sous licence à\n' +
             '\n' +

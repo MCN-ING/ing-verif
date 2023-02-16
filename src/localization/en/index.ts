@@ -2,6 +2,7 @@ const translation = {
   Global: {
     Continue: 'Continue',
     Back: 'Back',
+    Attributes: 'Attributes',
   },
   Home: {
     Title: 'Verify an identity',
@@ -25,6 +26,12 @@ const translation = {
     Footer: 'Receiving information in progress...',
     CancelButton: 'Cancel',
   },
+  ValidationBanner: {
+    SuccessTitle: 'The information are valid',
+    SuccessBody: 'The user has successfully shared the information to you.',
+    ErrorTitle: 'The information is invalid',
+    ErrorBody: 'The user was unable to share the information with you.',
+  },
   ActivityLog: {
     EmptyTitle: 'Activity',
     Title: 'New activities',
@@ -38,8 +45,10 @@ const translation = {
   TermsV2: {
     title: 'Terms and Conditions',
     IAgree: 'I Agree',
-    Attestation: 'I have read, understand and accept the terms of this EULA.',
-    AttestationError: 'Please check the box above to continue',
+    Credential: {
+      Body: 'I have read, understand and accept the terms of this EULA.',
+      Error: 'Please check the box above to continue',
+    },
     Consent: {
       title: 'Consent',
       body: 'Please read the general conditions for the use of the digital portfolio of the Government of Quebec.',

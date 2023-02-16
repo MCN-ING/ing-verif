@@ -491,8 +491,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -511,8 +511,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.qc.gouv.ingverif;
 				PRODUCT_NAME = IngVerif;
-				PROVISIONING_PROFILE_SPECIFIER = ingverifqcprovisioning;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ingverifqcprovisioning;
+				PROVISIONING_PROFILE_SPECIFIER = IngVerif;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = IngVerif;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -525,8 +525,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -544,8 +544,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.qc.gouv.ingverif;
 				PRODUCT_NAME = IngVerif;
-				PROVISIONING_PROFILE_SPECIFIER = ingverifqcprovisioning;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ingverifqcprovisioning;
+				PROVISIONING_PROFILE_SPECIFIER = IngVerif;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = IngVerif;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -580,8 +580,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2RST8749NS;
@@ -621,7 +621,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = ingverifqcprovisioning;
+				PROVISIONING_PROFILE_SPECIFIER = IngVerif;
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -656,8 +656,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = 2RST8749NS;
@@ -689,7 +689,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = ingverifqcprovisioning;
+				PROVISIONING_PROFILE_SPECIFIER = IngVerif;
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -12,12 +12,13 @@ interface ColorPallet {
   primaryText: string
   primary: string
   secondary: string
-  tertiary: string
-  quaternary: string
-  quinary: string
   titleHighlight: string
   white: string
   lightGray: string
+  darkGray: string
+  success: string
+  warning: string
+  error: string
   link: string
 }
 
@@ -26,12 +27,13 @@ const ColorPalletLight: ColorPallet = {
   primaryText: '#000000',
   primary: '#095797',
   secondary: '#0C2550',
-  tertiary: '#2D9CDB',
-  quaternary: '#BFD8FF',
-  quinary: '#F2F2F2',
   titleHighlight: '#E58271',
   white: '#FFFFFF',
   lightGray: '#b8b8b8',
+  darkGray: '#454545',
+  success: '#5B8046',
+  warning: '#D8AF3B',
+  error: '#F8DCD8',
   link: '#095797',
 }
 
@@ -40,12 +42,13 @@ const ColorPalletDark: ColorPallet = {
   primaryText: '#FFFFFF',
   primary: '#095797',
   secondary: '#0C2550',
-  tertiary: '#2D9CDB',
-  quaternary: '#BFD8FF',
-  quinary: '#F2F2F2',
   titleHighlight: '#E58271',
   white: '#FFFFFF',
   lightGray: '#b8b8b8',
+  darkGray: '#525252',
+  success: '#5B8046',
+  warning: '#D8AF3B',
+  error: '#F8DCD8',
   link: '#095797',
 }
 

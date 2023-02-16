@@ -1,11 +1,11 @@
 import {useNavigation} from '@react-navigation/core'
 import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, StyleSheet, Text, View, Linking} from 'react-native'
+import {ScrollView, StyleSheet, Text, View, Linking, SafeAreaView} from 'react-native'
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
-import {Notice} from '../components/Notice'
+import {NotificationBox} from '../components/NotificationBox'
 import {Header} from '../components/PageHeader'
 import {AccordionItem} from '../components/react-native-accordion-list-view'
 import {useTheme} from '../contexts/theme'
@@ -22,7 +22,6 @@ const Terms: React.FC = () => {
   const style = StyleSheet.create({
     container: {
       backgroundColor: ColorPallet.primaryBackground,
-      paddingHorizontal: 20,
     },
     bodyText: {
       ...defaultStyle.text,
@@ -78,8 +77,8 @@ const Terms: React.FC = () => {
   }
 
   return (
-    <View style={[style.container]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <SafeAreaView style={[style.container]}>
+      <ScrollView style={{paddingHorizontal: 20}} showsVerticalScrollIndicator={false}>
         <Header title={t('TermsV2.title')}></Header>
         <Text>{t('TermsV2.Consent.body')}</Text>
         <Text style={[style.title, {marginTop: 20}]}>{t('TermsV2.Consent.title')}</Text>
@@ -119,21 +118,12 @@ const Terms: React.FC = () => {
             /*!(store.onboarding.didAgreeToTerms && store.authentication.didAuthenticate) && */
             <>
               <CheckBoxRow
-                title={t('TermsV2.Attestation')}
+                title={t('TermsV2.Credential.Body')}
                 accessibilityLabel={t('TermsV2.IAgree') || ''}
                 checked={checked}
                 onPress={() => setChecked(!checked)}
               />
-              {!checked && formSubmitted && (
-                <View style={{paddingVertical: 10}}>
-                  <Notice
-                    icon="close-circle-outline"
-                    iconBackground={{backgroundColor: '#EDBAB1'}}
-                    iconColor="#CB381F"
-                    message={t('TermsV2.AttestationError')}
-                  />
-                </View>
-              )}
+              {!checked && formSubmitted && <NotificationBox type="warning" body={t('TermsV2.Credential.Error')} />}
               <View style={[{paddingTop: 10}]}>
                 <LargeButton title={t('Global.Continue')} action={onSubmitPressed} isPrimary></LargeButton>
               </View>
@@ -141,7 +131,7 @@ const Terms: React.FC = () => {
           }
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 
