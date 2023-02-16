@@ -5,6 +5,7 @@ export const sendProofExchange = async (
   agent: Agent,
   attributes: Record<string, ProofAttributeInfo>,
   connection: ConnectionRecord,
+  proofName: string,
   predicates?: Record<string, ProofPredicateInfo>
 ) => {
   const parentThreadId = uuid()
@@ -14,7 +15,7 @@ export const sendProofExchange = async (
     protocolVersion: 'v1',
     proofFormats: {
       indy: {
-        name: 'proof-request',
+        name: proofName,
         version: '1.0',
         nonce: '1298236324864',
         requestedAttributes: attributes,
