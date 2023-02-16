@@ -8,7 +8,7 @@ echo ">> Build Keychain Starting... 🤞"
 
 echo ">> Extracting Artifats"
 
-echo "${BUILD_CERTIFICATE_BASE64}" | base64 -d >"${CERT_PATH}"
+echo "${CERTIFICATE}" | base64 -d >"${CERT_PATH}"
 md5 "$CERT_PATH"
 
 echo ">> Create Keychain $KC_NAME"

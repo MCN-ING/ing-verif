@@ -8,6 +8,12 @@ import {defaultLanguage} from '../constants'
 import en from './en'
 import fr from './fr'
 
+declare module 'i18next' {
+  interface CustomTypeOptions {
+    returnNull: false
+  }
+}
+
 export type Translation = typeof en
 
 type TranslationResources = {
@@ -44,6 +50,7 @@ const initLanguages = (resources: TranslationResources) => {
     lng: translationToUse,
     fallbackLng: defaultLanguage,
     resources,
+    returnNull: false,
   })
 }
 
