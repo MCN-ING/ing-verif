@@ -1,10 +1,11 @@
 import {useNavigation} from '@react-navigation/core'
 import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, StyleSheet, Text, View, Linking} from 'react-native'
+import {ScrollView, StyleSheet, Text, View, Linking, SafeAreaView} from 'react-native'
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
+import {NotificationBox} from '../components/NotificationBox'
 import {Header} from '../components/PageHeader'
 import {AccordionItem} from '../components/react-native-accordion-list-view'
 import {useTheme} from '../contexts/theme'
@@ -13,6 +14,7 @@ import defaultComponentsThemes from '../defaultComponentsThemes'
 const Terms: React.FC = () => {
   // const [store, dispatch] = useStore()
   const [checked, setChecked] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false)
   const {t} = useTranslation()
   const navigation = useNavigation()
   const {ColorPallet} = useTheme()
@@ -20,7 +22,6 @@ const Terms: React.FC = () => {
   const style = StyleSheet.create({
     container: {
       backgroundColor: ColorPallet.primaryBackground,
-      paddingHorizontal: 20,
     },
     bodyText: {
       ...defaultStyle.text,
@@ -58,9 +59,12 @@ const Terms: React.FC = () => {
       type: DispatchAction.DID_AGREE_TO_TERMS,
       payload: [{DidAgreeToTerms: checked}],
     })*/
+    setFormSubmitted(true)
+
+    if (!checked) return
 
     navigation.navigate('Home' as never)
-  }, [])
+  }, [checked, formSubmitted])
 
   const openLink = async (url: string) => {
     // Only `https://` is allowed. Update manifest as needed.
@@ -73,8 +77,8 @@ const Terms: React.FC = () => {
   }
 
   return (
-    <View style={[style.container]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <SafeAreaView style={[style.container]}>
+      <ScrollView style={{paddingHorizontal: 20}} showsVerticalScrollIndicator={false}>
         <Header title={t('TermsV2.title')}></Header>
         <Text>{t('TermsV2.Consent.body')}</Text>
         <Text style={[style.title, {marginTop: 20}]}>{t('TermsV2.Consent.title')}</Text>
@@ -114,23 +118,20 @@ const Terms: React.FC = () => {
             /*!(store.onboarding.didAgreeToTerms && store.authentication.didAuthenticate) && */
             <>
               <CheckBoxRow
-                title={t('TermsV2.Credential')}
+                title={t('TermsV2.Credential.Body')}
                 accessibilityLabel={t('TermsV2.IAgree') || ''}
                 checked={checked}
                 onPress={() => setChecked(!checked)}
               />
+              {!checked && formSubmitted && <NotificationBox type="warning" body={t('TermsV2.Credential.Error')} />}
               <View style={[{paddingTop: 10}]}>
-                <LargeButton
-                  title={t('Global.Continue')}
-                  action={onSubmitPressed}
-                  disabled={!checked}
-                  isPrimary></LargeButton>
+                <LargeButton title={t('Global.Continue')} action={onSubmitPressed} isPrimary></LargeButton>
               </View>
             </>
           }
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 

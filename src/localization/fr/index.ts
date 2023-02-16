@@ -98,7 +98,7 @@ const translation = {
         title: 'Protection et vie privée',
         body: 'Le gouvernement du Québec se préoccupe de la protection de votre vie privée et des renseignements personnels et confidentiels qui sont contenus dans cette application. Vous avez la responsabilité de consulter *la Politique de confidentialité pour connaitre les pratiques du gouvernements du Québec à ce sujet.*',
         subsection: {
-          title: 'Protection of personal information',
+          title: 'Protection des données personnelles',
           body:
             'Si vous visitez le site Web de l’application sous licence à\n' +
             '\n' +
