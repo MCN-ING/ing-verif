@@ -136,33 +136,23 @@ jobs:
         run: |
           echo "MEDIATOR_URL=${MEDIATOR_URL}" >.env
       # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
-      - name: Install the Apple certificate and provisioning profile
+      - name: Create Provisioning Profile
+        if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
+        env:
+          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+        run: |
+          chmod +x scripts/makepp.sh && \
+          scripts/makepp.sh
+
+      # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
+      - name: Build Keychain
+        if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         env:
           CERTIFICATE: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
-          KEYCHIAN_PASSWD: ${{ secrets. KEYCHIAN_PASSWD }}
         run: |
-          # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/ingverif.p12
-          PP_PATH=$RUNNER_TEMP/IngVerif.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-
-          # import certificate and provisioning profile from secrets
-          echo -n "$CERTIFICATE" | base64 --decode -o $CERTIFICATE_PATH
-          echo -n "$PROVISIONING_PROFILE" | base64 --decode -o $PP_PATH
-
-          # create temporary keychain
-          security create-keychain -p "$KEYCHIAN_PASSWD" $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHIAN_PASSWD" $KEYCHAIN_PATH
-
-          # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$KEYCHIAN_PASSWD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+          chmod +x scripts/makekc.sh && \
+          scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
+          
       - name: Release build
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         working-directory: ios
