@@ -45,7 +45,10 @@ const translation = {
   TermsV2: {
     title: 'Terms and Conditions',
     IAgree: 'I Agree',
-    Credential: 'I have read, understand and accept the terms of this EULA.',
+    Credential: {
+      Body: 'I have read, understand and accept the terms of this EULA.',
+      Error: 'Please check the box above to continue',
+    },
     Consent: {
       title: 'Consent',
       body: 'Please read the general conditions for the use of the digital portfolio of the Government of Quebec.',
