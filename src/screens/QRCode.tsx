@@ -22,6 +22,12 @@ export const QRCodeScreen = ({navigation}: any) => {
   const connections = [...useConnectionByState(DidExchangeState.Completed)]
   const [state] = useStore()
   const {t} = useTranslation()
+  const [QCCodeHeight, setQCCodeHeight] = useState(300)
+
+  const onLayout = (event: any) => {
+    const {height} = event.nativeEvent.layout
+    setQCCodeHeight(height)
+  }
 
   const styles = StyleSheet.create({
     headerSection: {
@@ -29,6 +35,9 @@ export const QRCodeScreen = ({navigation}: any) => {
     },
     mainSection: {
       flex: 2,
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     bottomSection: {
       flex: 1.8,
@@ -87,16 +96,12 @@ export const QRCodeScreen = ({navigation}: any) => {
       <View style={styles.headerSection}>
         <Header title={t('QRCode.Title')} />
       </View>
-      <View style={styles.mainSection}>{isLoading ? <Spinner /> : <QRCode value={invitationUrl} size={300} />}</View>
+      <View style={styles.mainSection} onLayout={onLayout}>
+        {isLoading ? <Spinner /> : <QRCode size={QCCodeHeight} value={invitationUrl} />}
+      </View>
       <View style={styles.bottomSection}>
         <Text style={[defaultStyles.text, {paddingHorizontal: 10}]}>{t('QRCode.Instructions')}</Text>
         <LargeButton title={t('QRCode.GenerateNew')} action={handleCreateInvitation} isPrimary={true} />
-        <LargeButton
-          title={t('QRCode.UseBluetooth')}
-          action={() => {
-            navigation.navigate('#')
-          }}
-        />
       </View>
     </View>
   )
