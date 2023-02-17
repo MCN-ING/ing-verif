@@ -59,7 +59,7 @@ const translation = {
     IAgree: 'I Agree',
     Credential: {
       Body: 'I have read, understand and accept the terms of this EULA.',
-      Error: 'Please check the box above to continue',
+      Error: 'Please check the box above to continue.',
     },
     Consent: {
       title: 'Consent',

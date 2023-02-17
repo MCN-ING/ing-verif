@@ -52,7 +52,7 @@ export const QRCodeScreen = ({navigation}: any) => {
   }
 
   const handleProofExchange = async () => {
-    if (state.proofRequest == undefined) {
+    if (!state.proofRequest) {
       navigation.goBack()
       return
     }
