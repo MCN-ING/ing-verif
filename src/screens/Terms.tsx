@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native'
 import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, StyleSheet, Text, View, Linking, SafeAreaView} from 'react-native'
+import {ScrollView, StyleSheet, Text, View, SafeAreaView} from 'react-native'
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
@@ -14,7 +14,7 @@ import {useTheme} from '../contexts/theme'
 import defaultComponentsThemes from '../defaultComponentsThemes'
 
 const Terms: React.FC = () => {
-  const [_, dispatch] = useStore()
+  const [, dispatch] = useStore()
   const [checked, setChecked] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const {t} = useTranslation()
@@ -64,7 +64,7 @@ const Terms: React.FC = () => {
     dispatch({
       type: DispatchAction.DID_AGREE_TO_TERMS,
     })
-    
+
     navigation.navigate('HomeStack' as never)
   }, [checked, formSubmitted])
 
