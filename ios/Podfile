@@ -22,6 +22,8 @@ post_install do |installer|
       config.build_settings['DEVELOPMENT_TEAM'] = '2RST8749NS'
       config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+
     end
   end
   react_native_post_install(installer)
