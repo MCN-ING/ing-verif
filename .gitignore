@@ -13,6 +13,9 @@ api*.json
 .env
 .idea/
 
+# 3rd-party
+ios/Pods/*
+
 # Xcode
 #
 build/

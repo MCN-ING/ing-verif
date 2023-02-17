@@ -64,7 +64,7 @@ const Terms: React.FC = () => {
     dispatch({
       type: DispatchAction.DID_AGREE_TO_TERMS,
     })
-
+    
     navigation.navigate('HomeStack' as never)
   }, [checked, formSubmitted])
 
