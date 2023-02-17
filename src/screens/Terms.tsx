@@ -14,7 +14,7 @@ import {useTheme} from '../contexts/theme'
 import defaultComponentsThemes from '../defaultComponentsThemes'
 
 const Terms: React.FC = () => {
-  const [dispatch] = useStore()
+  const [, dispatch] = useStore()
   const [checked, setChecked] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const {t} = useTranslation()
