@@ -8,11 +8,13 @@ import {LargeButton} from '../components/LargeButton'
 import {NotificationBox} from '../components/NotificationBox'
 import {Header} from '../components/PageHeader'
 import {AccordionItem} from '../components/react-native-accordion-list-view'
+import {DispatchAction} from '../contexts/reducers/store'
+import {useStore} from '../contexts/store'
 import {useTheme} from '../contexts/theme'
 import defaultComponentsThemes from '../defaultComponentsThemes'
 
 const Terms: React.FC = () => {
-  // const [store, dispatch] = useStore()
+  const [_, dispatch] = useStore()
   const [checked, setChecked] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const {t} = useTranslation()
@@ -55,14 +57,14 @@ const Terms: React.FC = () => {
   })
 
   const onSubmitPressed = useCallback(() => {
-    /*dispatch({
-      type: DispatchAction.DID_AGREE_TO_TERMS,
-      payload: [{DidAgreeToTerms: checked}],
-    })*/
     setFormSubmitted(true)
 
     if (!checked) return
 
+    dispatch({
+      type: DispatchAction.DID_AGREE_TO_TERMS,
+    })
+    
     navigation.navigate('HomeStack' as never)
   }, [checked, formSubmitted])
 

@@ -11,5 +11,5 @@ export interface Onboarding {
 
 export interface State {
   onboarding: Onboarding
-  proofRequest: undefined | Request
+  proofRequest?: Request
 }
