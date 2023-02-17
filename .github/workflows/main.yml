@@ -159,6 +159,7 @@ jobs:
         run: |
           pod install
           xcodebuild \
+          -workspace IngVerif.xcworkspace \
           -scheme IngVerif \
           -configuration Release \
           -derivedDataPath xbuild \
@@ -166,7 +167,6 @@ jobs:
           -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
-          -allowProvisioningUpdates \
           archive
 
       - name: Debug build
