@@ -157,7 +157,19 @@ jobs:
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         working-directory: ios
         run: |
-          xcodebuild -target IngVerif -xcconfig ../release.xcconfig
+          xcodebuild \
+          -workspace IngVerif.xcworkspace \
+          -scheme IngVerif \
+          -configuration Release \
+          -derivedDataPath xbuild \
+          -target IngVerif \
+          -xcconfig ../release.xcconfig \
+          -archivePath IngVerif.xcarchive \
+          -sdk iphoneos \
+          -verbose \
+          archive
+
+          xcodebuild -workspace IngVerif.xcworkspace-target IngVerif -xcconfig ../release.xcconfig
 
 
       - name: Debug build
