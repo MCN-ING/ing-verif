@@ -169,9 +169,6 @@ jobs:
           -verbose \
           archive
 
-          xcodebuild -workspace IngVerif.xcworkspace-target IngVerif -xcconfig ../release.xcconfig
-
-
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
         working-directory: ios
