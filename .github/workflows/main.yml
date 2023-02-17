@@ -161,11 +161,11 @@ jobs:
           -scheme IngVerif \
           -configuration Release \
           -derivedDataPath xbuild \
-          -target IngVerif \
           -xcconfig ../release.xcconfig \
           -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
+          -allowProvisioningUpdates \
           archive
 
       - name: Debug build
