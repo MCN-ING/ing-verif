@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		66FCFF1F29A02A9C009E3A8D /* libYogaKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FCFF1E29A02A9C009E3A8D /* libYogaKit.a */; };
 		7699B88040F8A987B510C191 /* libPods-IngVerif-IngVerifTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-IngVerif-IngVerifTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D41A15A1299C15D900D6F31F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D41A15A0299C15D900D6F31F /* Fonts */; };
@@ -42,6 +43,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-IngVerif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IngVerif.release.xcconfig"; path = "Target Support Files/Pods-IngVerif/Pods-IngVerif.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-IngVerif-IngVerifTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IngVerif-IngVerifTests.debug.xcconfig"; path = "Target Support Files/Pods-IngVerif-IngVerifTests/Pods-IngVerif-IngVerifTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-IngVerif.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IngVerif.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66FCFF1E29A02A9C009E3A8D /* libYogaKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYogaKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = IngVerif/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-IngVerif-IngVerifTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IngVerif-IngVerifTests.release.xcconfig"; path = "Target Support Files/Pods-IngVerif-IngVerifTests/Pods-IngVerif-IngVerifTests.release.xcconfig"; sourceTree = "<group>"; };
 		D41A15A0299C15D900D6F31F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = IngVerif/Fonts; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66FCFF1F29A02A9C009E3A8D /* libYogaKit.a in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-IngVerif.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +105,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66FCFF1E29A02A9C009E3A8D /* libYogaKit.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-IngVerif.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-IngVerif-IngVerifTests.a */,
