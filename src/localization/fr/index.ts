@@ -56,8 +56,11 @@ const translation = {
   },
   TermsV2: {
     title: "Conditions d'utilisation",
-    Credential: "J'ai lu, je comprends et j'accepte les conditions.",
     IAgree: "J'accepte",
+    Credential: {
+      Body: "J'ai lu, je comprends et j'accepte les conditions.",
+      Error: 'Veuillez cocher la case ci-dessus.',
+    },
     Consent: {
       IAgree: "J'accepte",
       title: 'Consentement',
