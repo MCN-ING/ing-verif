@@ -157,6 +157,7 @@ jobs:
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         working-directory: ios
         run: |
+          pod install
           xcodebuild \
           -scheme IngVerif \
           -configuration Release \
