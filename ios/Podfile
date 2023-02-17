@@ -43,6 +43,14 @@ target 'IngVerif' do
     
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  target.build_configurations.each do |configs|
+    configs.build_settings['CODE_SIGN_IDENTITY'] = 'iPhone Distribution'
+    configs.build_settings['PROVISIONING_PROFILE'] = '8d56d0a9-3df5-4222-9826-6acef8fde6ab'
+    configs.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = 'IngVerif'
+    configs.build_settings['CODE_SIGN_STYLE'] = 'Manual'
+    configs.build_settings['DEVELOPMENT_TEAM'] = '2RST8749NS'
+    configs.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+  end
 
   target 'IngVerifTests' do
     inherit! :complete
