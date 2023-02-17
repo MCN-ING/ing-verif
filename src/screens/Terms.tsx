@@ -3,7 +3,6 @@ import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {ScrollView, StyleSheet, Text, View, Linking, SafeAreaView} from 'react-native'
 
-
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
 import {NotificationBox} from '../components/NotificationBox'
@@ -63,10 +62,9 @@ const Terms: React.FC = () => {
     setFormSubmitted(true)
 
     if (!checked) return
-    
-    navigation.navigate('Home' as never)
-  }, [checked, formSubmitted])
 
+    navigation.navigate('HomeStack' as never)
+  }, [checked, formSubmitted])
 
   /* 
   const openLink = async (url: string) => {
