@@ -158,7 +158,6 @@ jobs:
         working-directory: ios
         run: |
           xcodebuild \
-          -workspace IngVerif.xcworkspace \
           -scheme IngVerif \
           -configuration Release \
           -derivedDataPath xbuild \
