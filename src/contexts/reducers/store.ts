@@ -20,7 +20,7 @@ export const DispatchAction = {
 
 export interface ReducerAction<R> {
   type: R
-  payload: undefined | Request
+  payload?: Request
 }
 
 export const reducer = <S extends State>(state: S, action: ReducerAction<DispatchAction>): S => {

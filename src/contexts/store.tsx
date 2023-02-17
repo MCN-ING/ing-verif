@@ -1,7 +1,9 @@
-import React, {createContext, Dispatch, useContext, useReducer} from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import React, {createContext, Dispatch, useContext, useEffect, useReducer} from 'react'
+import {LocalStorageKeys} from '../constants'
 
-import _defaultReducer, {ReducerAction} from './reducers/store'
-import {State} from './types'
+import _defaultReducer, {DispatchAction, ReducerAction} from './reducers/store'
+import {Request, State} from './types'
 
 type Reducer = <S extends State>(state: S, action: ReducerAction<any>) => S
 
@@ -31,6 +33,32 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({children, initialSt
   const _reducer = reducer ?? defaultReducer
   const _state = initialState ?? defaultState
   const [state, dispatch] = useReducer(_reducer, _state)
+
+  useEffect(() => {
+    const getAgreeTerms = async () => {
+      const onboarding = await AsyncStorage.getItem(LocalStorageKeys.Onboarding)
+      if (onboarding) {
+        dispatch({
+          type: DispatchAction.DID_AGREE_TO_TERMS,
+        })
+      }
+    }
+    getAgreeTerms()
+  }, [])
+
+  useEffect(() => {
+    const getProofRequest = async () => {
+      const proofRequestJSON = await AsyncStorage.getItem(LocalStorageKeys.ProofRequest)
+      if (proofRequestJSON) {
+        const request: Request = JSON.parse(proofRequestJSON)
+        dispatch({
+          type: DispatchAction.PROOF_REQUEST_CHANGED,
+          payload: request,
+        })
+      }
+    }
+    getProofRequest()
+  }, [])
 
   return <StoreContext.Provider value={[state, dispatch]}>{children}</StoreContext.Provider>
 }
