@@ -25,7 +25,7 @@ export const Splash = () => {
 
   useEffect(() => {
     if (agent) {
-      navigation.navigate('Terms' as never)
+      navigation.navigate('TermsStack' as never)
     }
   }, [agent])
   return (

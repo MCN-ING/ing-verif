@@ -1,7 +1,8 @@
-import {useNavigation} from '@react-navigation/core'
+import {useNavigation} from '@react-navigation/native'
 import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {ScrollView, StyleSheet, Text, View, Linking, SafeAreaView} from 'react-native'
+
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
@@ -62,10 +63,12 @@ const Terms: React.FC = () => {
     setFormSubmitted(true)
 
     if (!checked) return
-
+    
     navigation.navigate('Home' as never)
   }, [checked, formSubmitted])
 
+
+  /* 
   const openLink = async (url: string) => {
     // Only `https://` is allowed. Update manifest as needed.
     const supported = await Linking.canOpenURL(url)
@@ -75,6 +78,7 @@ const Terms: React.FC = () => {
       await Linking.openURL(url)
     }
   }
+  */
 
   return (
     <SafeAreaView style={[style.container]}>

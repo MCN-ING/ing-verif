@@ -9,7 +9,7 @@ import DefaultComponentsThemes from '../../defaultComponentsThemes'
 export interface ItemInfo {
   id: number
   title: string
-  body: string
+  body?: string
   action: string
 }
 
@@ -43,7 +43,7 @@ export const SliderItem = ({id, title, body, action}: ItemInfo) => {
       style={[styles.container, id == 0 && styles.firstCardStyle]}
       onPress={() => navigate(action as never)}>
       <Text style={[defaultStyle.text, id == 0 && styles.firstCardTextStyle, {fontWeight: '600'}]}>{title}</Text>
-      <Text style={[defaultStyle.text, id == 0 && styles.firstCardTextStyle, {paddingTop: 15}]}>{body}</Text>
+      {body && <Text style={[defaultStyle.text, id == 0 && styles.firstCardTextStyle, {paddingTop: 15}]}>{body}</Text>}
     </TouchableOpacity>
   )
 }

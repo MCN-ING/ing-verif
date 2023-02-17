@@ -14,6 +14,7 @@ import React, {useState, useMemo, useEffect} from 'react'
 import {StatusBar, useColorScheme} from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 
+import {StoreProvider} from './contexts/store'
 import {ThemeProvider} from './contexts/theme'
 import {initStoredLanguage, translationResources, initLanguages} from './localization'
 import RootStack from './navigators/RootStack'
@@ -41,14 +42,16 @@ const App = () => {
   }, [])
 
   return (
-    <NavigationContainer>
-      <AgentProvider agent={agent}>
-        <ThemeProvider value={isDarkMode ? defaultColorSheme.dark : defaultColorSheme.light}>
-          <StatusBar></StatusBar>
-          <RootStack />
-        </ThemeProvider>
-      </AgentProvider>
-    </NavigationContainer>
+    <StoreProvider>
+      <NavigationContainer>
+        <AgentProvider agent={agent}>
+          <ThemeProvider value={isDarkMode ? defaultColorSheme.dark : defaultColorSheme.light}>
+            <StatusBar></StatusBar>
+            <RootStack />
+          </ThemeProvider>
+        </AgentProvider>
+      </NavigationContainer>
+    </StoreProvider>
   )
 }
 
