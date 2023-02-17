@@ -1,4 +1,4 @@
-import {DidExchangeState, ProofAttributeInfo} from '@aries-framework/core'
+import {DidExchangeState} from '@aries-framework/core'
 import {useAgent, useConnectionByState} from '@aries-framework/react-hooks'
 import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
@@ -8,6 +8,7 @@ import QRCode from 'react-native-qrcode-svg'
 import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
 import {Spinner} from '../components/Spinner'
+import {useStore} from '../contexts/store'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {createLegacyInvitation} from '../utils/createLegacyInvitation'
 import {sendProofExchange} from '../utils/sendProofExchange'
@@ -19,6 +20,7 @@ export const QRCodeScreen = ({navigation}: any) => {
   const [isLoading, setIsLoading] = useState(true)
   const [invitationId, setInvitationId] = useState<string | undefined>(undefined)
   const connections = [...useConnectionByState(DidExchangeState.Completed)]
+  const [state] = useStore()
   const {t} = useTranslation()
 
   const styles = StyleSheet.create({
@@ -35,16 +37,6 @@ export const QRCodeScreen = ({navigation}: any) => {
     },
   })
 
-  const attributes = {
-    name: new ProofAttributeInfo({
-      names: ['Nom', 'Prénom'],
-      restrictions: [],
-    }),
-    age: new ProofAttributeInfo({
-      names: ['Age'],
-    }),
-  }
-
   const handleCreateInvitation = async () => {
     if (agent == undefined) {
       return undefined
@@ -60,11 +52,23 @@ export const QRCodeScreen = ({navigation}: any) => {
   }
 
   const handleProofExchange = async () => {
-    const proofName = "Requête d'age"
+    if (state.proofRequest == undefined) {
+      navigation.goBack()
+      return
+    }
     for (let i = 0; i < connections.length; i++) {
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
-        const proofExchangeRecord = await sendProofExchange(agent, attributes, connections[i], proofName)
-        navigation.navigate('ValidationResult', {proofId: proofExchangeRecord.proofId, proofName: proofName})
+        const proofExchangeRecord = await sendProofExchange(
+          agent,
+          connections[i],
+          state.proofRequest.title,
+          state.proofRequest.attributes,
+          state.proofRequest.predicates
+        )
+        navigation.navigate('ValidationResult', {
+          proofId: proofExchangeRecord.proofId,
+          proofName: state.proofRequest.title,
+        })
       }
       break
     }

@@ -3,9 +3,9 @@ import {uuid} from '@aries-framework/core/build/utils/uuid'
 
 export const sendProofExchange = async (
   agent: Agent,
-  attributes: Record<string, ProofAttributeInfo>,
   connection: ConnectionRecord,
   proofName: string,
+  attributes?: Record<string, ProofAttributeInfo>,
   predicates?: Record<string, ProofPredicateInfo>
 ) => {
   const parentThreadId = uuid()

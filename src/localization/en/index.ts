@@ -37,10 +37,22 @@ const translation = {
     Title: 'New activities',
     EmptyBody: 'You are up to date, there is nothing new.',
   },
+  Request: {
+    Title: 'Choice of a request',
+  },
   Screens: {
     Home: 'Home',
     QRCode: 'Connection',
     Validation: 'Verification',
+    Requests: 'Requests',
+  },
+  RequestsList: {
+    Title1: 'Validation of age (18+)',
+    Description1: 'Check that a person is 18 years of age or older.',
+    Title2: 'Validation of seniority (65+)',
+    Description2: 'Check that a person is 65 years of age or older.',
+    Title3: 'Validation of identity',
+    Description3: 'Check the last name and first name of a person.',
   },
   TermsV2: {
     title: 'Terms and Conditions',

@@ -1,4 +1,4 @@
-import { LayoutAnimation, LayoutAnimationConfig } from 'react-native'
+import {LayoutAnimation, LayoutAnimationConfig} from 'react-native'
 
 /**
  * Toggle animation config

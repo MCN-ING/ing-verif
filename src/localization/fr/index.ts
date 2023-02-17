@@ -7,12 +7,8 @@ const translation = {
   Home: {
     Title: 'Vérifier une identité',
     Slider: {
-      Title1: 'Vérifier ...',
-      Body1: "Utilisez le code QR pour vérifier l'identité d'une personne.",
+      Title1: 'Sélectionner une requête',
       Title2: 'Changer le schéma de vérification',
-      Body2: 'pour vérifier l’identité d’une personne.',
-      Title3: 'Vérification Bluetooth',
-      Body3: 'Utilisez Bluetooth pour vérifier l’identité d’une personne.',
     },
   },
   QRCode: {
@@ -38,6 +34,9 @@ const translation = {
     Title: 'Nouvelles activités',
     EmptyBody: "Vous êtes à jour, il n'y a rien de nouveau.",
   },
+  Request: {
+    Title: "Choix d'une requête",
+  },
   sections: {
     schema: 'Schémas',
   },
@@ -45,6 +44,15 @@ const translation = {
     Home: 'Accueil',
     QRCode: 'Connexion',
     Validation: 'Vérification',
+    Requests: 'Requêtes',
+  },
+  RequestsList: {
+    Title1: "Vérification de l'âge (18+)",
+    Description1: "Vérifiez qu'une personne est âgée de 18 ans ou plus.",
+    Title2: 'Vérification de la séniorité (65+)',
+    Description2: "Vérifiez qu'une personne est âgée de 65 et plus.",
+    Title3: 'Vérification de l’identité',
+    Description3: 'Vérifiez le nom et prénom d’une personne.',
   },
   TermsV2: {
     title: "Conditions d'utilisation",
