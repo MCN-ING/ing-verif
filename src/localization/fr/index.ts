@@ -4,6 +4,10 @@ const translation = {
     Back: 'Retour',
     Attributes: 'Attributs',
   },
+  Agent: {
+    ErrorTitle: "Initialisation de l'agent",
+    Error: "Une erreur s'est produite lors de l'initialisation de l'agent",
+  },
   Home: {
     Title: 'Vérifier une identité',
     Slider: {
