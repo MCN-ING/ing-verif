@@ -1,11 +1,11 @@
-import {PredicateType, ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
+import {ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
 
 interface Attribute {
-  name: ProofAttributeInfo
+  [key: string]: ProofAttributeInfo
 }
 
 interface Predicate {
-  age: ProofPredicateInfo
+  [key: string]: ProofPredicateInfo
 }
 
 export interface Request {
