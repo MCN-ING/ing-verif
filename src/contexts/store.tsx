@@ -1,5 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import {t} from 'i18next'
 import React, {createContext, Dispatch, useContext, useEffect, useReducer} from 'react'
+
+import {RequestsList} from '../assets/RequestsList'
 import {LocalStorageKeys} from '../constants'
 
 import _defaultReducer, {DispatchAction, ReducerAction} from './reducers/store'
@@ -18,6 +21,7 @@ export const defaultState: State = {
     didAgreeToTerms: false,
   },
   proofRequest: undefined,
+  requests: RequestsList(t),
 }
 
 export const StoreContext = createContext<[State, Dispatch<ReducerAction<any>>]>([
