@@ -215,8 +215,8 @@ jobs:
           --password ${{ secrets.APPLE_ID_PASSWD }} \
           --enable-package-validation \
           --max-build-processing-wait 10
-          # --testflight \
-          # --beta-group "The Team"
+          --testflight \
+          --beta-group "The Team"
 
       - name: Ship to SauceLabs
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
