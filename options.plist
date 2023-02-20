@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>teamID</key>
-	<string>467G3V9649</string>
+	<string>2RST8749NS</string>
 	<key>method</key>
 	<string>app-store</string>
 	<key>signingStyle</key>
@@ -17,7 +17,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>ca.qc.gouv.ingverif</key>
-		<string>c578b644-c99a-46ac-aac2-f21ece5ca5b9</string>
+		<string>8d56d0a9-3df5-4222-9826-6acef8fde6ab</string>
 	</dict>
 </dict>
 </plist>
