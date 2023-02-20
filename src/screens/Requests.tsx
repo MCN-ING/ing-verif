@@ -1,23 +1,20 @@
 import {t} from 'i18next'
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {View} from 'react-native'
 
-import {RequestsList} from '../assets/RequestsList'
 import {Header} from '../components/PageHeader'
 import {RequestComponent} from '../components/RequestComponent'
+import {useStore} from '../contexts/store'
+import {Request} from '../contexts/types'
 
 export const Requests = () => {
-  const [requestsList, setRequestsList] = useState<any[]>([])
-
-  useEffect(() => {
-    setRequestsList(RequestsList(t))
-  }, [])
+  const [state] = useStore()
 
   return (
     <View style={{justifyContent: 'center', alignContent: 'center'}}>
       <Header title={t('Request.Title')} />
       <View style={{marginTop: 10}}>
-        {requestsList.map((item, index) => {
+        {state.requests.map((item: Request, index: number) => {
           return <RequestComponent key={index.toString()} item={item} />
         })}
       </View>
