@@ -1,8 +1,18 @@
+import {ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
+
+interface Attribute {
+  [key: string]: ProofAttributeInfo
+}
+
+interface Predicate {
+  [key: string]: ProofPredicateInfo
+}
+
 export interface Request {
   title: string
   description: string
-  attributes: any
-  predicates: any
+  attributes: Attribute
+  predicates: Predicate
 }
 
 export interface Onboarding {
@@ -12,4 +22,5 @@ export interface Onboarding {
 export interface State {
   onboarding: Onboarding
   proofRequest?: Request
+  requests: Request[]
 }

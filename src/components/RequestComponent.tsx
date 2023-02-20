@@ -10,12 +10,7 @@ import {Request} from '../contexts/types'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 type itemProps = {
-  item: {
-    title: string
-    description: string
-    attributes: any
-    predicate: any
-  }
+  item: Request
 }
 
 export const RequestComponent = ({item}: itemProps) => {
@@ -42,7 +37,7 @@ export const RequestComponent = ({item}: itemProps) => {
   const handleSelection = () => {
     dispatch({
       type: DispatchAction.PROOF_REQUEST_CHANGED,
-      payload: item as never as Request,
+      payload: item,
     })
     navigate('QRCode' as never)
   }
