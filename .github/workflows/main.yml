@@ -211,15 +211,15 @@ jobs:
         run: |
           export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin
           app-store-connect publish \
-          --issuer-id $APP_STORE_CONNECT_ISSUER_ID \
-          --key-id $APP_STORE_CONNECT_KEY_IDENTIFIER \
-          --private-key $APP_STORE_CONNECT_PRIVATE_KEY \
+          --issuer-id ${APP_STORE_CONNECT_ISSUER_ID} \
+          --key-id ${APP_STORE_CONNECT_KEY_IDENTIFIER} \
+          --private-key ${APP_STORE_CONNECT_PRIVATE_KEY} \
           --apple-id ${{ secrets.APPLE_ID }} \
           --password ${{ secrets.APPLE_ID_PASSWD }} \
           --enable-package-validation \
           --max-build-processing-wait 10
-          --testflight \
-          --beta-group "The Team"
+          #--testflight \
+          #--beta-group "The Team"
 
       - name: Ship to SauceLabs
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
