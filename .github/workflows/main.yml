@@ -181,7 +181,7 @@ jobs:
           -archivePath IngVerif.xcarchive \
           -exportPath export \
           -exportOptionsPlist ../options.plist \
-          -destination generic/platform=iOS -verbose CODE_SIGNING_REQUIRED=No CODE_SIGNING_ALLOWED=Yes
+          -destination generic/platform=iOS -verbose CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES
 
       # https://blog.codemagic.io/app-store-connect-api-codemagic-cli-tools/
       - name: Install Codemagic CLI Tools
