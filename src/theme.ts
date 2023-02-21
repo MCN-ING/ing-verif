@@ -7,6 +7,44 @@ export interface Theme {
   ColorPallet: ColorPallet
 }
 
+const NotificationColors: NotificationColors = {
+  success: '#FFFFFF',
+  successBorder: '#5B8046',
+  successIcon: '#5B8046',
+  successText: '#000000',
+  info: '#FFFFFF',
+  infoBorder: '#0099FF',
+  infoIcon: '#0099FF',
+  infoText: '#000000',
+  warn: '#FFFFFF',
+  warnBorder: '#D8AF3B',
+  warnIcon: '#D8AF3B',
+  warnText: '#000000',
+  error: '#FFFFFF',
+  errorBorder: '#F8DCD8',
+  errorIcon: '#F8DCD8',
+  errorText: '#000000',
+}
+
+interface NotificationColors {
+  success: string
+  successBorder: string
+  successIcon: string
+  successText: string
+  info: string
+  infoBorder: string
+  infoIcon: string
+  infoText: string
+  warn: string
+  warnBorder: string
+  warnIcon: string
+  warnText: string
+  error: string
+  errorBorder: string
+  errorIcon: string
+  errorText: string
+}
+
 interface ColorPallet {
   primaryBackground: string
   primaryText: string
@@ -20,6 +58,7 @@ interface ColorPallet {
   warning: string
   error: string
   link: string
+  notification: NotificationColors
 }
 
 const ColorPalletLight: ColorPallet = {
@@ -35,6 +74,7 @@ const ColorPalletLight: ColorPallet = {
   warning: '#D8AF3B',
   error: '#F8DCD8',
   link: '#095797',
+  notification: NotificationColors,
 }
 
 const ColorPalletDark: ColorPallet = {
@@ -50,6 +90,7 @@ const ColorPalletDark: ColorPallet = {
   warning: '#D8AF3B',
   error: '#F8DCD8',
   link: '#095797',
+  notification: NotificationColors,
 }
 
 const themeLight: Theme = {
