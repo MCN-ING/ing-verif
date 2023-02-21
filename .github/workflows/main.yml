@@ -166,7 +166,7 @@ jobs:
           -archivePath IngVerif.xcarchive \
           -sdk iphoneos \
           -verbose \
-          archive
+          -destination 'generic/platform=iOS' clean archive "$@"
 
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
