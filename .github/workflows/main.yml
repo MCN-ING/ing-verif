@@ -178,7 +178,7 @@ jobs:
         run: |
           xcodebuild \
           -exportArchive \
-          -archivePath IngVerif.xcarchive \
+          -archivePath "$HOME/Library/Developer/Xcode/Archives/$(date '+%Y-%m-%d')/IngVerif-$(date '+%H%M%S').xcarchive" \
           -exportPath export \
           -exportOptionsPlist ../options.plist \
           -destination generic/platform=iOS -verbose CODE_SIGNING_REQUIRED=No CODE_SIGNING_ALLOWED=Yes
