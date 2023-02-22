@@ -1,23 +1,24 @@
-import {t} from 'i18next'
 import React from 'react'
-import {View} from 'react-native'
+import {useTranslation} from 'react-i18next'
+import {ScrollView, View} from 'react-native'
 
 import {Header} from '../components/PageHeader'
-import {RequestComponent} from '../components/RequestComponent'
+import {RequestItem} from '../components/RequestItem'
 import {useStore} from '../contexts/store'
 import {Request} from '../contexts/types'
 
 export const Requests = () => {
   const [state] = useStore()
+  const {t} = useTranslation()
 
   return (
-    <View style={{justifyContent: 'center', alignContent: 'center'}}>
+    <View style={{justifyContent: 'center', alignContent: 'center', flex: 1}}>
       <Header title={t('Request.Title')} />
-      <View style={{marginTop: 10}}>
+      <ScrollView style={{marginHorizontal: 10, marginVertical: 10}}>
         {state.requests.map((item: Request, index: number) => {
-          return <RequestComponent key={index.toString()} item={item} />
+          return <RequestItem key={index.toString()} item={item} />
         })}
-      </View>
+      </ScrollView>
     </View>
   )
 }

@@ -37,6 +37,10 @@ const translation = {
   Request: {
     Title: "Choix d'une requête",
   },
+  ManageRequests: {
+    Title: 'Liste des requêtes de présentation',
+    AddButtonText: 'Ajouter une nouvelle requête',
+  },
   sections: {
     schema: 'Schémas',
   },
@@ -45,6 +49,7 @@ const translation = {
     QRCode: 'Connexion',
     Validation: 'Vérification',
     Requests: 'Requêtes',
+    ManageRequests: 'Gestion des requêtes',
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",
