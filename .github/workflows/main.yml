@@ -157,7 +157,7 @@ jobs:
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         working-directory: ios
         run: |
-          xcodebuild -workspace IngVerif.xcworkspace -scheme IngVerif -configuration Release -destination 'generic/platform=iOS' -archivePath IngVerif.xcarchive clean archive "$@" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY="Apple Distribution" DEVELOPMENT_TEAM="7V2Y6HDP66" CODE_SIGN_STYLE="Manual"
+          xcodebuild -workspace IngVerif.xcworkspace -scheme IngVerif -configuration Release -destination 'generic/platform=iOS' -archivePath IngVerif.xcarchive clean archive "$@" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY="iPhone Distribution" DEVELOPMENT_TEAM="2RST8749NS" CODE_SIGN_STYLE="Manual"
 
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
