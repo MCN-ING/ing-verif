@@ -203,9 +203,6 @@ jobs:
           app-store-connect publish \
           --apple-id ${{ secrets.APPLE_ID }} \
           --password ${{ secrets.APPLE_ID_PASSWD }} \
-          --issuer-id ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }} \
-          --key-id ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }} \
-          --private-key ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY_95 }} \
           --enable-package-validation \
           --max-build-processing-wait 10 \
           --testflight
