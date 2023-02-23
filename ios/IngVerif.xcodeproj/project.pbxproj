@@ -499,7 +499,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2RST8749NS;
 				ENABLE_BITCODE = NO;
@@ -534,7 +534,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ministere de la Cybersecurite et du Numerique (2RST8749NS)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2RST8749NS;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2RST8749NS;
 				INFOPLIST_FILE = IngVerif/Info.plist;
