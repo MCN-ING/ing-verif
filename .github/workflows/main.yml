@@ -4,6 +4,7 @@ env:
   cacheId: "2" # increment to expire the cache
   appBuildNumber: ${{ github.run_number }}
   appBuildVersion: "1.0.1"
+  project-path: ios
 
 on:
   push:
