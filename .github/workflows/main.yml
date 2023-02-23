@@ -157,7 +157,16 @@ jobs:
         if: github.ref_name == 'main' && needs.check-ios-secrets.outputs.isReleaseBuild == 'true'
         working-directory: ios
         run: |
-          xcodebuild -workspace IngVerif.xcworkspace -scheme IngVerif -configuration Release -destination 'generic/platform=iOS' -archivePath IngVerif.xcarchive clean archive "$@" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY="iPhone Distribution" DEVELOPMENT_TEAM="2RST8749NS" CODE_SIGN_STYLE="Manual"
+          xcodebuild \
+          -workspace IngVerif.xcworkspace \
+          -scheme IngVerif \
+          -configuration Release \
+          -derivedDataPath xbuild \
+          -xcconfig ../release.xcconfig \
+          -archivePath IngVerif.xcarchive \
+          -sdk iphoneos \
+          -verbose \
+          archive
 
       - name: Debug build
         if: github.ref_name != 'main' || needs.check-ios-secrets.outputs.isReleaseBuild != 'true'
@@ -181,7 +190,7 @@ jobs:
           -archivePath IngVerif.xcarchive \
           -exportPath export \
           -exportOptionsPlist ../options.plist \
-          -destination generic/platform=iOS -verbose CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES
+          -verbose
 
       # https://blog.codemagic.io/app-store-connect-api-codemagic-cli-tools/
       - name: Install Codemagic CLI Tools
@@ -365,7 +374,7 @@ jobs:
         with:
           username: ${{ secrets.SAUCE_USERNAME }}
           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
-          directDomains: aries-mediator-agent-test.apps.silver.devops.gov.bc.ca
+          directDomains: aries-mediator.apps.exp.openshift.cqen.ca
 
       - name: Fetch mobile test harness repo
         uses: actions/checkout@v2
@@ -380,7 +389,7 @@ jobs:
           LEDGER_URL_CONFIG: "http://test.bcovrin.vonx.io"
           REGION: "us-west-1"
         with:
-          MOBILE_WALLET: "-w ing_verif"
+          MOBILE_WALLET: "-w IngVerif"
           ISSUER_AGENT: '-i "AATH;http://0.0.0.0:9020"'
           VERIFIER_AGENT: '-v "AATH;http://0.0.0.0:9030"'
           DEVICE_CLOUD: "-d SauceLabs"
@@ -388,7 +397,7 @@ jobs:
           DEVICE_CLOUD_KEY: "-k ${{ secrets.SAUCE_ACCESS_KEY }}"
           MOBILE_PLATFORM: ${{ matrix.mobile-platform }}
           APP_FILE_NAME: ${{ matrix.app-file-name }}
-          TEST_SCOPE: "-t @bc_wallet -t @SmokeTest"
+          TEST_SCOPE: "-t @IngVerif -t @SmokeTest"
           REPORT_PROJECT: ${{ matrix.report-project }}
 
       - name: Upload smoke-test results to Allure
