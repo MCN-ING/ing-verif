@@ -4,15 +4,15 @@ interface Attribute {
   [key: string]: ProofAttributeInfo
 }
 
-interface Predicate {
+export interface Predicate {
   [key: string]: ProofPredicateInfo
 }
 
 export interface Request {
   title: string
   description: string
-  attributes: Attribute
-  predicates: Predicate
+  attributes?: Attribute
+  predicates?: Predicate
 }
 
 export interface Onboarding {

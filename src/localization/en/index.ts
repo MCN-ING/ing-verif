@@ -57,6 +57,8 @@ const translation = {
     Description2: 'Check that a person is 65 years of age or older.',
     Title3: 'Validation of identity',
     Description3: 'Check the last name and first name of a person.',
+    Title4: 'Validation of date of birth',
+    Description4: 'Check the date of birth of a person.',
   },
   TermsV2: {
     title: 'Terms and Conditions',

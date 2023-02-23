@@ -57,6 +57,8 @@ const translation = {
     Description2: "Vérifiez qu'une personne est âgée de 65 et plus.",
     Title3: 'Vérification de l’identité',
     Description3: 'Vérifiez le nom et prénom d’une personne.',
+    Title4: 'Vérification de la date de naissance',
+    Description4: 'Vérifiez la date de naissance d’une personne.',
   },
   TermsV2: {
     title: "Conditions d'utilisation",
