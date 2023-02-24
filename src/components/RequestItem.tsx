@@ -24,11 +24,10 @@ export const RequestItem = ({item, isManaged = false}: Props) => {
     container: {
       flex: 1,
       flexDirection: 'row',
-      paddingLeft: 24,
-      paddingRight: 24,
+      paddingHorizontal: 24,
       paddingBottom: 24,
       paddingTop: 32,
-      marginVertical: 10,
+      marginVertical: 5,
       elevation: 3,
       backgroundColor: ColorPallet.white,
       borderColor: ColorPallet.lightGray,
@@ -60,7 +59,7 @@ export const RequestItem = ({item, isManaged = false}: Props) => {
     requestTitle: {
       fontWeight: 'bold',
       fontSize: 18,
-      color: '#223654',
+      color: ColorPallet.primary,
     },
   })
 

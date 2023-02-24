@@ -14,7 +14,7 @@ export const Requests = () => {
   return (
     <View style={{justifyContent: 'center', alignContent: 'center', flex: 1}}>
       <Header title={t('Request.Title')} />
-      <ScrollView style={{marginHorizontal: 10, marginVertical: 10}}>
+      <ScrollView style={{padding: 10}}>
         {state.requests.map((item: Request, index: number) => {
           return <RequestItem key={index.toString()} item={item} />
         })}
