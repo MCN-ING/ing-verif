@@ -44,6 +44,13 @@ const translation = {
   ManageRequests: {
     Title: 'Liste des requêtes de présentation',
     AddButtonText: 'Ajouter une nouvelle requête',
+    RequestTitle: 'Nom de la requête',
+    RequestDescription: 'Description de la requête',
+    RequestAttributes: 'Liste des attributs',
+    AddAttribute: 'Ajouter un attribut',
+    AddPredicates: 'Ajouter un prédicat',
+    SaveRequest: 'Enregistrer la requête',
+    Cancel: 'Annuler',
   },
   sections: {
     schema: 'Schémas',

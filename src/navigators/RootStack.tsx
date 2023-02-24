@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {useTheme} from '../contexts/theme'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
+import {AddRequest} from '../screens/AddRequest'
 import {ManageRequests} from '../screens/ManageRequests'
 
 import TermsStack from './TermsStack'
@@ -100,6 +101,15 @@ const RootStack = () => {
           headerShown: true,
           gestureEnabled: true,
           headerBackTitle: t('Global.Back') || '',
+        }}
+      />
+      <Stack.Screen
+        name="AddRequest"
+        component={AddRequest}
+        options={{
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: true,
         }}
       />
     </Stack.Navigator>

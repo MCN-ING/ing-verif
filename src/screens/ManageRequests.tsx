@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
 import {ScrollView, View} from 'react-native'
@@ -11,6 +12,7 @@ import {Request} from '../contexts/types'
 export const ManageRequests = () => {
   const [state] = useStore()
   const {t} = useTranslation()
+  const navigation = useNavigation()
 
   return (
     <View style={{flex: 1}}>
@@ -21,7 +23,11 @@ export const ManageRequests = () => {
         })}
       </ScrollView>
       <View style={{marginBottom: 5}}>
-        <LargeButton isPrimary title={t('ManageRequests.AddButtonText')} action={() => null} />
+        <LargeButton
+          isPrimary
+          title={t('ManageRequests.AddButtonText')}
+          action={() => navigation.navigate('AddRequest' as never)}
+        />
       </View>
     </View>
   )
