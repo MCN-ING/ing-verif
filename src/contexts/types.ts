@@ -12,7 +12,7 @@ export interface Request {
   title: string
   description: string
   attributes: Attribute
-  predicates: Predicate
+  predicates?: Predicate
 }
 
 export interface Onboarding {
