@@ -44,11 +44,16 @@ const translation = {
   Request: {
     Title: 'Choice of a request',
   },
+  ManageRequests: {
+    Title: 'List of Submission Requests',
+    AddButtonText: 'Add New Request',
+  },
   Screens: {
     Home: 'Home',
     QRCode: 'Connection',
     Validation: 'Verification',
     Requests: 'Requests',
+    ManageRequests: 'Request Management',
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',
