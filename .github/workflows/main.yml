@@ -124,7 +124,7 @@ jobs:
           MARKETING_VERSION: ${{ env.appBuildVersion }}
         run: |
           agvtool new-version ${CURRENT_PROJECT_VERSION} && \
-          #agvtool next-version -all && \
+          agvtool next-version -all && \
           agvtool new-marketing-version ${MARKETING_VERSION}
 
         # Actual environment variables are not being picked up
