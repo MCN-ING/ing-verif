@@ -6,17 +6,38 @@ import {useTheme} from '../contexts/theme'
 
 interface Props {
   isPrimary?: boolean
+  color?: string
   title: string
   action: () => void
   disabled?: boolean
 }
 
-export const LargeButton = ({title, action, isPrimary = false, disabled = false}: Props) => {
+export const LargeButton = ({title, action, color, isPrimary = false, disabled = false}: Props) => {
   const {ColorPallet} = useTheme()
+
+  let backgroundColor = ColorPallet.primary
+  let borderColor = ColorPallet.primary
+  let textColor = ColorPallet.white
+
+  if (isPrimary) {
+    if (color) {
+      backgroundColor = color
+      borderColor = color
+    }
+  } else {
+    if (color) {
+      backgroundColor = ColorPallet.white
+      borderColor = color
+      textColor = color
+    } else {
+      backgroundColor = ColorPallet.primaryBackground
+      textColor = ColorPallet.primary
+    }
+  }
 
   const styles = StyleSheet.create({
     buttonContainer: {
-      backgroundColor: isPrimary ? ColorPallet.primary : ColorPallet.primaryBackground,
+      backgroundColor: backgroundColor,
       borderRadius: 5,
       marginHorizontal: 10,
       padding: 20,
@@ -24,12 +45,12 @@ export const LargeButton = ({title, action, isPrimary = false, disabled = false}
       alignItems: 'center',
       textAlign: 'center',
       borderWidth: 2,
-      borderColor: ColorPallet.primary,
+      borderColor: borderColor,
       borderStyle: 'solid',
     },
     textStyles: {
       fontWeight: 'bold',
-      color: isPrimary ? ColorPallet.white : ColorPallet.primary,
+      color: textColor,
       fontSize: 16,
     },
   })
