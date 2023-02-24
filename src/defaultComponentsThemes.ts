@@ -16,6 +16,11 @@ const DefaultComponentsThemes = () => {
       color: ColorPallet.primaryText,
       fontSize: 16,
     },
+    note: {
+      color: ColorPallet.primaryText,
+      fontWeight: '400',
+      fontSize: 14,
+    },
     title: {
       fontSize: 30,
       fontWeight: 'bold',

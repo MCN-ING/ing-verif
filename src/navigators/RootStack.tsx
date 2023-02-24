@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {useTheme} from '../contexts/theme'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
+import {ManageRequests} from '../screens/ManageRequests'
 
 import TermsStack from './TermsStack'
 
@@ -18,6 +19,8 @@ const getTitle = (route: any, t: TFunction<'translation', undefined, 'translatio
       return t('Screens.Home') || ''
     case 'Requests':
       return t('Screens.Requests') || ''
+    case 'ManageRequests':
+      return t('Screens.ManageRequests') || ''
     default:
       return t('Screens.Home') || ''
   }
@@ -63,6 +66,18 @@ const RootStack = () => {
         })}
         component={BottomNav}
       />
+      <Stack.Screen
+        name="Requests"
+        component={Requests}
+        options={{
+          title: t('Screens.Requests') || '',
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
+        }}
+      />
+
       <Stack.Screen
         name="QRCode"
         component={QRCodeScreen}
@@ -113,8 +128,8 @@ const BottomNav = () => {
         }}
       />
       <Tab.Screen
-        name={'Requests'}
-        component={Requests}
+        name={'ManageRequests'}
+        component={ManageRequests}
         options={{
           title: t('Screens.Requests') || '',
           tabBarIcon: ({focused}) => (
