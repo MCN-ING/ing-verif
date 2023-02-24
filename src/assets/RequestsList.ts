@@ -41,6 +41,19 @@ export const RequestsList = (t: any): Request[] => {
       },
     },
     {
+      title: t('RequestsList.Title4'),
+      description: t('RequestsList.Description4'),
+      attributes: {},
+      predicates: {
+        birthdate: new ProofPredicateInfo({
+          name: 'birthdate_dateint',
+          predicateType: PredicateType.LessThanOrEqualTo,
+          predicateValue: 18,
+          restrictions: [],
+        }),
+      },
+    },
+    {
       title: t('RequestsList.Title3'),
       description: t('RequestsList.Description3'),
       attributes: {

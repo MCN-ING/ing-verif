@@ -9,8 +9,10 @@ import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
 import {Spinner} from '../components/Spinner'
 import {useStore} from '../contexts/store'
+import {Predicate} from '../contexts/types'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {createLegacyInvitation} from '../utils/createLegacyInvitation'
+import {dateIntPredicate} from '../utils/dateIntPredicate'
 import {sendProofExchange} from '../utils/sendProofExchange'
 
 export const QRCodeScreen = ({navigation}: any) => {
@@ -66,13 +68,17 @@ export const QRCodeScreen = ({navigation}: any) => {
       return
     }
     for (let i = 0; i < connections.length; i++) {
+      let predicates: Predicate | undefined
+      if (state.proofRequest.predicates) {
+        predicates = dateIntPredicate(state.proofRequest.predicates)
+      }
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
         const proofExchangeRecord = await sendProofExchange(
           agent,
           connections[i],
           state.proofRequest.title,
           state.proofRequest.attributes,
-          state.proofRequest.predicates
+          predicates
         )
         navigation.navigate('ValidationResult', {
           proofId: proofExchangeRecord.proofId,
