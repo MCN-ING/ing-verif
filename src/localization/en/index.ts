@@ -47,6 +47,13 @@ const translation = {
   ManageRequests: {
     Title: 'List of Submission Requests',
     AddButtonText: 'Add New Request',
+    RequestTitle: 'Name of the request',
+    RequestDescription: 'Description of the request',
+    RequestAttributes: 'List of attributes',
+    AddAttribute: 'Add an attribute',
+    AddPredicates: 'Add a predicate',
+    SaveRequest: 'Save the request',
+    Cancel: 'Cancel',
   },
   Screens: {
     Home: 'Home',
