@@ -4,6 +4,8 @@ import {
   MediatorPickupStrategy,
   WsOutboundTransport,
   HttpOutboundTransport,
+  ConsoleLogger,
+  LogLevel,
 } from '@aries-framework/core'
 import {agentDependencies} from '@aries-framework/react-native'
 import Config from 'react-native-config'
@@ -12,7 +14,7 @@ import ledgers from '../configs/ledgers/indy'
 
 const InitializeAgent = async () => {
   const indyLedgers = ledgers.filter((item) => !item.id.startsWith('Indicio'))
-
+  agentDependencies.indy.setDefaultLogger('trace')
   try {
     const newAgent = new Agent({
       config: {
@@ -25,6 +27,7 @@ const InitializeAgent = async () => {
         indyLedgers,
         connectToIndyLedgersOnStartup: true,
         autoUpdateStorageOnStartup: true,
+        logger: new ConsoleLogger(LogLevel.info),
       },
       dependencies: agentDependencies,
     })
