@@ -85,6 +85,14 @@ project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
 ]
 
+project.ext.envConfigFiles = [
+  release: ".env",
+  dev: ".env",
+// Also you can different types of environments,
+  // for example staging.
+  stage: ".env",
+]
+
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
