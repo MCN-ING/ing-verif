@@ -120,7 +120,7 @@ jobs:
       - name: Bump Build No.
         working-directory: ios
         env:
-          CURRENT_PROJECT_VERSION: ${{ env.appBuildNumber -1}}
+          CURRENT_PROJECT_VERSION: ${{ env.appBuildNumber }}
           MARKETING_VERSION: ${{ env.appBuildVersion }}
         run: |
           agvtool new-version ${CURRENT_PROJECT_VERSION} && \
