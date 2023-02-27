@@ -6,7 +6,7 @@ import {
   HttpOutboundTransport,
 } from '@aries-framework/core'
 import {agentDependencies} from '@aries-framework/react-native'
-import Config from 'react-native-config'
+import {Config} from 'react-native-config'
 
 import ledgers from '../configs/ledgers/indy'
 
