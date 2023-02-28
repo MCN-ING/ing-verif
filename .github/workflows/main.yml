@@ -112,6 +112,7 @@ jobs:
         # if: steps.pod-cache.outputs.cache-hit != 'true' || steps.npm-cache.outputs.cache-hit != 'true'
         working-directory: ios
         run: |
+          gem install activesupport -v 6.1.7.2
           gem install cocoapods && \
           pod install && \
           git status && \
@@ -122,10 +123,8 @@ jobs:
         env:
           CURRENT_PROJECT_VERSION: ${{ env.appBuildNumber }}
           MARKETING_VERSION: ${{ env.appBuildVersion }}
-          INC: 1
-          NUM_VERSION: $(( ${CURRENT_PROJECT_VERSION} - ${INC} ))
         run: |
-          agvtool new-version ${NUM_VERSION} && \
+          agvtool new-version ${CURRENT_PROJECT_VERSION} && \
           agvtool next-version -all && \
           agvtool new-marketing-version ${MARKETING_VERSION}
 
