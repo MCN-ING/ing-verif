@@ -59,7 +59,11 @@ const translation = {
     ModififyRequestButton: 'Edit',
   },
   Comparaison: {
-    Age: {
+    age: {
+      '>=': 'years old or more',
+      '<=': 'years old or less',
+    },
+    birthdate: {
       '>=': 'years old or more',
       '<=': 'years old or less',
     },
