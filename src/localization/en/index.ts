@@ -48,12 +48,29 @@ const translation = {
     Title: 'List of Submission Requests',
     AddButtonText: 'Add New Request',
   },
+  RequestDetails: {
+    Name: 'Request Name',
+    Description: 'Request Description',
+    Attributes: 'Request Attributes',
+    Predicates: 'Request Predicates',
+    UseRequestButton: 'Use the Request',
+    DeleteRequestButton: 'Delete Request',
+    BackToRequestListButton: 'Back to the List of Requests',
+    ModififyRequestButton: 'Edit',
+  },
+  Comparaison: {
+    Age: {
+      '>=': 'years old or more',
+      '<=': 'years old or less',
+    },
+  },
   Screens: {
     Home: 'Home',
     QRCode: 'Connection',
     Validation: 'Verification',
     Requests: 'Requests',
     ManageRequests: 'Request Management',
+    RequestDetails: 'Request Details',
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',

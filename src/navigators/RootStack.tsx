@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import {useTheme} from '../contexts/theme'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
 import {ManageRequests} from '../screens/ManageRequests'
+import {RequestDetails} from '../screens/RequestDetails'
 
 import TermsStack from './TermsStack'
 
@@ -71,6 +72,18 @@ const RootStack = () => {
         component={Requests}
         options={{
           title: t('Screens.Requests') || '',
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
+        }}
+      />
+
+      <Stack.Screen
+        name="RequestDetails"
+        component={RequestDetails}
+        options={{
+          title: t('Screens.RequestDetails'),
           headerTintColor: ColorPallet.white,
           headerShown: true,
           gestureEnabled: true,
