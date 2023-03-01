@@ -1,4 +1,3 @@
-// import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
@@ -15,10 +14,7 @@ type Props = {
 
 export const RequestItem = ({item, action, isManaged = false}: Props) => {
   const defaultStyles = DefaultComponentsThemes()
-  // const [, dispatch] = useStore()
   const {ColorPallet} = useTheme()
-  // const {navigate} = useNavigation()
-
   const styles = StyleSheet.create({
     container: {
       flex: 1,
