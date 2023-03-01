@@ -11,7 +11,6 @@ import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '
 import {ManageRequests} from '../screens/ManageRequests'
 import {RequestDetails} from '../screens/RequestDetails'
 
-import ManageRequestsStack from './ManageRequestsStack'
 import TermsStack from './TermsStack'
 
 const getTitle = (route: any, t: TFunction<'translation', undefined, 'translation'>) => {
