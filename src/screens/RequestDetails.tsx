@@ -18,7 +18,7 @@ type manageRequestsProp = StackNavigationProp<ManageRequestsParamList, 'ManageRe
 export const RequestDetails = () => {
   const [, dispatch] = useStore()
   const {t} = useTranslation()
-  const {navigate} = useNavigation<manageRequestsProp>()
+  const navigation = useNavigation<manageRequestsProp>()
   const defaultStyles = DefaultComponentsThemes()
   const {ColorPallet} = useTheme()
   const route = useRoute<RouteProp<ManageRequestsParamList, 'RequestDetails'>>()
@@ -48,7 +48,11 @@ export const RequestDetails = () => {
       payload: item,
     })
 
-    navigate('QRCode' as never)
+    navigation.navigate('QRCode' as never)
+  }
+
+  const editHandler = () => {
+    //TODO: Go to screen for modifying the field clicked
   }
 
   return (
@@ -58,18 +62,20 @@ export const RequestDetails = () => {
           sectionLabel={t('RequestDetails.Name')}
           sectionDescription={item.title}
           containerStyle={{marginBottom: 20}}
+          action={editHandler}
         />
         <RequestDetailItem
           sectionLabel={t('RequestDetails.Description')}
           sectionDescription={item.description}
           containerStyle={{marginBottom: 20}}
+          action={editHandler}
         />
         <View style={{marginBottom: 20}}>
           <View style={[styles.detailsDescription, {marginBottom: 10}]}>
             <Text style={[defaultStyles.text, defaultStyles.requestDetailsTitle]}>
               {t('RequestDetails.Attributes')}
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={editHandler}>
               <Text style={defaultStyles.link}>Modifier</Text>
             </TouchableOpacity>
           </View>
@@ -111,7 +117,7 @@ export const RequestDetails = () => {
             color={ColorPallet.error}
           />
         </View>
-        <LargeButton title={t('RequestDetails.BackToRequestListButton')} action={() => navigate('ManageRequests')} />
+        <LargeButton title={t('RequestDetails.BackToRequestListButton')} action={() => navigation.goBack()} />
       </View>
     </View>
   )
