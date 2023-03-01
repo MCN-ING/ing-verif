@@ -76,7 +76,7 @@ export const RequestDetails = () => {
               {t('RequestDetails.Attributes')}
             </Text>
             <TouchableOpacity onPress={editHandler}>
-              <Text style={defaultStyles.link}>Modifier</Text>
+              <Text style={defaultStyles.link}>{t('RequestDetails.ModifyRequestButton')}</Text>
             </TouchableOpacity>
           </View>
           {item.attributes && (
