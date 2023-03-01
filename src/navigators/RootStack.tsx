@@ -39,7 +39,6 @@ const RootStack = () => {
           backgroundColor: ColorPallet.primary,
         },
         headerTitleAlign: 'center',
-        
       }}>
       <Stack.Screen
         name="Splash"
