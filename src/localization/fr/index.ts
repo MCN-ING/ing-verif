@@ -12,9 +12,7 @@ const translation = {
     Title: 'Vérifier une identité',
     Slider: {
       Title1: 'Sélectionner une requête',
-      Body1: "Utiliser le code QR pour vérifier l'identité de la personne.",
       Title2: 'Changer le schéma de vérification',
-      Body2: "Changer le schéma de vérification pour vérifier l'identité de la personne.",
     },
   },
   QRCode: {
