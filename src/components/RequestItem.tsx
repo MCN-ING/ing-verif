@@ -1,24 +1,23 @@
-import {useNavigation} from '@react-navigation/native'
+// import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 
-import {DispatchAction} from '../contexts/reducers/store'
-import {useStore} from '../contexts/store'
 import {useTheme} from '../contexts/theme'
 import {Request} from '../contexts/types'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 type Props = {
   item: Request
+  action: () => void
   isManaged?: boolean
 }
 
-export const RequestItem = ({item, isManaged = false}: Props) => {
+export const RequestItem = ({item, action, isManaged = false}: Props) => {
   const defaultStyles = DefaultComponentsThemes()
-  const [, dispatch] = useStore()
+  // const [, dispatch] = useStore()
   const {ColorPallet} = useTheme()
-  const {navigate} = useNavigation()
+  // const {navigate} = useNavigation()
 
   const styles = StyleSheet.create({
     container: {
@@ -59,25 +58,12 @@ export const RequestItem = ({item, isManaged = false}: Props) => {
     requestTitle: {
       fontWeight: 'bold',
       fontSize: 18,
-      color: ColorPallet.primary,
+      color: ColorPallet.primaryText,
     },
   })
 
-  const handleSelection = () => {
-    if (isManaged) {
-      // Navigate to Request Form and send params
-      // to prefill request form fields
-    } else {
-      dispatch({
-        type: DispatchAction.PROOF_REQUEST_CHANGED,
-        payload: item,
-      })
-      navigate('QRCode' as never)
-    }
-  }
-
   let content = (
-    <TouchableOpacity style={[styles.container, styles.containerManaged]} onPress={handleSelection}>
+    <TouchableOpacity style={[styles.container, styles.containerManaged]} onPress={action}>
       <View style={[styles.requestCard, {flex: 2}]}>
         <Text style={[defaultStyles.text, styles.requestTitle, styles.textManaged]}>{item.title}</Text>
       </View>
@@ -87,7 +73,7 @@ export const RequestItem = ({item, isManaged = false}: Props) => {
 
   if (isManaged) {
     content = (
-      <TouchableOpacity style={styles.container} onPress={handleSelection}>
+      <TouchableOpacity style={styles.container} onPress={action}>
         <View style={styles.requestCard}>
           <Text style={[defaultStyles.text, styles.requestText, styles.requestTitle]}>{item.title}</Text>
           <Text style={[defaultStyles.note, styles.requestText]}>{item.description}</Text>

@@ -1,6 +1,6 @@
 import {ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
 
-interface Attribute {
+export interface Attribute {
   [key: string]: ProofAttributeInfo
 }
 

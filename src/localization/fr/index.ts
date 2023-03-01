@@ -45,6 +45,26 @@ const translation = {
     Title: 'Liste des requêtes de présentation',
     AddButtonText: 'Ajouter une nouvelle requête',
   },
+  RequestDetails: {
+    Name: 'Nom de la requête',
+    Description: 'Description de la requête',
+    Attributes: 'Liste des attributs',
+    Predicates: 'Liste de prédicats',
+    UseRequestButton: 'Utiliser la requête',
+    DeleteRequestButton: 'Supprimer la requête',
+    BackToRequestListButton: 'Retour à la liste des requêtes',
+    ModifyRequestButton: 'Modifier',
+  },
+  Comparaison: {
+    age: {
+      '>=': 'ans ou plus',
+      '<=': 'ans ou moins',
+    },
+    birthdate: {
+      '>=': 'ans ou plus',
+      '<=': 'ans ou moins',
+    },
+  },
   sections: {
     schema: 'Schémas',
   },
@@ -54,6 +74,7 @@ const translation = {
     Validation: 'Vérification',
     Requests: 'Requêtes',
     ManageRequests: 'Gestion des requêtes',
+    RequestDetails: 'Détails de la requête',
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",
