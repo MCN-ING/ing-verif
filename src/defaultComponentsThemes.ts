@@ -16,6 +16,19 @@ const DefaultComponentsThemes = () => {
       color: ColorPallet.primaryText,
       fontSize: 16,
     },
+    requestDetailsTitle: {
+      color: ColorPallet.primaryText,
+      fontWeight: '700',
+      fontSize: 18,
+    },
+    requestDetailsBody: {
+      color: ColorPallet.primaryText,
+      fontWeight: '400',
+      fontSize: 16,
+    },
+    attributePredicate: {
+      fontWeight: '600',
+    },
     note: {
       color: ColorPallet.primaryText,
       fontWeight: '400',
@@ -28,6 +41,11 @@ const DefaultComponentsThemes = () => {
     subtitle: {
       fontSize: 20,
       fontWeight: 'bold',
+    },
+    link: {
+      color: ColorPallet.link,
+      fontWeight: '600',
+      fontSize: 14,
     },
   })
 }
