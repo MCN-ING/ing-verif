@@ -56,7 +56,7 @@ const translation = {
     UseRequestButton: 'Use the Request',
     DeleteRequestButton: 'Delete Request',
     BackToRequestListButton: 'Back to the List of Requests',
-    ModififyRequestButton: 'Edit',
+    ModifyRequestButton: 'Edit',
   },
   Comparaison: {
     age: {
