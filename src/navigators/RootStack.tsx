@@ -65,6 +65,7 @@ const RootStack = () => {
           title: getTitle(route, t),
           headerLeft: () => false,
           headerTintColor: ColorPallet.white,
+          gestureEnabled: false,
         })}
         component={BottomNav}
       />
