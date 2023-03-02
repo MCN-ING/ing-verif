@@ -11,8 +11,8 @@ const translation = {
   Home: {
     Title: 'Vérifier une identité',
     Slider: {
-      Title1: 'Sélectionner une requête',
-      Title2: 'Changer le schéma de vérification',
+      Title1: "Sélectionner une requête",
+      Title2: "Changer le schéma de vérification",
     },
   },
   QRCode: {
