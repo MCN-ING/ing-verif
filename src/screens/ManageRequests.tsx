@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native'
 import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, View} from 'react-native'
+import {FlatList, View} from 'react-native'
 
 import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
@@ -28,13 +28,14 @@ export const ManageRequests = () => {
   return (
     <View style={{flex: 1}}>
       <Header title={t('ManageRequests.Title')} />
-      <ScrollView style={{paddingHorizontal: 10, paddingBottom: 10}}>
-        {state.requests.map((item: Request, index: number) => {
-          return (
-            <RequestItem key={index.toString()} item={item} isManaged action={() => handleRequestSelection(item)} />
-          )
-        })}
-      </ScrollView>
+      <FlatList
+        data={state.requests}
+        renderItem={({item}) => (
+          <View style={{paddingHorizontal: 10, paddingBottom: 10}}>
+            <RequestItem item={item} isManaged action={() => handleRequestSelection(item)} />
+          </View>
+        )}
+      />
       <View style={{marginBottom: 5}}>
         <LargeButton isPrimary title={t('ManageRequests.AddButtonText')} action={() => null} />
       </View>

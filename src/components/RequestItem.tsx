@@ -1,6 +1,8 @@
-import React from 'react'
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import React, {useState} from 'react'
+import {StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native'
+import {Swipeable} from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/AntDesign'
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 
 import {useTheme} from '../contexts/theme'
 import {Request} from '../contexts/types'
@@ -15,6 +17,8 @@ type Props = {
 export const RequestItem = ({item, action, isManaged = false}: Props) => {
   const defaultStyles = DefaultComponentsThemes()
   const {ColorPallet} = useTheme()
+  const [borderRadius, setBorderRadius] = useState(4)
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -30,7 +34,10 @@ export const RequestItem = ({item, action, isManaged = false}: Props) => {
       shadowColor: ColorPallet.lightGray,
       shadowOffset: {width: 0, height: 4},
       shadowOpacity: 0.24,
-      borderRadius: 4,
+      borderTopLeftRadius: 4,
+      borderBottomLeftRadius: 4,
+      borderTopRightRadius: borderRadius,
+      borderBottomRightRadius: borderRadius,
     },
     containerManaged: {
       borderWidth: 3,
@@ -58,6 +65,32 @@ export const RequestItem = ({item, action, isManaged = false}: Props) => {
     },
   })
 
+  const RightSwipeActions = () => {
+    return (
+      <View
+        style={{
+          marginVertical: 5,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          paddingVertical: 50,
+          paddingHorizontal: 34,
+          backgroundColor: ColorPallet.error,
+        }}>
+        <FontAwesomeIcon name="trash" size={24} color={ColorPallet.white} />
+      </View>
+    )
+  }
+
+  const onSwipeRightHandler = () => {
+    setBorderRadius(0)
+    // Delete item from request list
+  }
+
+  const onSwipeCloseHandler = () => {
+    setBorderRadius(4)
+  }
+
   let content = (
     <TouchableOpacity style={[styles.container, styles.containerManaged]} onPress={action}>
       <View style={[styles.requestCard, {flex: 2}]}>
@@ -69,12 +102,19 @@ export const RequestItem = ({item, action, isManaged = false}: Props) => {
 
   if (isManaged) {
     content = (
-      <TouchableOpacity style={styles.container} onPress={action}>
-        <View style={styles.requestCard}>
-          <Text style={[defaultStyles.text, styles.requestText, styles.requestTitle]}>{item.title}</Text>
-          <Text style={[defaultStyles.note, styles.requestText]}>{item.description}</Text>
-        </View>
-      </TouchableOpacity>
+      <Swipeable
+        renderRightActions={RightSwipeActions}
+        onSwipeableRightOpen={onSwipeRightHandler}
+        onSwipeableClose={onSwipeCloseHandler}>
+        <TouchableWithoutFeedback onPress={action}>
+          <View style={styles.container}>
+            <View style={styles.requestCard}>
+              <Text style={[defaultStyles.text, styles.requestText, styles.requestTitle]}>{item.title}</Text>
+              <Text style={[defaultStyles.note, styles.requestText]}>{item.description}</Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </Swipeable>
     )
   }
 
