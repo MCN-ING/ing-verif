@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/native'
+import {useFocusEffect, useNavigation} from '@react-navigation/native'
 import React, {useCallback, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, StyleSheet, Text, View, SafeAreaView} from 'react-native'
+import {ScrollView, StyleSheet, Text, View, SafeAreaView, BackHandler} from 'react-native'
 
 import CheckBoxRow from '../components/CheckBoxRow'
 import {LargeButton} from '../components/LargeButton'
@@ -55,6 +55,18 @@ const Terms: React.FC = () => {
       fontWeight: 'bold',
     },
   })
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        return true
+      }
+
+      BackHandler.addEventListener('hardwareBackPress', onBackPress)
+
+      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress)
+    }, [])
+  )
 
   const onSubmitPressed = useCallback(() => {
     setFormSubmitted(true)

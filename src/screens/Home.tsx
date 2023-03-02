@@ -1,6 +1,7 @@
+import {useFocusEffect} from '@react-navigation/native'
 import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {View} from 'react-native'
+import {BackHandler, View} from 'react-native'
 
 import {HorizontalSlider} from '../components/HorizontalSlider/HorizontalSlider'
 import {ItemInfo} from '../components/HorizontalSlider/SliderItem'
@@ -15,6 +16,18 @@ export const Home = () => {
   const styles = DefaultComponentsThemes()
   const [items, setItems] = useState<ItemInfo[]>([])
   const [state] = useStore()
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        return true
+      }
+
+      BackHandler.addEventListener('hardwareBackPress', onBackPress)
+
+      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress)
+    }, [])
+  )
 
   useEffect(() => {
     if (state.proofRequest) {
