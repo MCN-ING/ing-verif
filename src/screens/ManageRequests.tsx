@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native'
 import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
-import {FlatList, ScrollView, View} from 'react-native'
+import {FlatList, View} from 'react-native'
 
 import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
