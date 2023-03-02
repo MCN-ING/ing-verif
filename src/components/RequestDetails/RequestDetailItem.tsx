@@ -1,7 +1,6 @@
-import React from 'react'
+import React, {ReactNode} from 'react'
 import {StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native'
 import {TouchableOpacity} from 'react-native-gesture-handler'
-import Icon from 'react-native-vector-icons/Ionicons'
 
 import {useTheme} from '../../contexts/theme'
 import DefaultComponentsThemes from '../../defaultComponentsThemes'
@@ -10,11 +9,12 @@ import {Separator} from '../Separator'
 interface Props {
   containerStyle?: StyleProp<ViewStyle>
   sectionLabel: string
-  sectionDescription: string
+  children: ReactNode
   action?: () => void
+  actionLabel: string
 }
 
-export const RequestDetailItem = ({sectionLabel, sectionDescription, containerStyle, action}: Props) => {
+export const RequestDetailItem = ({sectionLabel, children, containerStyle, action, actionLabel}: Props) => {
   const defaultStyles = DefaultComponentsThemes()
   const {ColorPallet} = useTheme()
 
@@ -38,11 +38,13 @@ export const RequestDetailItem = ({sectionLabel, sectionDescription, containerSt
 
   return (
     <View style={containerStyle}>
-      <Text style={styles.detailsTitle}>{sectionLabel}</Text>
-      <TouchableOpacity style={styles.detailsDescription} onPress={action}>
-        <Text style={[defaultStyles.text, {flex: 9}]}>{sectionDescription}</Text>
-        <Icon name="chevron-forward" size={24} style={{flex: 1, textAlign: 'right'}} />
-      </TouchableOpacity>
+      <View style={[styles.detailsDescription, {marginBottom: 10}]}>
+        <Text style={[defaultStyles.text, defaultStyles.requestDetailsTitle]}>{sectionLabel}</Text>
+        <TouchableOpacity onPress={action} style={{padding: 8}}>
+          <Text style={defaultStyles.link}>{actionLabel}</Text>
+        </TouchableOpacity>
+      </View>
+      {children}
       <Separator color={ColorPallet.darkGray} />
     </View>
   )
