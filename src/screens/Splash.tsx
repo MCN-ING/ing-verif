@@ -1,7 +1,7 @@
 import {useAgent} from '@aries-framework/react-hooks'
-import {useNavigation} from '@react-navigation/native'
-import {useEffect} from 'react'
-import {Image, SafeAreaView, StyleSheet} from 'react-native'
+import {useFocusEffect, useNavigation} from '@react-navigation/native'
+import React, {useEffect} from 'react'
+import {BackHandler, Image, SafeAreaView, StyleSheet} from 'react-native'
 
 import {useStore} from '../contexts/store'
 import {useTheme} from '../contexts/theme'
@@ -11,6 +11,18 @@ export const Splash = () => {
   const {ColorPallet} = useTheme()
   const {agent} = useAgent()
   const navigation = useNavigation()
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        return true
+      }
+
+      BackHandler.addEventListener('hardwareBackPress', onBackPress)
+
+      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress)
+    }, [])
+  )
 
   const styles = StyleSheet.create({
     container: {
