@@ -76,7 +76,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({children, initialSt
       }
     }
     getRequests()
-  })
+  }, [])
 
   return <StoreContext.Provider value={[state, dispatch]}>{children}</StoreContext.Provider>
 }

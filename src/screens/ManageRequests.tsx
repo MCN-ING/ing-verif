@@ -50,7 +50,7 @@ export const ManageRequests = () => {
       {requests.length === 0 && (
         <EmptyList
           body={t('RequestDetails.EmptyList')}
-          action={() => null}
+          action={() => navigate('AddRequest')}
           actionLabel={t('ManageRequests.AddButtonText')}
         />
       )}
@@ -72,7 +72,7 @@ export const ManageRequests = () => {
       )}
       {requests.length > 0 && (
         <View style={{marginBottom: 5}}>
-          <LargeButton isPrimary title={t('ManageRequests.AddButtonText')} action={() => null} />
+          <LargeButton isPrimary title={t('ManageRequests.AddButtonText')} action={() => navigate('AddRequest')} />
         </View>
       )}
     </View>

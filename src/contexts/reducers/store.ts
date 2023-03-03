@@ -14,6 +14,7 @@ enum ProofRequestDispatchAction {
 enum RequestDispatchAction {
   DELETE_REQUEST = 'request/delete',
   SET_REQUESTS = 'requests/set',
+  ADD_REQUEST = 'request/add',
 }
 
 export type DispatchAction = OnboardingDispatchAction | ProofRequestDispatchAction | RequestDispatchAction
@@ -63,6 +64,18 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
         ...state,
         requests,
       }
+      return newState
+    }
+    case RequestDispatchAction.ADD_REQUEST: {
+      const request = action.payload
+      const requests = [...state.requests, request]
+      const newState = {
+        ...state,
+        requests: requests,
+        proofRequest: request,
+      }
+      AsyncStorage.setItem(LocalStorageKeys.Requests, JSON.stringify(newState.requests))
+      AsyncStorage.setItem(LocalStorageKeys.ProofRequest, JSON.stringify(newState.proofRequest))
       return newState
     }
     case RequestDispatchAction.DELETE_REQUEST: {

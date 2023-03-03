@@ -30,7 +30,7 @@ export const Requests = () => {
         <EmptyList
           body={t('RequestDetails.EmptyList')}
           actionLabel={t('ManageRequests.AddButtonText')}
-          action={() => null}
+          action={() => navigate('AddRequest' as never)}
         />
       )}
       <ScrollView style={{padding: 10}}>
