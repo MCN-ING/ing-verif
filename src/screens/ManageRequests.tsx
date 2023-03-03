@@ -1,6 +1,5 @@
 import {useNavigation} from '@react-navigation/native'
 import {StackNavigationProp} from '@react-navigation/stack'
-
 import React from 'react'
 import {useTranslation} from 'react-i18next'
 import {FlatList, View} from 'react-native'
@@ -38,11 +37,7 @@ export const ManageRequests = () => {
         )}
       />
       <View style={{marginBottom: 5}}>
-        <LargeButton
-          isPrimary
-          title={t('ManageRequests.AddButtonText')}
-          action={() => navigate('AddRequest')}
-        />
+        <LargeButton isPrimary title={t('ManageRequests.AddButtonText')} action={() => navigate('AddRequest')} />
       </View>
     </View>
   )
