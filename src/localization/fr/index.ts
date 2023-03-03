@@ -54,6 +54,26 @@ const translation = {
     SaveRequest: 'Enregistrer la requête',
     Cancel: 'Annuler',
   },
+  RequestDetails: {
+    Name: 'Nom de la requête',
+    Description: 'Description de la requête',
+    Attributes: 'Liste des attributs',
+    Predicates: 'Liste de prédicats',
+    UseRequestButton: 'Utiliser la requête',
+    DeleteRequestButton: 'Supprimer la requête',
+    BackToRequestListButton: 'Retour à la liste des requêtes',
+    ModifyRequestButton: 'Modifier',
+  },
+  Comparaison: {
+    age: {
+      '>=': 'ans ou plus',
+      '<=': 'ans ou moins',
+    },
+    birthdate: {
+      '>=': 'ans ou plus',
+      '<=': 'ans ou moins',
+    },
+  },
   sections: {
     schema: 'Schémas',
   },
@@ -64,6 +84,7 @@ const translation = {
     Requests: 'Requêtes',
     ManageRequests: 'Gestion des requêtes',
     AddRequest: 'Ajouter une requête',
+    RequestDetails: 'Détails de la requête',
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",

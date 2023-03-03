@@ -11,12 +11,8 @@ const translation = {
   Home: {
     Title: 'Verify an identity',
     Slider: {
-      Title1: 'Verify ...',
-      Body1: 'Use the QR code to verify the identity of a person.',
+      Title1: 'Select a request',
       Title2: 'Change verification schema',
-      Body2: 'Change the verification schema to verify the identity of a person.',
-      Title3: 'Bluetooth verification',
-      Body3: 'Use Bluetooth to verify the identity of a person.',
     },
   },
   QRCode: {
@@ -64,6 +60,26 @@ const translation = {
     SaveRequest: 'Save the request',
     Cancel: 'Cancel',
   },
+  RequestDetails: {
+    Name: 'Request Name',
+    Description: 'Request Description',
+    Attributes: 'Request Attributes',
+    Predicates: 'Request Predicates',
+    UseRequestButton: 'Use the Request',
+    DeleteRequestButton: 'Delete Request',
+    BackToRequestListButton: 'Back to the List of Requests',
+    ModifyRequestButton: 'Edit',
+  },
+  Comparaison: {
+    age: {
+      '>=': 'years old or more',
+      '<=': 'years old or less',
+    },
+    birthdate: {
+      '>=': 'years old or more',
+      '<=': 'years old or less',
+    },
+  },
   Screens: {
     Home: 'Home',
     QRCode: 'Connection',
@@ -71,6 +87,7 @@ const translation = {
     Requests: 'Requests',
     ManageRequests: 'Request Management',
     AddRequest: 'Add a request',
+    RequestDetails: 'Request Details',
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',

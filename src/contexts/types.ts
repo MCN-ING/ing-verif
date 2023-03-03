@@ -3,7 +3,7 @@ import {PredicateType, ProofAttributeInfo, ProofPredicateInfo} from '@aries-fram
 export type ATTRIBUTE = 'Attribute'
 export type PREDICATE = 'Predicate'
 
-interface Attribute {
+export interface Attribute {
   [key: string]: ProofAttributeInfo
 }
 
