@@ -112,6 +112,7 @@ jobs:
         # if: steps.pod-cache.outputs.cache-hit != 'true' || steps.npm-cache.outputs.cache-hit != 'true'
         working-directory: ios
         run: |
+          gem install activesupport -v 6.1.7.2
           gem install cocoapods && \
           pod install && \
           git status && \

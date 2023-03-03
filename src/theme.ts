@@ -63,7 +63,7 @@ interface ColorPallet {
 
 const ColorPalletLight: ColorPallet = {
   primaryBackground: '#F2EFEF',
-  primaryText: '#000000',
+  primaryText: '#223654',
   primary: '#095797',
   secondary: '#0C2550',
   titleHighlight: '#E58271',
@@ -72,7 +72,7 @@ const ColorPalletLight: ColorPallet = {
   darkGray: '#454545',
   success: '#5B8046',
   warning: '#D8AF3B',
-  error: '#F8DCD8',
+  error: '#CB381F',
   link: '#095797',
   notification: NotificationColors,
 }
@@ -88,7 +88,7 @@ const ColorPalletDark: ColorPallet = {
   darkGray: '#525252',
   success: '#5B8046',
   warning: '#D8AF3B',
-  error: '#F8DCD8',
+  error: '#CB381F',
   link: '#095797',
   notification: NotificationColors,
 }
