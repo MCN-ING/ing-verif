@@ -11,16 +11,22 @@ enum ProofRequestDispatchAction {
   PROOF_REQUEST_CHANGED = 'proofRequest/update',
 }
 
-export type DispatchAction = OnboardingDispatchAction | ProofRequestDispatchAction
+enum RequestDispatchAction {
+  DELETE_REQUEST = 'request/delete',
+  SET_REQUESTS = 'requests/set',
+}
+
+export type DispatchAction = OnboardingDispatchAction | ProofRequestDispatchAction | RequestDispatchAction
 
 export const DispatchAction = {
   ...OnboardingDispatchAction,
   ...ProofRequestDispatchAction,
+  ...RequestDispatchAction,
 }
 
 export interface ReducerAction<R> {
   type: R
-  payload?: Request
+  payload?: Request | Request[] | string
 }
 
 export const reducer = <S extends State>(state: S, action: ReducerAction<DispatchAction>): S => {
@@ -38,13 +44,35 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
       return newState
     }
     case ProofRequestDispatchAction.PROOF_REQUEST_CHANGED: {
-      const proofRequest = action?.payload
+      const proofRequest = action.payload
 
       const newState = {
         ...state,
-        proofRequest,
+        proofRequest: proofRequest,
       }
-      AsyncStorage.setItem(LocalStorageKeys.ProofRequest, JSON.stringify(newState.proofRequest))
+      if (proofRequest) {
+        AsyncStorage.setItem(LocalStorageKeys.ProofRequest, JSON.stringify(newState.proofRequest))
+      } else {
+        AsyncStorage.removeItem(LocalStorageKeys.ProofRequest)
+      }
+      return newState
+    }
+    case RequestDispatchAction.SET_REQUESTS: {
+      const requests = action.payload
+      const newState = {
+        ...state,
+        requests,
+      }
+      return newState
+    }
+    case RequestDispatchAction.DELETE_REQUEST: {
+      const requestId = action.payload
+      const requestsFiltered: Request[] = state.requests.filter((req) => req.id !== requestId)
+      const newState = {
+        ...state,
+        requests: requestsFiltered,
+      }
+      AsyncStorage.setItem(LocalStorageKeys.Requests, JSON.stringify(newState.requests))
       return newState
     }
     default:

@@ -53,6 +53,7 @@ const translation = {
     DeleteRequestButton: 'Delete Request',
     BackToRequestListButton: 'Back to the List of Requests',
     ModifyRequestButton: 'Edit',
+    EmptyList: 'Your list of presentation requests is empty. Please add one in order to use the application.',
   },
   Comparaison: {
     age: {

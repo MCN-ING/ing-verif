@@ -1,10 +1,12 @@
 import {PredicateType, ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
+import {uuid} from '@aries-framework/core/build/utils/uuid'
 
 import {Request} from '../contexts/types'
 
 export const RequestsList = (t: any): Request[] => {
   return [
     {
+      id: uuid(),
       title: t('RequestsList.Title1'),
       description: t('RequestsList.Description1'),
       attributes: {
@@ -23,6 +25,7 @@ export const RequestsList = (t: any): Request[] => {
       },
     },
     {
+      id: uuid(),
       title: t('RequestsList.Title2'),
       description: t('RequestsList.Description2'),
       attributes: {
@@ -41,6 +44,7 @@ export const RequestsList = (t: any): Request[] => {
       },
     },
     {
+      id: uuid(),
       title: t('RequestsList.Title4'),
       description: t('RequestsList.Description4'),
       attributes: {},
@@ -54,6 +58,7 @@ export const RequestsList = (t: any): Request[] => {
       },
     },
     {
+      id: uuid(),
       title: t('RequestsList.Title3'),
       description: t('RequestsList.Description3'),
       attributes: {

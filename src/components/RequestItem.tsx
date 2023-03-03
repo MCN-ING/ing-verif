@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native'
+import {Pressable, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native'
 import {Swipeable} from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/AntDesign'
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
@@ -11,10 +11,11 @@ import DefaultComponentsThemes from '../defaultComponentsThemes'
 type Props = {
   item: Request
   action: () => void
+  onDelete?: () => void
   isManaged?: boolean
 }
 
-export const RequestItem = ({item, action, isManaged = false}: Props) => {
+export const RequestItem = ({item, action, onDelete, isManaged = false}: Props) => {
   const defaultStyles = DefaultComponentsThemes()
   const {ColorPallet} = useTheme()
   const [borderRadius, setBorderRadius] = useState(4)
@@ -47,6 +48,15 @@ export const RequestItem = ({item, action, isManaged = false}: Props) => {
       borderColor: ColorPallet.primary,
       shadowColor: ColorPallet.secondary,
     },
+    deleteContainer: {
+      marginVertical: 5,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      paddingVertical: 50,
+      paddingHorizontal: 34,
+      backgroundColor: ColorPallet.error,
+    },
     textManaged: {
       color: ColorPallet.primary,
       textAlign: 'center',
@@ -67,24 +77,14 @@ export const RequestItem = ({item, action, isManaged = false}: Props) => {
 
   const RightSwipeActions = () => {
     return (
-      <View
-        style={{
-          marginVertical: 5,
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          paddingVertical: 50,
-          paddingHorizontal: 34,
-          backgroundColor: ColorPallet.error,
-        }}>
+      <Pressable onPress={onDelete} style={({pressed}) => [styles.deleteContainer, pressed && {opacity: 0.8}]}>
         <FontAwesomeIcon name="trash" size={24} color={ColorPallet.white} />
-      </View>
+      </Pressable>
     )
   }
 
   const onSwipeRightHandler = () => {
     setBorderRadius(0)
-    // Delete item from request list
   }
 
   const onSwipeCloseHandler = () => {
