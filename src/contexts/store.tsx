@@ -64,6 +64,20 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({children, initialSt
     getProofRequest()
   }, [])
 
+  useEffect(() => {
+    const getRequests = async () => {
+      const requestsJSON = await AsyncStorage.getItem(LocalStorageKeys.Requests)
+      if (requestsJSON) {
+        const requests: Request[] = JSON.parse(requestsJSON)
+        dispatch({
+          type: DispatchAction.SET_REQUESTS,
+          payload: requests,
+        })
+      }
+    }
+    getRequests()
+  })
+
   return <StoreContext.Provider value={[state, dispatch]}>{children}</StoreContext.Provider>
 }
 

@@ -54,6 +54,8 @@ const translation = {
     DeleteRequestButton: 'Supprimer la requête',
     BackToRequestListButton: 'Retour à la liste des requêtes',
     ModifyRequestButton: 'Modifier',
+    EmptyList:
+      'Votre liste de requêtes de présentation est vide. Veuillez en ajouter une afin d’utiliser l’application.',
   },
   Comparaison: {
     age: {
