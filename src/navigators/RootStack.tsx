@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {useTheme} from '../contexts/theme'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
+import {AddRequest} from '../screens/AddRequest'
 import {ManageRequests} from '../screens/ManageRequests'
 import {RequestDetails} from '../screens/RequestDetails'
 
@@ -110,6 +111,17 @@ const RootStack = () => {
         options={{
           presentation: 'modal',
           title: t('Screens.Validation') || '',
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
+        }}
+      />
+      <Stack.Screen
+        name="AddRequest"
+        component={AddRequest}
+        options={{
+          title: t('Screens.AddRequest') || '',
           headerTintColor: ColorPallet.white,
           headerShown: true,
           gestureEnabled: true,

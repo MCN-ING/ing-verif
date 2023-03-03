@@ -25,6 +25,7 @@ export const QRCodeScreen = ({navigation}: any) => {
   const [state] = useStore()
   const {t} = useTranslation()
   const [QCCodeHeight, setQCCodeHeight] = useState(300)
+  const [proofRequest] = useState<any>(state.proofRequest)
 
   const onLayout = (event: any) => {
     const {height} = event.nativeEvent.layout
@@ -63,26 +64,26 @@ export const QRCodeScreen = ({navigation}: any) => {
   }
 
   const handleProofExchange = async () => {
-    if (!state.proofRequest) {
+    if (!proofRequest) {
       navigation.goBack()
       return
     }
     for (let i = 0; i < connections.length; i++) {
       let predicates: Predicate | undefined
-      if (state.proofRequest.predicates) {
-        predicates = dateIntPredicate(state.proofRequest.predicates)
+      if (proofRequest.predicates) {
+        predicates = dateIntPredicate(proofRequest.predicates)
       }
       if (connections[i].outOfBandId == invitationId && agent && !isLoading) {
         const proofExchangeRecord = await sendProofExchange(
           agent,
           connections[i],
-          state.proofRequest.title,
-          state.proofRequest.attributes,
+          proofRequest.title,
+          proofRequest.attributes,
           predicates
         )
         navigation.navigate('ValidationResult', {
           proofId: proofExchangeRecord.proofId,
-          proofName: state.proofRequest.title,
+          proofName: proofRequest.title,
         })
       }
       break
