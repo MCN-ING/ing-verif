@@ -25,9 +25,7 @@ export const AttributesList = (t: any): AttributeDetails => {
     },
     issue_date_dateint: {
       title: t('Attributes.issue_date_dateint'),
-      type: attributeType.PREDICATE,
-      operator: PredicateType.GreaterThanOrEqualTo,
-      defaultValue: 1,
+      type: attributeType.ATTRIBUTE,
     },
     expiry_date_dateint: {
       title: t('Attributes.expiry_date_dateint'),

@@ -1,4 +1,5 @@
 import {ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
+import {uuid} from '@aries-framework/core/build/utils/uuid'
 
 import {attributeType} from '../constants'
 import {lightAttributeDetails, Request, specificPredicatesDetails} from '../contexts/types'
@@ -43,6 +44,7 @@ export const createProofRequest = ({title, description, attributes}: Props, t: a
   const descriptionFinal = description.length == 0 ? createDefaultDescription(attributes) : description
 
   return {
+    id: uuid(),
     title: title,
     description: descriptionFinal,
     attributes: proofAttributes,

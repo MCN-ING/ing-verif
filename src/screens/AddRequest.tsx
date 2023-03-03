@@ -44,9 +44,8 @@ export const AddRequest = () => {
         t
       )
 
-      // TODO: change this to save to add to the list of proof requests
       dispatch({
-        type: DispatchAction.PROOF_REQUEST_CHANGED,
+        type: DispatchAction.ADD_REQUEST,
         payload: newProofRequest,
       })
 
