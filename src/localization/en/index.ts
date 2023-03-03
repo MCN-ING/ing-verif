@@ -44,14 +44,23 @@ const translation = {
   Request: {
     Title: 'Choice of a request',
   },
+  Dropdown: {
+    Select: 'Select an attribute',
+  },
+  Error: {
+    AddRequestError: 'Error',
+    EmptyTitle: 'The name of the request cannot be empty',
+    EmptyAttributes: 'The list of attributes cannot be empty',
+  },
   ManageRequests: {
     Title: 'List of Submission Requests',
     AddButtonText: 'Add New Request',
     RequestTitle: 'Name of the request',
     RequestDescription: 'Description of the request',
+    TitlePlaceholder: 'Name of the request',
+    DescriptionPlaceholder: 'Description of the request',
     RequestAttributes: 'List of attributes',
     AddAttribute: 'Add an attribute',
-    AddPredicates: 'Add a predicate',
     SaveRequest: 'Save the request',
     Cancel: 'Cancel',
   },
@@ -156,6 +165,15 @@ const translation = {
         body: 'Learn more about *these terms and conditions(*)*',
       },
     },
+  },
+  Attributes: {
+    given_name: 'First name',
+    family_name: 'Last name',
+    birthdate_dateint: 'Birthdate',
+    picture: 'Picture',
+    issue_date_dateint: 'Issue date',
+    expiry_date_dateint: 'Expiry date',
+    issuing_jurisdiction: 'Issuing jurisdiction',
   },
 }
 

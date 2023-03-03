@@ -3,18 +3,23 @@ import {t} from 'i18next'
 import React, {useState} from 'react'
 import {StyleSheet, View} from 'react-native'
 import {ScrollView} from 'react-native-gesture-handler'
+import Toast from 'react-native-toast-message'
 
 import {LargeButton} from '../components/LargeButton'
 import {AttributesSection} from '../components/ManageRequests/AttributesSection'
 import {DescriptionSection} from '../components/ManageRequests/DescriptionSection'
-import {PredicatesSection} from '../components/ManageRequests/PredicatesSection'
 import {TitleSection} from '../components/ManageRequests/TitleSection'
+import {ToastType} from '../components/Toast/BaseToast'
+import {DispatchAction} from '../contexts/reducers/store'
+import {useStore} from '../contexts/store'
+import {lightAttributeDetails} from '../contexts/types'
+import {createProofRequest} from '../utils/createProofRequest'
 
 export const AddRequest = () => {
-  const [requestTitle, setRequestTitle] = useState('')
-  const [requestDescription, setRequestDescription] = useState('')
-  const [requestAttributes, setRequestAttributes] = useState([{title: '', value: ''}])
-  const [requestPredicates, setRequestPredicates] = useState([{title: '', value: '', operateur: ''}])
+  const [, dispatch] = useStore()
+  const [requestTitle, setRequestTitle] = useState<string>('')
+  const [requestDescription, setRequestDescription] = useState<string>('')
+  const [requestAttributes, setRequestAttributes] = useState<lightAttributeDetails[]>([])
 
   const navigation = useNavigation()
 
@@ -28,8 +33,37 @@ export const AddRequest = () => {
     },
   })
 
+  const handleSaveProofRequest = () => {
+    // TODO : save proof request to storage
+    try {
+      const newProofRequest = createProofRequest(
+        {
+          title: requestTitle,
+          description: requestDescription,
+          attributes: requestAttributes,
+        },
+        t
+      )
+
+      // TODO: change this to save to add to the list of proof requests
+      dispatch({
+        type: DispatchAction.PROOF_REQUEST_CHANGED,
+        payload: newProofRequest,
+      })
+
+      navigation.navigate('Home' as never)
+    } catch (e: any) {
+      Toast.show({
+        type: ToastType.Error,
+        autoHide: true,
+        text1: t('Error.AddRequestError'),
+        text2: e.message,
+      })
+    }
+  }
+
   return (
-    <ScrollView contentContainerStyle={{flex: 1, height: '100%'}}>
+    <ScrollView>
       <View style={{flex: 1, justifyContent: 'space-between'}}>
         <View>
           <View style={styles.section}>
@@ -41,18 +75,9 @@ export const AddRequest = () => {
           <View style={styles.section}>
             <AttributesSection requestAttributes={requestAttributes} setRequestAttributes={setRequestAttributes} />
           </View>
-          <View style={styles.section}>
-            <PredicatesSection requestPredicates={requestPredicates} setRequestPredicates={setRequestPredicates} />
-          </View>
         </View>
         <View style={styles.buttonsContainer}>
-          <LargeButton
-            title={t('ManageRequests.SaveRequest')}
-            action={() => {
-              return
-            }}
-            isPrimary={true}
-          />
+          <LargeButton title={t('ManageRequests.SaveRequest')} action={handleSaveProofRequest} isPrimary={true} />
           <View style={{height: 10}} />
           <LargeButton title={t('ManageRequests.Cancel')} action={() => navigation.goBack()} />
         </View>
