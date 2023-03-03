@@ -70,6 +70,7 @@ const translation = {
     Validation: 'Verification',
     Requests: 'Requests',
     ManageRequests: 'Request Management',
+    AddRequest: 'Add a request',
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',

@@ -107,9 +107,11 @@ const RootStack = () => {
         name="AddRequest"
         component={AddRequest}
         options={{
+          title: t('Screens.AddRequest') || '',
           headerTintColor: ColorPallet.white,
           headerShown: true,
           gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
         }}
       />
     </Stack.Navigator>

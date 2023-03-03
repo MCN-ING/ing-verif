@@ -34,7 +34,6 @@ export const AddRequest = () => {
   })
 
   const handleSaveProofRequest = () => {
-    // TODO : save proof request to storage
     try {
       const newProofRequest = createProofRequest(
         {
