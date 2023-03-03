@@ -23,7 +23,7 @@ export const DescriptionSection = ({
       <CustomInputText
         value={requestTitle}
         setValue={setRequestTitle}
-        placeholder={t('ManageRequests.TitlePlaceholder')}
+        placeholder={t('ManageRequests.DescriptionPlaceholder')}
         containerStyle={{minHeight: 100}}
         multiline={true}
       />

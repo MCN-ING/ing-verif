@@ -15,9 +15,9 @@ export const CustomInputText = ({value, setValue, placeholder, containerStyle, m
   const {ColorPallet} = useTheme()
   const styles = StyleSheet.create({
     container: {
-      minHeight: 50,
+      minHeight: 20,
       marginVertical: 10,
-      padding: 10,
+      paddingHorizontal: 5,
       borderWidth: 2,
       borderColor: ColorPallet.lightGray,
       borderRadius: 4,

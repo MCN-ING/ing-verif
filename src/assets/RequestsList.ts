@@ -9,15 +9,11 @@ export const RequestsList = (t: any): Request[] => {
       description: t('RequestsList.Description1'),
       attributes: {
         name: new ProofAttributeInfo({
-          names: ['Nom'],
+          names: ['Nom', 'Prénom'],
           restrictions: [],
         }),
-      },
-      predicates: {
-        age: new ProofPredicateInfo({
-          name: 'age',
-          predicateType: PredicateType.GreaterThanOrEqualTo,
-          predicateValue: 18,
+        prenom: new ProofAttributeInfo({
+          names: ['age'],
           restrictions: [],
         }),
       },

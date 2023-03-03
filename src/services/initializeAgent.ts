@@ -6,13 +6,12 @@ import {
   HttpOutboundTransport,
 } from '@aries-framework/core'
 import {agentDependencies} from '@aries-framework/react-native'
-import Config from 'react-native-config'
+import {Config} from 'react-native-config'
 
 import ledgers from '../configs/ledgers/indy'
 
 const InitializeAgent = async () => {
   const indyLedgers = ledgers.filter((item) => !item.id.startsWith('Indicio'))
-
   try {
     const newAgent = new Agent({
       config: {
@@ -23,6 +22,7 @@ const InitializeAgent = async () => {
         autoAcceptConnections: true,
         autoAcceptCredentials: AutoAcceptCredential.ContentApproved,
         indyLedgers,
+        connectionImageUrl: 'https://GouvernementQC.ca',
         connectToIndyLedgersOnStartup: true,
         autoUpdateStorageOnStartup: true,
       },

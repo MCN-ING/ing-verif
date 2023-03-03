@@ -46,9 +46,11 @@ const translation = {
     AddButtonText: 'Ajouter une nouvelle requête',
     RequestTitle: 'Nom de la requête',
     RequestDescription: 'Description de la requête',
+    TitlePlaceholder: 'Nom de la requête',
+    DescriptionPlaceholder: 'Description de la requête',
     RequestAttributes: 'Liste des attributs',
+    RequestPredicates: 'Liste des prédicats',
     AddAttribute: 'Ajouter un attribut',
-    AddPredicates: 'Ajouter un prédicat',
     SaveRequest: 'Enregistrer la requête',
     Cancel: 'Annuler',
   },
@@ -71,6 +73,14 @@ const translation = {
     Description3: 'Vérifiez le nom et prénom d’une personne.',
     Title4: 'Vérification de la date de naissance',
     Description4: 'Vérifiez la date de naissance d’une personne.',
+  },
+  Dropdown: {
+    Select: 'Sélectionner un attribut',
+  },
+  Error: {
+    AddRequestError: 'Erreur',
+    EmptyTitle: 'Le nom ne peut pas être vide',
+    EmptyAttributes: 'La liste des attributs ne peut pas être vide',
   },
   TermsV2: {
     title: "Conditions d'utilisation",
@@ -155,6 +165,15 @@ const translation = {
         body: 'En savoir plus sur *ces conditions générales(*)*',
       },
     },
+  },
+  Attributes: {
+    given_name: 'Prénom',
+    family_name: 'Nom de famille',
+    birthdate_dateint: 'Date de naissance',
+    picture: 'Photo',
+    issue_date_dateint: 'Date d’émission',
+    expiry_date_dateint: 'Date d’expiration',
+    issuing_jurisdiction: 'Juridiction d’émission',
   },
 }
 

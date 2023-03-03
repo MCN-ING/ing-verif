@@ -8,3 +8,8 @@ export enum LocalStorageKeys {
 const lengthOfhiddenAttributes = 10
 const unicodeForBulletCharacter = '\u2022'
 export const hiddenField = Array(lengthOfhiddenAttributes).fill(unicodeForBulletCharacter).join('')
+
+export const attributeType = {
+  ATTRIBUTE: 'Attribute',
+  PREDICATE: 'Predicate',
+}
