@@ -63,6 +63,7 @@ const translation = {
     Validation: 'Vérification',
     Requests: 'Requêtes',
     ManageRequests: 'Gestion des requêtes',
+    AddRequest: 'Ajouter une requête',
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",
