@@ -63,6 +63,8 @@ const translation = {
     DeleteRequestButton: 'Supprimer la requête',
     BackToRequestListButton: 'Retour à la liste des requêtes',
     ModifyRequestButton: 'Modifier',
+    EmptyList:
+      'Votre liste de requêtes de présentation est vide. Veuillez en ajouter une afin d’utiliser l’application.',
   },
   Comparaison: {
     age: {
@@ -191,10 +193,10 @@ const translation = {
   Attributes: {
     given_name: 'Prénom',
     family_name: 'Nom de famille',
-    birthdate_dateint: 'Date de naissance',
+    birthdate_dateint: 'Vérification de la majorité',
     picture: 'Photo',
     issue_date_dateint: 'Date d’émission',
-    expiry_date_dateint: 'Date d’expiration',
+    expiry_date_dateint: 'Date d’expiration valide',
     issuing_jurisdiction: 'Juridiction d’émission',
   },
 }

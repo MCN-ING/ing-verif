@@ -3,6 +3,7 @@ export const defaultLanguage = 'en'
 export enum LocalStorageKeys {
   Onboarding = 'onboarding',
   ProofRequest = 'proofRequest',
+  Requests = 'requests',
 }
 
 const lengthOfhiddenAttributes = 10

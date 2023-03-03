@@ -69,6 +69,7 @@ const translation = {
     DeleteRequestButton: 'Delete Request',
     BackToRequestListButton: 'Back to the List of Requests',
     ModifyRequestButton: 'Edit',
+    EmptyList: 'Your list of presentation requests is empty. Please add one in order to use the application.',
   },
   Comparaison: {
     age: {
@@ -187,10 +188,10 @@ const translation = {
   Attributes: {
     given_name: 'First name',
     family_name: 'Last name',
-    birthdate_dateint: 'Birthdate',
+    birthdate_dateint: 'Majority Verification',
     picture: 'Picture',
     issue_date_dateint: 'Issue date',
-    expiry_date_dateint: 'Expiry date',
+    expiry_date_dateint: 'Valid expiry date',
     issuing_jurisdiction: 'Issuing jurisdiction',
   },
 }

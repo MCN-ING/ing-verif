@@ -12,6 +12,7 @@ export interface Predicate {
 }
 
 export interface Request {
+  id: string
   title: string
   description: string
   attributes?: Attribute
