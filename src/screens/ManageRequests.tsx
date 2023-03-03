@@ -2,16 +2,15 @@ import {useNavigation} from '@react-navigation/native'
 import {StackNavigationProp} from '@react-navigation/stack'
 import React, {useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {FlatList, Text, View} from 'react-native'
-import {EmptyList} from '../components/EmptyList'
+import {FlatList, View} from 'react-native'
 
+import {EmptyList} from '../components/EmptyList'
 import {LargeButton} from '../components/LargeButton'
 import {Header} from '../components/PageHeader'
 import {RequestItem} from '../components/RequestItem'
 import {DispatchAction} from '../contexts/reducers/store'
 import {useStore} from '../contexts/store'
 import {Request} from '../contexts/types'
-import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {ManageRequestsParamList} from '../navigators/ManageRequestsParamsList'
 
 type requestDetailsProp = StackNavigationProp<ManageRequestsParamList, 'RequestDetails'>
@@ -21,7 +20,6 @@ export const ManageRequests = () => {
   const [requests, setRequests] = useState(state.requests)
   const {t} = useTranslation()
   const {navigate} = useNavigation<requestDetailsProp>()
-  const defaultStyles = DefaultComponentsThemes()
 
   const handleRequestSelection = (item: Request) => {
     // Navigate to request details
