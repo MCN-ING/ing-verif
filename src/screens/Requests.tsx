@@ -1,22 +1,19 @@
 import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
-import {ScrollView, Text, View} from 'react-native'
-import {EmptyList} from '../components/EmptyList'
+import {ScrollView, View} from 'react-native'
 
-import {LargeButton} from '../components/LargeButton'
+import {EmptyList} from '../components/EmptyList'
 import {Header} from '../components/PageHeader'
 import {RequestItem} from '../components/RequestItem'
 import {DispatchAction} from '../contexts/reducers/store'
 import {useStore} from '../contexts/store'
 import {Request} from '../contexts/types'
-import DefaultComponentsThemes from '../defaultComponentsThemes'
 
 export const Requests = () => {
   const [state, dispatch] = useStore()
   const {t} = useTranslation()
   const {navigate} = useNavigation()
-  const defaultStyles = DefaultComponentsThemes()
 
   function handleSelection(item: Request) {
     dispatch({
