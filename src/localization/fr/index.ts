@@ -3,6 +3,7 @@ const translation = {
     Continue: 'Continuer',
     Back: 'Retour',
     Attributes: 'Attributs',
+    GoBackHome: 'Retour à l’accueil',
   },
   Agent: {
     ErrorTitle: "Initialisation de l'agent",
