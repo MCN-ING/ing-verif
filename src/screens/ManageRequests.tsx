@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native'
 import {StackNavigationProp} from '@react-navigation/stack'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {FlatList, View} from 'react-native'
 
@@ -20,6 +20,10 @@ export const ManageRequests = () => {
   const [requests, setRequests] = useState(state.requests)
   const {t} = useTranslation()
   const {navigate} = useNavigation<requestDetailsProp>()
+
+  useEffect(() => {
+    setRequests(state.requests)
+  }, [state.requests])
 
   const handleRequestSelection = (item: Request) => {
     // Navigate to request details
