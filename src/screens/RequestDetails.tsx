@@ -6,6 +6,7 @@ import {Text, View, ScrollView, StyleSheet} from 'react-native'
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 
+import {AttributesList} from '../assets/attributesList'
 import {LargeButton} from '../components/LargeButton'
 import {RequestDetailItem} from '../components/RequestDetails/RequestDetailItem'
 import {DispatchAction} from '../contexts/reducers/store'
@@ -24,6 +25,7 @@ export const RequestDetails = () => {
   const {ColorPallet} = useTheme()
   const route = useRoute<RouteProp<ManageRequestsParamList, 'RequestDetails'>>()
   const item = route.params.item
+  const attributes = AttributesList(t)
 
   const [isOptionsVisible, setIsOptionsVisible] = useState(false)
 
@@ -39,7 +41,6 @@ export const RequestDetails = () => {
       justifyContent: 'space-between',
     },
     attributePredicate: {
-      ...defaultStyles.text,
       ...defaultStyles.requestDetailsBody,
       ...defaultStyles.attributePredicate,
     },
@@ -115,23 +116,27 @@ export const RequestDetails = () => {
           <View>
             {item.attributes && (
               <View style={item.predicates && {marginBottom: 10}}>
-                {Object.keys(item.attributes).map((key, index) => (
-                  <Text key={index} style={[styles.attributePredicate, {marginTop: index === 0 ? 0 : 10}]}>
-                    {item.attributes?.[key].names?.[0]}
-                  </Text>
-                ))}
+                {Object.keys(item.attributes).map((key, index) =>
+                  item.attributes?.[key].names?.map((attributeRawName) => (
+                    <Text key={index} style={[styles.attributePredicate, {marginTop: index === 0 ? 0 : 10}]}>
+                      {(attributes[attributeRawName] && attributes[attributeRawName].title) ?? attributeRawName}
+                    </Text>
+                  ))
+                )}
               </View>
             )}
             {item.predicates && (
               <View>
                 {Object.keys(item.predicates).map((key, index) => (
                   <View key={index}>
-                    <Text style={[styles.attributePredicate, {marginBottom: 10, maxWidth: '75%'}]}>
-                      {item.predicates?.[key].name}
+                    <Text style={[styles.attributePredicate, {marginBottom: 0, maxWidth: '75%'}]}>
+                      {(item.predicates?.[key].name && attributes[item.predicates?.[key].name].title) ??
+                        item.predicates?.[key].name}
                     </Text>
-                    <Text style={[defaultStyles.requestDetailsBody, {maxWidth: '75%'}]}>
-                      {item.predicates?.[key].predicateValue}{' '}
-                      {t(`Comparaison.${key}.${item.predicates?.[key].predicateType}`)}
+                    <Text style={[defaultStyles.requestDetailsBody, {maxWidth: '75%', color: ColorPallet.darkGray}]}>
+                      {t(`Attributes.Predicate.${key}.${item.predicates?.[key].predicateType}`, {
+                        value: item.predicates?.[key].predicateValue,
+                      })}
                     </Text>
                   </View>
                 ))}
