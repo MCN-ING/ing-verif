@@ -4,9 +4,11 @@ import {createStackNavigator} from '@react-navigation/stack'
 import {TFunction} from 'i18next'
 import React from 'react'
 import {useTranslation} from 'react-i18next'
+import {View} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {useTheme} from '../contexts/theme'
+import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
 import {AddRequest} from '../screens/AddRequest'
 import {ManageRequests} from '../screens/ManageRequests'
@@ -137,12 +139,19 @@ const BottomNav = () => {
   const {ColorPallet} = useTheme()
   const Tab = createBottomTabNavigator()
   const {t} = useTranslation()
+  const styles = DefaultComponentsThemes()
 
   return (
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
         header: () => null,
+        tabBarLabelStyle: {
+          fontSize: 12,
+          position: 'relative',
+          textAlignVertical: 'center',
+          fontWeight: '600',
+        },
       }}>
       <Tab.Screen
         name={'Home'}
@@ -150,7 +159,15 @@ const BottomNav = () => {
         options={{
           title: t('Screens.Home') || '',
           tabBarIcon: ({focused}) => (
-            <Icon name={'home'} color={focused ? ColorPallet.primary : ColorPallet.lightGray} size={30} />
+            <View style={{width: '100%', height: '100%'}}>
+              {focused && <View style={styles.tabBarActive} />}
+              <Icon
+                style={styles.tabBarIcone}
+                name={'home'}
+                color={focused ? ColorPallet.primary : ColorPallet.lightGray}
+                size={20}
+              />
+            </View>
           ),
         }}
       />
@@ -160,7 +177,15 @@ const BottomNav = () => {
         options={{
           title: t('Screens.Requests') || '',
           tabBarIcon: ({focused}) => (
-            <Icon name={'list'} color={focused ? ColorPallet.primary : ColorPallet.lightGray} size={30} />
+            <View style={{width: '100%', height: '100%'}}>
+              {focused && <View style={styles.tabBarActive} />}
+              <Icon
+                style={styles.tabBarIcone}
+                name={'list'}
+                color={focused ? ColorPallet.primary : ColorPallet.lightGray}
+                size={20}
+              />
+            </View>
           ),
         }}
       />
