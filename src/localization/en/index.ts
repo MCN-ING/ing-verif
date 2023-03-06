@@ -185,17 +185,17 @@ const translation = {
     issuing_jurisdiction: 'Issuing jurisdiction',
     Predicate: {
       age: {
-        '>=': '{{value}} years old or more',
-        '<=': '{{value}} years old or less',
+        '>=': '{{value}} years old and over',
+        '<=': '{{value}} years old and under',
       },
       birthdate_dateint: {
-        '<=': '{{value}} years old or more',
-        '<': 'more than {{value}} years old',
-        '>': 'less than {{value}} years old',
-        '>=': '{{value}} years old or less',
+        '<=': '{{value}} years old and over',
+        '<': 'Over {{value}} years old',
+        '>': 'Under {{value}} years old',
+        '>=': '{{value}} years old and under',
       },
       expiry_date_dateint: {
-        '>=': "date d'expiration valide",
+        '>=': 'Valid expiration date',
       },
     },
   },
