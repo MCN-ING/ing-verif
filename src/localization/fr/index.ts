@@ -71,7 +71,7 @@ const translation = {
       '>=': 'ans ou plus',
       '<=': 'ans ou moins',
     },
-    birthdate: {
+    birthdate_dateint: {
       '>=': 'ans ou plus',
       '<=': 'ans ou moins',
     },
