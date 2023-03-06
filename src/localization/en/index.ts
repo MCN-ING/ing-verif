@@ -71,16 +71,6 @@ const translation = {
     ModifyRequestButton: 'Edit',
     EmptyList: 'Your list of presentation requests is empty. Please add one in order to use the application.',
   },
-  Comparaison: {
-    age: {
-      '>=': 'years old or more',
-      '<=': 'years old or less',
-    },
-    birthdate: {
-      '>=': 'years old or more',
-      '<=': 'years old or less',
-    },
-  },
   Screens: {
     Home: 'Home',
     QRCode: 'Connection',
@@ -193,6 +183,21 @@ const translation = {
     issue_date_dateint: 'Issue date',
     expiry_date_dateint: 'Valid expiry date',
     issuing_jurisdiction: 'Issuing jurisdiction',
+    Predicate: {
+      age: {
+        '>=': '{{value}} years old or more',
+        '<=': '{{value}} years old or less',
+      },
+      birthdate_dateint: {
+        '<=': '{{value}} years old or more',
+        '<': 'more than {{value}} years old',
+        '>': 'less than {{value}} years old',
+        '>=': '{{value}} years old or less',
+      },
+      expiry_date_dateint: {
+        '>=': "date d'expiration valide",
+      },
+    },
   },
 }
 
