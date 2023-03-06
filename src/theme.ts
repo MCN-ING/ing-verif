@@ -64,11 +64,11 @@ interface ColorPallet {
 const ColorPalletLight: ColorPallet = {
   primaryBackground: '#F2EFEF',
   primaryText: '#223654',
-  primary: '#0047BA',
+  primary: '#095797',
   secondary: '#0C2550',
   titleHighlight: '#E58271',
   white: '#FFFFFF',
-  lightGray: '#6B778A',
+  lightGray: '#b8b8b8',
   darkGray: '#454545',
   success: '#5B8046',
   warning: '#D8AF3B',
