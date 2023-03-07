@@ -87,6 +87,15 @@ const translation = {
     ManageRequests: 'Gestion des requêtes',
     AddRequest: 'Ajouter une requête',
     RequestDetails: 'Détails de la requête',
+    EditRequest: {
+      Title: 'Modifier le nom',
+      Description: 'Modifier la description',
+      Attributes: 'Modifier les attributs',
+      Cancel: 'Annuler la modification',
+      Save: 'Enregistrer les modifications',
+      CharacterCount: 'caractères',
+      TitleError: 'Le nom de la requête est obligatoire.',
+    },
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",

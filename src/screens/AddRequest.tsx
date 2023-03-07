@@ -68,7 +68,11 @@ export const AddRequest = () => {
             <TitleSection requestTitle={requestTitle} setRequestTitle={setRequestTitle} />
           </View>
           <View style={styles.section}>
-            <DescriptionSection requestDescription={requestDescription} setRequestDescription={setRequestDescription} />
+            <DescriptionSection
+              maxLength={140}
+              requestDescription={requestDescription}
+              setRequestDescription={setRequestDescription}
+            />
           </View>
           <View style={styles.section}>
             <AttributesSection requestAttributes={requestAttributes} setRequestAttributes={setRequestAttributes} />
