@@ -1,12 +1,14 @@
 import {ProofState, V1PresentationMessage} from '@aries-framework/core'
 import {DidCommMessageRepository} from '@aries-framework/core/build/storage'
 import {useAgent, useProofById} from '@aries-framework/react-hooks'
+import {useNavigation} from '@react-navigation/native'
 import Base64 from 'js-base64'
 import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, ScrollView} from 'react-native'
 
 import {Credential} from '../components/Credential'
+import {LargeButton} from '../components/LargeButton'
 import {NotificationBox} from '../components/NotificationBox'
 import {Header} from '../components/PageHeader'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
@@ -23,12 +25,18 @@ export const ValidationResult = ({route}: any) => {
   const [identifiers, setIdentifiers] = useState<any>([])
   const {agent} = useAgent()
   const {t} = useTranslation()
+  const navigation = useNavigation()
 
   const styles = StyleSheet.create({
     section: {
       flex: 1,
       padding: 10,
     },
+    bottom: {
+      marginBottom: 50,
+      marginTop: 20,
+    },
+    separator: {height: 20},
   })
 
   const findAgentMessage = async () => {
@@ -87,7 +95,7 @@ export const ValidationResult = ({route}: any) => {
       {isLoading ? (
         <ValidationLoading />
       ) : (
-        <View style={{flex: 1, width: '100%'}}>
+        <ScrollView style={{flex: 1, width: '100%'}}>
           <Header title={proofName} />
           <NotificationBox
             type={isVerified ? 'checkcircle' : 'warning'}
@@ -104,7 +112,12 @@ export const ValidationResult = ({route}: any) => {
               })}
             </View>
           )}
-        </View>
+          <View style={styles.bottom}>
+            <LargeButton isPrimary title={t('QRCode.GenerateNew')} action={() => navigation.goBack()} />
+            <View style={styles.separator} />
+            <LargeButton title={t('Global.GoBackHome')} action={() => navigation.navigate('Home' as never)} />
+          </View>
+        </ScrollView>
       )}
     </View>
   )
