@@ -39,7 +39,7 @@ export const RequestDetailItem = ({sectionLabel, children, containerStyle, actio
   return (
     <View style={containerStyle}>
       <View style={[styles.detailsDescription, {marginBottom: 10}]}>
-        <Text style={[defaultStyles.text, defaultStyles.requestDetailsTitle]}>{sectionLabel}</Text>
+        <Text style={defaultStyles.requestDetailsTitle}>{sectionLabel}</Text>
         <TouchableOpacity onPress={action} style={{padding: 8}}>
           <Text style={defaultStyles.link}>{actionLabel}</Text>
         </TouchableOpacity>
