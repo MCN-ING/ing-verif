@@ -89,6 +89,15 @@ const translation = {
     ManageRequests: 'Request Management',
     AddRequest: 'Add a request',
     RequestDetails: 'Request Details',
+    EditRequest: {
+      Title: 'Modify The Name',
+      Description: 'Modify The Description',
+      Attributes: 'Modify The Attributes',
+      Cancel: 'Cancel Change',
+      Save: 'Save Changes',
+      CharacterCount: 'characters',
+      TitleError: 'Name is required.',
+    },
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',

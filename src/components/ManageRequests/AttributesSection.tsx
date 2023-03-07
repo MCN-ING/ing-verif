@@ -1,9 +1,12 @@
 import {uuid} from '@aries-framework/core/build/utils/uuid'
 import React, {useEffect} from 'react'
 import {useTranslation} from 'react-i18next'
-import {Text, View} from 'react-native'
+import {StyleSheet, Text, View} from 'react-native'
+import {TouchableOpacity} from 'react-native-gesture-handler'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import {AttributesList} from '../../assets/attributesList'
+import {useTheme} from '../../contexts/theme'
 import DefaultComponentsThemes from '../../defaultComponentsThemes'
 import {AddElementButton} from '../AddElementButton'
 import {DopdownMenu} from '../DopdownMenu'
@@ -15,6 +18,7 @@ type Props = {
 
 export const AttributesSection = ({requestAttributes, setRequestAttributes}: Props) => {
   const {t} = useTranslation()
+  const {ColorPallet} = useTheme()
   const defaultStyles = DefaultComponentsThemes()
   const [attributes, setAttributes] = React.useState<any[]>([])
   const attributesList = AttributesList(t)
@@ -27,16 +31,28 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
     handleAddAttribute()
   }, [])
 
+  const styles = StyleSheet.create({
+    detailsTitle: {
+      ...defaultStyles.text,
+      ...defaultStyles.requestDetailsTitle,
+    },
+    removeIcon: {
+      position: 'absolute',
+      right: -8,
+      bottom: 0,
+      top: 8,
+      padding: 8,
+      zIndex: 2,
+    },
+  })
+
   const handleAddAttribute = () => {
     setRequestAttributes([...requestAttributes, {id: uuid(), title: '', raw_name: ''}])
   }
 
-  /*
-    // TODO : delete attribute
-    const handleDeleteAttribute = (id: string) => {
-      setRequestAttributes(requestAttributes.filter((attribute) => attribute.id !== id))
-    }
-  */
+  const handleDeleteAttribute = (id: string) => {
+    setRequestAttributes(requestAttributes.filter((attribute) => attribute.id !== id))
+  }
 
   const handleUpdateAttribute = (id: string, key: string) => {
     setRequestAttributes(
@@ -60,14 +76,21 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
 
   return (
     <View>
-      <Text style={defaultStyles.subtitle}>{t('ManageRequests.RequestAttributes')}</Text>
+      <Text style={styles.detailsTitle}>{t('ManageRequests.RequestAttributes')}</Text>
       {requestAttributes.map((attribute) => {
         return (
           <View key={attribute.id}>
-            <DopdownMenu
-              data={attributes}
-              setSelectedValue={(key: string) => handleUpdateAttribute(attribute.id, key)}
-            />
+            <View style={{maxWidth: '90%'}}>
+              <DopdownMenu
+                data={attributes}
+                setSelectedValue={(key: string) => handleUpdateAttribute(attribute.id, key)}
+              />
+            </View>
+            <View style={styles.removeIcon}>
+              <TouchableOpacity onPress={() => handleDeleteAttribute(attribute.id)}>
+                <Icon name="close" size={32} color={ColorPallet.darkGray} />
+              </TouchableOpacity>
+            </View>
           </View>
         )
       })}
