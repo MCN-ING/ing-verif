@@ -3,6 +3,7 @@ const translation = {
     Continue: 'Continue',
     Back: 'Back',
     Attributes: 'Attributes',
+    GoBackHome: 'Go back to home',
   },
   Agent: {
     ErrorTitle: 'Agent initialization',
@@ -70,16 +71,6 @@ const translation = {
     BackToRequestListButton: 'Back to the List of Requests',
     ModifyRequestButton: 'Edit',
     EmptyList: 'Your list of presentation requests is empty. Please add one in order to use the application.',
-  },
-  Comparaison: {
-    age: {
-      '>=': 'years old or more',
-      '<=': 'years old or less',
-    },
-    birthdate: {
-      '>=': 'years old or more',
-      '<=': 'years old or less',
-    },
   },
   Screens: {
     Home: 'Home',
@@ -202,6 +193,21 @@ const translation = {
     issue_date_dateint: 'Issue date',
     expiry_date_dateint: 'Valid expiry date',
     issuing_jurisdiction: 'Issuing jurisdiction',
+    Predicate: {
+      age: {
+        '>=': '{{value}} years old and over',
+        '<=': '{{value}} years old and under',
+      },
+      birthdate_dateint: {
+        '<=': '{{value}} years old and over',
+        '<': 'Over {{value}} years old',
+        '>': 'Under {{value}} years old',
+        '>=': '{{value}} years old and under',
+      },
+      expiry_date_dateint: {
+        '>=': 'Valid expiration date',
+      },
+    },
   },
 }
 
