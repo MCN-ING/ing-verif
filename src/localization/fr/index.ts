@@ -3,6 +3,7 @@ const translation = {
     Continue: 'Continuer',
     Back: 'Retour',
     Attributes: 'Attributs',
+    GoBackHome: 'Retour à l’accueil',
   },
   Agent: {
     ErrorTitle: "Initialisation de l'agent",
@@ -65,16 +66,6 @@ const translation = {
     ModifyRequestButton: 'Modifier',
     EmptyList:
       'Votre liste de requêtes de présentation est vide. Veuillez en ajouter une afin d’utiliser l’application.',
-  },
-  Comparaison: {
-    age: {
-      '>=': 'ans ou plus',
-      '<=': 'ans ou moins',
-    },
-    birthdate: {
-      '>=': 'ans ou plus',
-      '<=': 'ans ou moins',
-    },
   },
   sections: {
     schema: 'Schémas',
@@ -207,6 +198,21 @@ const translation = {
     issue_date_dateint: 'Date d’émission',
     expiry_date_dateint: 'Date d’expiration valide',
     issuing_jurisdiction: 'Juridiction d’émission',
+    Predicate: {
+      age: {
+        '>=': '{{value}} ans ou plus',
+        '<=': '{{value}} ans ou moins',
+      },
+      birthdate_dateint: {
+        '<=': '{{value}} ans ou plus',
+        '<': 'plus que {{value}} ans',
+        '>=': '{{value}} ans ou moins',
+        '>': 'moins que {{value}} ans',
+      },
+      expiry_date_dateint: {
+        '>=': "date d'expiration valide",
+      },
+    },
   },
 }
 

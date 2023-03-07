@@ -81,6 +81,7 @@ export const QRCodeScreen = ({navigation}: any) => {
           proofRequest.attributes,
           predicates
         )
+        handleCreateInvitation()
         navigation.navigate('ValidationResult', {
           proofId: proofExchangeRecord.proofId,
           proofName: proofRequest.title,

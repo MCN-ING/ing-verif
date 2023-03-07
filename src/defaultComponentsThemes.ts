@@ -47,6 +47,16 @@ const DefaultComponentsThemes = () => {
       fontWeight: '600',
       fontSize: 14,
     },
+    tabBarActive: {
+      borderTopWidth: 2,
+      borderTopColor: ColorPallet.primary,
+    },
+    tabBarIcone: {
+      padding: 8,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   })
 }
 
