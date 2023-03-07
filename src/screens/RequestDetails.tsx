@@ -130,7 +130,7 @@ export const RequestDetails = () => {
                 {Object.keys(item.predicates).map((key, index) => (
                   <View key={index}>
                     <Text style={[styles.attributePredicate, {marginBottom: 0, maxWidth: '75%'}]}>
-                      {(item.predicates?.[key].name && attributes[item.predicates?.[key].name].title) ??
+                      {(item.predicates?.[key].name && attributes[item.predicates?.[key].name]?.title) ??
                         item.predicates?.[key].name}
                     </Text>
                     <Text style={[defaultStyles.requestDetailsBody, {maxWidth: '75%', color: ColorPallet.darkGray}]}>
