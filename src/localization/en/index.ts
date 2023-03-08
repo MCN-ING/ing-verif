@@ -195,9 +195,6 @@ const translation = {
         '>': 'Under {{value}} years old',
         '>=': '{{value}} years old and under',
       },
-      expiry_date_dateint: {
-        '>=': 'Valid expiration date',
-      },
     },
   },
 }

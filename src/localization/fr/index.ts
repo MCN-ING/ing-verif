@@ -200,9 +200,6 @@ const translation = {
         '>=': '{{value}} ans ou moins',
         '>': 'moins que {{value}} ans',
       },
-      expiry_date_dateint: {
-        '>=': "date d'expiration valide",
-      },
     },
   },
 }

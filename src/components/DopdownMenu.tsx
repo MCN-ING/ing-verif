@@ -1,9 +1,12 @@
 import {t} from 'i18next'
 import React from 'react'
-import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native'
+import {KeyboardAvoidingView, Platform, StyleSheet, View} from 'react-native'
 import {SelectList} from 'react-native-dropdown-select-list'
 
 import {useTheme} from '../contexts/theme'
+import {lightAttributeDetails} from '../contexts/types'
+
+import {InputPredicate} from './ManageRequests/InputPredicate'
 
 interface Item {
   label: string
@@ -12,11 +15,14 @@ interface Item {
 
 type Props = {
   setSelectedValue: (value: string) => void
+  setPredicateValue: (value: number) => void
   data: Item[]
+  current: lightAttributeDetails
 }
 
-export const DopdownMenu = ({setSelectedValue, data}: Props) => {
+export const DopdownMenu = ({setSelectedValue, setPredicateValue, data, current}: Props) => {
   const {ColorPallet} = useTheme()
+
   const styles = StyleSheet.create({
     container: {
       minHeight: 50,
@@ -50,14 +56,17 @@ export const DopdownMenu = ({setSelectedValue, data}: Props) => {
   })
   return (
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <SelectList
-        boxStyles={styles.container}
-        setSelected={(val: string) => setSelectedValue(val)}
-        data={data}
-        search={false}
-        save="key"
-        placeholder={t('Dropdown.Select')}
-      />
+      <View>
+        <SelectList
+          boxStyles={styles.container}
+          setSelected={(val: string) => setSelectedValue(val)}
+          data={data}
+          search={false}
+          save="key"
+          placeholder={t('Dropdown.Select')}
+        />
+        <InputPredicate current={current} setPredicate={setPredicateValue} />
+      </View>
     </KeyboardAvoidingView>
   )
 }
