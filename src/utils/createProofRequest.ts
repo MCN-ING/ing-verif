@@ -2,7 +2,7 @@ import {ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
 import {uuid} from '@aries-framework/core/build/utils/uuid'
 
 import {attributeType} from '../constants'
-import {lightAttributeDetails, Request, specificPredicatesDetails} from '../contexts/types'
+import {lightAttributeDetails, Request, SpecificPredicatesDetails} from '../contexts/types'
 
 import {createDefaultDescription} from './createDefaultDescription'
 
@@ -18,7 +18,7 @@ export const createProofRequest = ({title, description, attributes}: Props, t: a
   let nomberOfUndefined = 0
   for (let i = 0; i < attributes.length; i++) {
     if (attributes[i].specific?.type == attributeType.PREDICATE) {
-      const specificPredicateDetails = attributes[i].specific as specificPredicatesDetails
+      const specificPredicateDetails = attributes[i].specific as SpecificPredicatesDetails
       proofPredicates[attributes[i].raw_name] = new ProofPredicateInfo({
         name: attributes[i].raw_name,
         predicateType: specificPredicateDetails.operator,

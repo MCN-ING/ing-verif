@@ -1,23 +1,26 @@
 import {uuid} from '@aries-framework/core/build/utils/uuid'
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {Text, View} from 'react-native'
 
 import {AttributesList} from '../../assets/attributesList'
+import {lightAttributeDetails} from '../../contexts/types'
 import DefaultComponentsThemes from '../../defaultComponentsThemes'
 import {AddElementButton} from '../AddElementButton'
 import {DopdownMenu} from '../DopdownMenu'
 
 type Props = {
-  requestAttributes: any[]
-  setRequestAttributes: (value: any[]) => void
+  requestAttributes: lightAttributeDetails[]
+  setRequestAttributes: (value: lightAttributeDetails[]) => void
 }
 
 export const AttributesSection = ({requestAttributes, setRequestAttributes}: Props) => {
   const {t} = useTranslation()
   const defaultStyles = DefaultComponentsThemes()
-  const [attributes, setAttributes] = React.useState<any[]>([])
+  const [attributes, setAttributes] = useState<any[]>([])
+
   const attributesList = AttributesList(t)
+
   useEffect(() => {
     setAttributes(
       Object.keys(attributesList).map((key) => {
@@ -54,7 +57,24 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
           }
         }
         return attribute
-      })
+      }) as lightAttributeDetails[]
+    )
+  }
+
+  const handleUpdatePredicate = (id: string, value: number) => {
+    setRequestAttributes(
+      requestAttributes.map((attribute) => {
+        if (attribute.id === id) {
+          return {
+            ...attribute,
+            specific: {
+              ...attribute.specific,
+              value: value,
+            },
+          }
+        }
+        return attribute
+      }) as lightAttributeDetails[]
     )
   }
 
@@ -67,6 +87,8 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
             <DopdownMenu
               data={attributes}
               setSelectedValue={(key: string) => handleUpdateAttribute(attribute.id, key)}
+              setPredicateValue={(value: number) => handleUpdatePredicate(attribute.id, value)}
+              current={attribute}
             />
           </View>
         )
