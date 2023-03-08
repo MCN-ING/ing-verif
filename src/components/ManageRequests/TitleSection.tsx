@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import {StyleSheet, Text, View} from 'react-native'
 
@@ -16,6 +16,7 @@ export const TitleSection = ({requestTitle, setRequestTitle}: Props) => {
   const {t} = useTranslation()
   const defaultStyles = DefaultComponentsThemes()
   const {ColorPallet} = useTheme()
+  const [isDirty, setIsDirty] = useState(false)
 
   const styles = StyleSheet.create({
     detailsTitle: {
@@ -27,21 +28,26 @@ export const TitleSection = ({requestTitle, setRequestTitle}: Props) => {
       color: ColorPallet.error,
     },
     containerStyle: {
-      borderColor: requestTitle.trim().length > 0 ? ColorPallet.lightGray : ColorPallet.error,
-      borderWidth: requestTitle.trim().length > 0 ? 1 : 2,
+      borderColor: requestTitle.trim().length === 0 && isDirty ? ColorPallet.error : ColorPallet.lightGray,
+      borderWidth: requestTitle.trim().length === 0 && isDirty ? 2 : 1,
     },
   })
+
+  const handleSetValue = (value: string) => {
+    if (!isDirty) setIsDirty(true)
+    setRequestTitle(value)
+  }
 
   return (
     <View>
       <Text style={styles.detailsTitle}>{t('ManageRequests.RequestTitle')}</Text>
       <CustomInputText
         value={requestTitle}
-        setValue={setRequestTitle}
+        setValue={handleSetValue}
         placeholder={t('ManageRequests.TitlePlaceholder')}
         containerStyle={styles.containerStyle}
       />
-      {requestTitle.length === 0 && <Text style={styles.error}>{t('Screens.EditRequest.TitleError')}</Text>}
+      {requestTitle.length === 0 && isDirty && <Text style={styles.error}>{t('Screens.EditRequest.TitleError')}</Text>}
     </View>
   )
 }
