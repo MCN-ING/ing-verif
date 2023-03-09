@@ -1,12 +1,13 @@
 import {PredicateType} from '@aries-framework/core'
+import {TFunction} from 'i18next'
 
 import {attributeType} from '../constants'
 import {AttributeDetails} from '../contexts/types'
 
-export const AttributesList = (t: any): AttributeDetails => {
+export const AttributesList = (t: TFunction<'translation', undefined, 'translation'>): AttributeDetails => {
   return {
-    given_name: {
-      title: t('Attributes.given_name'),
+    given_names: {
+      title: t('Attributes.given_names'),
       type: attributeType.ATTRIBUTE,
     },
     family_name: {
@@ -29,9 +30,7 @@ export const AttributesList = (t: any): AttributeDetails => {
     },
     expiry_date_dateint: {
       title: t('Attributes.expiry_date_dateint'),
-      type: attributeType.PREDICATE,
-      operator: PredicateType.GreaterThanOrEqualTo,
-      defaultValue: 0,
+      type: attributeType.ATTRIBUTE,
     },
     issuing_jurisdiction: {
       title: t('Attributes.issuing_jurisdiction'),

@@ -46,8 +46,8 @@ const translation = {
   },
   Error: {
     AddRequestError: 'Error',
-    EmptyTitle: 'The name of the request cannot be empty',
-    EmptyAttributes: 'The list of attributes cannot be empty',
+    EmptyTitle: 'Request name is required.',
+    EmptyAttributes: 'The list of attributes cannot be empty.',
   },
   ManageRequests: {
     Title: 'List of Submission Requests',
@@ -87,7 +87,6 @@ const translation = {
       Cancel: 'Cancel Change',
       Save: 'Save Changes',
       CharacterCount: 'characters',
-      TitleError: 'Name is required.',
     },
   },
   RequestsList: {
@@ -186,7 +185,7 @@ const translation = {
     },
   },
   Attributes: {
-    given_name: 'First name',
+    given_names: 'First name',
     family_name: 'Last name',
     birthdate_dateint: 'Majority Verification',
     picture: 'Picture',
@@ -203,9 +202,6 @@ const translation = {
         '<': 'Over {{value}} years old',
         '>': 'Under {{value}} years old',
         '>=': '{{value}} years old and under',
-      },
-      expiry_date_dateint: {
-        '>=': 'Valid expiration date',
       },
     },
   },

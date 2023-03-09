@@ -69,7 +69,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
     }
     case RequestDispatchAction.ADD_REQUEST: {
       const request = action.payload
-      const requests = [...state.requests, request]
+      const requests = [request, ...state.requests]
       const newState = {
         ...state,
         requests: requests,
