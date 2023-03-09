@@ -1,34 +1,40 @@
 import {uuid} from '@aries-framework/core/build/utils/uuid'
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, ViewStyle} from 'react-native'
 import {TouchableOpacity} from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import {AttributesList} from '../../assets/attributesList'
 import {useTheme} from '../../contexts/theme'
+import {lightAttributeDetails} from '../../contexts/types'
 import DefaultComponentsThemes from '../../defaultComponentsThemes'
 import {AddElementButton} from '../AddElementButton'
 import {DopdownMenu} from '../DopdownMenu'
 
 type Props = {
-  requestAttributes: any[]
-  setRequestAttributes: (value: any[]) => void
+  requestAttributes: lightAttributeDetails[]
+  setRequestAttributes: (value: lightAttributeDetails[]) => void
+  containerStyles?: ViewStyle
 }
 
-export const AttributesSection = ({requestAttributes, setRequestAttributes}: Props) => {
+export const AttributesSection = ({requestAttributes, setRequestAttributes, containerStyles}: Props) => {
   const {t} = useTranslation()
   const {ColorPallet} = useTheme()
   const defaultStyles = DefaultComponentsThemes()
-  const [attributes, setAttributes] = React.useState<any[]>([])
+  const [attributes, setAttributes] = useState<any[]>([])
+
   const attributesList = AttributesList(t)
+
   useEffect(() => {
     setAttributes(
       Object.keys(attributesList).map((key) => {
         return {key: key, value: attributesList[key].title}
       })
     )
-    handleAddAttribute()
+    if (requestAttributes.length <= 0) {
+      handleAddAttribute()
+    }
   }, [])
 
   const styles = StyleSheet.create({
@@ -43,6 +49,14 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
       top: 8,
       padding: 8,
       zIndex: 2,
+    },
+    error: {
+      ...defaultStyles.text,
+      color: ColorPallet.error,
+      paddingVertical: 10,
+    },
+    containerError: {
+      borderColor: ColorPallet.error,
     },
   })
 
@@ -70,7 +84,24 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
           }
         }
         return attribute
-      })
+      }) as lightAttributeDetails[]
+    )
+  }
+
+  const handleUpdatePredicate = (id: string, value: number) => {
+    setRequestAttributes(
+      requestAttributes.map((attribute) => {
+        if (attribute.id === id) {
+          return {
+            ...attribute,
+            specific: {
+              ...attribute.specific,
+              value: value,
+            },
+          }
+        }
+        return attribute
+      }) as lightAttributeDetails[]
     )
   }
 
@@ -84,6 +115,9 @@ export const AttributesSection = ({requestAttributes, setRequestAttributes}: Pro
               <DopdownMenu
                 data={attributes}
                 setSelectedValue={(key: string) => handleUpdateAttribute(attribute.id, key)}
+                setPredicateValue={(value: number) => handleUpdatePredicate(attribute.id, value)}
+                current={attribute}
+                containerStyles={containerStyles}
               />
             </View>
             <View style={styles.removeIcon}>
