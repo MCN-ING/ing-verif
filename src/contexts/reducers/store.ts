@@ -15,6 +15,7 @@ enum RequestDispatchAction {
   DELETE_REQUEST = 'request/delete',
   SET_REQUESTS = 'requests/set',
   ADD_REQUEST = 'request/add',
+  UPDATE_REQUEST = 'request/edit',
 }
 
 export type DispatchAction = OnboardingDispatchAction | ProofRequestDispatchAction | RequestDispatchAction
@@ -68,7 +69,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
     }
     case RequestDispatchAction.ADD_REQUEST: {
       const request = action.payload
-      const requests = [...state.requests, request]
+      const requests = [request, ...state.requests]
       const newState = {
         ...state,
         requests: requests,
@@ -87,6 +88,17 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
       }
       AsyncStorage.setItem(LocalStorageKeys.Requests, JSON.stringify(newState.requests))
       return newState
+    }
+    case RequestDispatchAction.UPDATE_REQUEST: {
+      const request = action.payload as Request
+      const requestIndex = state.requests.findIndex((req) => req.id === request.id)
+      const newRequests = [...state.requests]
+      newRequests[requestIndex] = request
+      AsyncStorage.setItem(LocalStorageKeys.Requests, JSON.stringify(newRequests))
+      return {
+        ...state,
+        requests: newRequests,
+      }
     }
     default:
       return state

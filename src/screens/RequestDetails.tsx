@@ -82,8 +82,12 @@ export const RequestDetails = () => {
     navigation.navigate('QRCode' as never)
   }
 
-  const editHandler = () => {
+  const editHandler = (attribute: 'Title' | 'Description' | 'Attributes') => {
     //TODO: Go to screen for modifying the field clicked
+    navigation.navigate('EditRequest', {
+      itemId: item.id,
+      attribute: attribute,
+    })
   }
 
   return (
@@ -98,21 +102,21 @@ export const RequestDetails = () => {
           sectionLabel={t('RequestDetails.Name')}
           actionLabel={t('RequestDetails.ModifyRequestButton')}
           containerStyle={{marginBottom: 20}}
-          action={editHandler}>
+          action={() => editHandler('Title')}>
           <Text style={[defaultStyles.text, {maxWidth: '75%'}]}>{item.title}</Text>
         </RequestDetailItem>
         <RequestDetailItem
           sectionLabel={t('RequestDetails.Description')}
           containerStyle={{marginBottom: 20}}
           actionLabel={t('RequestDetails.ModifyRequestButton')}
-          action={editHandler}>
+          action={() => editHandler('Description')}>
           <Text style={[defaultStyles.text, {maxWidth: '75%'}]}>{item.description}</Text>
         </RequestDetailItem>
         <RequestDetailItem
           sectionLabel={t('RequestDetails.Attributes')}
           containerStyle={{marginBottom: 20}}
           actionLabel={t('RequestDetails.ModifyRequestButton')}
-          action={editHandler}>
+          action={() => editHandler('Attributes')}>
           <View>
             {item.attributes && (
               <View style={item.predicates && {marginBottom: 10}}>
@@ -145,8 +149,8 @@ export const RequestDetails = () => {
           </View>
         </RequestDetailItem>
       </ScrollView>
-      <View>
-        <View style={{marginBottom: 20}}>
+      <View style={{marginBottom: 42}}>
+        <View style={{marginBottom: 24}}>
           <LargeButton action={useRequestHandler} title={t('RequestDetails.UseRequestButton')} isPrimary />
         </View>
         <LargeButton title={t('RequestDetails.BackToRequestListButton')} action={() => navigation.goBack()} />
