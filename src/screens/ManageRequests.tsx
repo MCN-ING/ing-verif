@@ -17,7 +17,7 @@ type requestDetailsProp = StackNavigationProp<ManageRequestsParamList, 'RequestD
 
 export const ManageRequests = () => {
   const [state, dispatch] = useStore()
-  const [requests, setRequests] = useState(state.requests)
+  const [requests, setRequests] = useState<Request[]>([])
   const {t} = useTranslation()
   const {navigate} = useNavigation<requestDetailsProp>()
 
