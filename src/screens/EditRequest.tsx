@@ -16,6 +16,7 @@ import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {ManageRequestsParamList} from '../navigators/ManageRequestsParamsList'
 import {createProofRequest} from '../utils/createProofRequest'
 import {requestAttributesToLightAttributesDetail} from '../utils/requestAttributesToLightAttributeDetails'
+import {isValidAttributes} from '../utils/validateAttributes'
 
 type editRequestProps = StackNavigationProp<ManageRequestsParamList, 'RequestDetails'>
 
@@ -33,10 +34,6 @@ export const EditRequest = () => {
   const [title, setTitle] = useState<string>(item.title)
   const [description, setDescription] = useState<string>(item.description)
   const [requestAttributes, setRequestAttributes] = useState<lightAttributeDetails[]>(lightAttributes)
-
-  const isInvalidAttributes = () => {
-    return requestAttributes.length <= 0 || requestAttributes[0].title.length === 0
-  }
 
   const styles = StyleSheet.create({
     section: {
@@ -56,8 +53,8 @@ export const EditRequest = () => {
       borderWidth: title.trim().length === 0 ? 2 : 1,
     },
     containerStyleAttributes: {
-      borderColor: isInvalidAttributes() ? ColorPallet.error : ColorPallet.lightGray,
-      borderWidth: isInvalidAttributes() ? 2 : 1,
+      borderColor: !isValidAttributes(requestAttributes) ? ColorPallet.error : ColorPallet.lightGray,
+      borderWidth: !isValidAttributes(requestAttributes) ? 2 : 1,
     },
   })
 
@@ -92,7 +89,7 @@ export const EditRequest = () => {
   }
 
   const handleSave = () => {
-    if (title.trim().length > 0 && !isInvalidAttributes()) {
+    if (title.trim().length > 0 && isValidAttributes(requestAttributes)) {
       dispatch({
         type: DispatchAction.UPDATE_REQUEST,
         payload: item,
@@ -131,7 +128,7 @@ export const EditRequest = () => {
                 setRequestAttributes={setRequestAttributes}
                 containerStyles={styles.containerStyleAttributes}
               />
-              {isInvalidAttributes() && <Text style={styles.error}>{t('Error.EmptyAttributes')}</Text>}
+              {!isValidAttributes(requestAttributes) && <Text style={styles.error}>{t('Error.EmptyAttributes')}</Text>}
             </View>
           )}
         </View>
