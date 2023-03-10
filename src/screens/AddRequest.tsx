@@ -14,6 +14,7 @@ import {useTheme} from '../contexts/theme'
 import {lightAttributeDetails} from '../contexts/types'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {createProofRequest} from '../utils/createProofRequest'
+import {isValidAttributes} from '../utils/validateAttributes'
 
 export const AddRequest = () => {
   const [, dispatch] = useStore()
@@ -26,10 +27,6 @@ export const AddRequest = () => {
   const {ColorPallet} = useTheme()
 
   const navigation = useNavigation()
-
-  const isInvalidAttributes = () => {
-    return requestAttributes.length <= 0 || requestAttributes[0].title.length === 0
-  }
 
   const styles = StyleSheet.create({
     section: {
@@ -49,8 +46,8 @@ export const AddRequest = () => {
       borderWidth: requestTitle.trim().length === 0 && titleDirty ? 2 : 1,
     },
     containerStyleAttributes: {
-      borderColor: isInvalidAttributes() && attributesDirty ? ColorPallet.error : ColorPallet.lightGray,
-      borderWidth: isInvalidAttributes() && attributesDirty ? 2 : 1,
+      borderColor: !isValidAttributes(requestAttributes) && attributesDirty ? ColorPallet.error : ColorPallet.lightGray,
+      borderWidth: !isValidAttributes(requestAttributes) && attributesDirty ? 2 : 1,
     },
   })
 
@@ -73,7 +70,7 @@ export const AddRequest = () => {
       navigation.navigate('Home' as never)
     } catch (e: unknown) {
       if (requestTitle.length === 0) setTitleDirty(true)
-      if (requestAttributes.length === 0 || requestAttributes[0].title.length === 0) setAttributesDirty(true)
+      if (!isValidAttributes(requestAttributes)) setAttributesDirty(true)
     }
   }
 
@@ -107,7 +104,9 @@ export const AddRequest = () => {
               setRequestAttributes={setRequestAttributes}
               containerStyles={styles.containerStyleAttributes}
             />
-            {isInvalidAttributes() && attributesDirty && <Text style={styles.error}>{t('Error.EmptyAttributes')}</Text>}
+            {!isValidAttributes(requestAttributes) && attributesDirty && (
+              <Text style={styles.error}>{t('Error.EmptyAttributes')}</Text>
+            )}
           </View>
         </View>
         <View style={styles.buttonsContainer}>
