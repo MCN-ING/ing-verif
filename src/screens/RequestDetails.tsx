@@ -11,7 +11,6 @@ import {RequestDetailItem} from '../components/RequestDetails/RequestDetailItem'
 import {DispatchAction} from '../contexts/reducers/store'
 import {useStore} from '../contexts/store'
 import {useTheme} from '../contexts/theme'
-import {Request} from '../contexts/types'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {ManageRequestsParamList} from '../navigators/ManageRequestsParamsList'
 
