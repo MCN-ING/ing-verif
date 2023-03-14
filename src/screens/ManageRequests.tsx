@@ -38,14 +38,6 @@ export const ManageRequests = () => {
       type: DispatchAction.DELETE_REQUEST,
       payload: item.id,
     })
-    if (state.proofRequest) {
-      if (item.id == state.proofRequest.id) {
-        dispatch({
-          type: DispatchAction.PROOF_REQUEST_CHANGED,
-          payload: undefined,
-        })
-      }
-    }
   }
 
   return (
