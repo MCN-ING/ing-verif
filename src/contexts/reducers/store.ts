@@ -85,6 +85,10 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
       const newState = {
         ...state,
         requests: requestsFiltered,
+        proofRequest: state.proofRequest?.id === requestId ? undefined : state.proofRequest,
+      }
+      if (newState.proofRequest === undefined) {
+        AsyncStorage.removeItem(LocalStorageKeys.ProofRequest)
       }
       AsyncStorage.setItem(LocalStorageKeys.Requests, JSON.stringify(newState.requests))
       return newState
