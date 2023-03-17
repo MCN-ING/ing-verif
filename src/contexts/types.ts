@@ -1,4 +1,4 @@
-import {PredicateType, ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
+import { PredicateType, ProofAttributeInfo, ProofPredicateInfo } from '@aries-framework/core'
 
 export type ATTRIBUTE = 'Attribute'
 export type PREDICATE = 'Predicate'
@@ -27,6 +27,8 @@ export interface State {
   onboarding: Onboarding
   proofRequest?: Request
   requests: Request[]
+  langueApp?: String
+  history?: String
 }
 
 export type AttributeDetails = {
@@ -55,3 +57,26 @@ export type lightAttributeDetails = {
 
   specific?: specificPredicatesDetails | specificAttributesDetails
 }
+
+export interface Setting {
+  id: string
+  title: string
+  route: string
+}
+export interface AppSetting {
+  id: string
+  title: string
+  route?: string
+  name?: string
+  defaultValue?: string
+}
+
+export interface Languages {
+  code: string
+  label: string
+}
+export interface Historic {
+  id: string
+  label: string
+}
+

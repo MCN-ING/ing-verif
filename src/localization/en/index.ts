@@ -41,6 +41,9 @@ const translation = {
   Request: {
     Title: 'Choice of a request',
   },
+  Footer: {
+    Title: 'Government of Quebec',
+  },
   Dropdown: {
     Select: 'Select an attribute',
   },
@@ -80,6 +83,100 @@ const translation = {
     ManageRequests: 'Request Management',
     AddRequest: 'Add a request',
     RequestDetails: 'Request Details',
+    Settings: 'More option',
+  },
+  SettingsList: {
+    Title: "More option",
+    Title1: "App Settings",
+    Title2: "Help Center",
+    Title3: 'About',
+    Title4: 'Contact US',
+    SaveSettings: 'Save Update',
+    Cancel: 'Cancel',
+  },
+  AppSettingsList: {
+    Title: "App Settings",
+    Title1: "Display language",
+    Title2: "History",
+    Title3: 'The notifications',
+    Title4: 'App version',
+  },
+  DisplayLanguage: {
+    Title: "Display language",
+  },
+  LanguageList: {
+    Title1: "English",
+    Title2: "French",
+  },
+  Historic: {
+    Title: "History",
+    Body: "How long do you want the transaction history to be stored in memory?",
+    Subtitle: "History duration",
+  },
+  HistoricList: {
+    Title1: "Do not save history",
+    Title2: "7 days",
+    Title3: "15 days",
+    Title4: '30 days (default)',
+    Title5: "90 days",
+    Title6: "365 days",
+    Title7: "Keep all history",
+  },
+  Notification: {
+    Title: "The notifications",
+  },
+  HelpCenterList: {
+    Title: "Help Center",
+    Title1: "The app tutorial",
+    Title2: "User manual",
+    Title3: 'How to transfer my wallet to another device',
+    Title4: 'Help us improve the app',
+  },
+  AppTutorial: {
+    Title: "The app tutorial",
+  },
+  UserManual: {
+    Title: "User manual",
+  },
+  TransferWalletApp: {
+    Title: "How to transfer my wallet to another device",
+  },
+  ImproveApp: {
+    Title: "Help us improve the app",
+  },
+  AboutList: {
+    Title: "About",
+    Title1: "Terms of use",
+    Title2: "Confidentiality declaration",
+    Title3: 'Vulnerability Disclosure Policy',
+    Title4: 'Accessibility',
+  },
+  TermsUse: {
+    Title: "Terms of use",
+  },
+  Confidentiality: {
+    Title: "Confidentiality declaration",
+  },
+  Vulnerability: {
+    Title: "Vulnerability Disclosure Policy",
+  },
+  Accessibility: {
+    Title: "Accessibility",
+  },
+  ContactUsList: {
+    Title: "Contact Us",
+    Title1: "Phone",
+    Title2: "By email",
+    Title3: 'Report a problem',
+  },
+  Phone: {
+    Title: "Phone",
+  },
+  ByEmail: {
+    Title: "By email",
+  },
+  ReportProblem: {
+    Title: "Report a problem",
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',

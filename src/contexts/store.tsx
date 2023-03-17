@@ -22,6 +22,8 @@ export const defaultState: State = {
   },
   proofRequest: undefined,
   requests: RequestsList(t),
+  langueApp: undefined,
+  history: undefined,
 }
 
 export const StoreContext = createContext<[State, Dispatch<ReducerAction<any>>]>([

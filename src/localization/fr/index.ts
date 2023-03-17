@@ -42,6 +42,9 @@ const translation = {
   Request: {
     Title: "Choix d'une requête",
   },
+  Footer: {
+    Title: 'Gouvernement de Quèbec',
+  },
   ManageRequests: {
     Title: 'Liste des requêtes de présentation',
     AddButtonText: 'Ajouter une nouvelle requête',
@@ -78,6 +81,100 @@ const translation = {
     ManageRequests: 'Gestion des requêtes',
     AddRequest: 'Ajouter une requête',
     RequestDetails: 'Détails de la requête',
+    Settings: "Plus d'option",
+  },
+  SettingsList: {
+    Title: "Plus d'option",
+    Title1: "Paramètres de l'application",
+    Title2: "Centre d'aide",
+    Title3: 'À propos',
+    Title4: 'Nous joindre',
+    SaveSettings: 'Enregistrer la modification',
+    Cancel: 'Annuler',
+  },
+  AppSettingsList: {
+    Title: "Paramètres de l'application",
+    Title1: "Langue d'affichage",
+    Title2: "L'historique",
+    Title3: 'Les notifications',
+    Title4: "Version de l'application",
+  },
+  DisplayLanguage: {
+    Title: "Langue d'affichage",
+  },
+  LanguageList: {
+    Title1: "Anglais",
+    Title2: "Français",
+  },
+  Historic: {
+    Title: "L'historique",
+    Body: "Combien de temps souhaitez vous que l’historique des opérations soient enregistrée gardé en mémoire?",
+    Subtitle: "Durée de l’historique",
+  },
+  HistoricList: {
+    Title1: "Ne pas enregistré l’historique",
+    Title2: "7 jours",
+    Title3: "15 jours",
+    Title4: '30 jours (défaut)',
+    Title5: "90 jours",
+    Title6: "365 jours",
+    Title7: "Garder toute l’historique",
+  },
+  Notification: {
+    Title: "Les notifications",
+  },
+  HelpCenterList: {
+    Title: "Centre d'aide",
+    Title1: "Le tutoriel de l’application",
+    Title2: "Guide d’utilisation",
+    Title3: 'Comment transférer mon portefeuille sur un autre appareil',
+    Title4: 'Aidez nous à améliorer l’application',
+  },
+  AppTutorial: {
+    Title: "Le tutoriel de l’application",
+  },
+  UserManual: {
+    Title: "Guide d’utilisation",
+  },
+  TransferWalletApp: {
+    Title: "Comment transférer mon portefeuille sur un autre appareil",
+  },
+  ImproveApp: {
+    Title: "Aidez nous à améliorer l’application",
+  },
+  AboutList: {
+    Title: "À propos",
+    Title1: "Conditions d’utilisation",
+    Title2: "Déclaration de confidentialité",
+    Title3: 'Politique de divulgation des vulnérabilités',
+    Title4: 'Accessibilité',
+  },
+  TermsUse: {
+    Title: "Conditions d’utilisation",
+  },
+  Confidentiality: {
+    Title: "Déclaration de confidentialité",
+  },
+  Vulnerability: {
+    Title: "Politique de divulgation des vulnérabilités",
+  },
+  Accessibility: {
+    Title: "Accessibilité",
+  },
+  ContactUsList: {
+    Title: "Nous joindre",
+    Title1: "Téléphone",
+    Title2: "Par courriel",
+    Title3: 'Rapporter un problème',
+  },
+  Phone: {
+    Title: "Téléphone",
+  },
+  ByEmail: {
+    Title: "Par courriel",
+  },
+  ReportProblem: {
+    Title: "Rapporter un problème",
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",
