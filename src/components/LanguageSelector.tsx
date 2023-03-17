@@ -25,7 +25,7 @@ const LanguageSelector = () => {
 
   const setLanguage = (label: string | undefined) => {
     const index = languageList.findIndex(langue => langue.label === label)
-    state.langueApp = label
+    state.langueApp = languageList[index].label
     return i18n.changeLanguage(languageList[index].code);
   };
 
@@ -38,10 +38,13 @@ const LanguageSelector = () => {
 
   useEffect(() => {
     if (state.langueApp == null){
-      state.langueApp = selectedLanguageCode
-      setLanguageCode(state.langueApp.toString())
+      setLanguageCode(selectedLanguageCode)
+    } else {
+      const index = languageList.findIndex(langue => langue.label === state.langueApp)
+      setLanguageCode(languageList[index].code)
     }
   }, [state.langueApp])
+  
   return (
 
     <ScrollView>
