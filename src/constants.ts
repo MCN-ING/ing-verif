@@ -6,7 +6,8 @@ export enum LocalStorageKeys {
   Onboarding = 'onboarding',
   ProofRequest = 'proofRequest',
   Requests = 'requests',
-  Languages = 'languages',
+  Languages = 'langue',
+  Histories = 'history',
 }
 
 const lengthOfhiddenAttributes = 10

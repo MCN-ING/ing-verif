@@ -1,10 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import i18n from 'i18next'
-import {initReactI18next} from 'react-i18next'
-import * as RNLocalize from 'react-native-localize'
-
-import {defaultLanguage} from '../constants'
-
+import { initReactI18next } from 'react-i18next'
+import { defaultLanguage, LocalStorageKeys } from '../constants'
 import en from './en'
 import fr from './fr'
 
@@ -36,13 +33,23 @@ export enum Locales {
 
 const currentLanguage = i18n.language
 
-const initLanguages = (resources: TranslationResources) => {
-  const availableLanguages = Object.keys(resources)
+
+
+
+
+const initLanguages = async (resources: TranslationResources) => {
+  /* const availableLanguages = Object.keys(resources)
   const bestLanguageMatch = RNLocalize.findBestAvailableLanguage(availableLanguages)
-  let translationToUse = defaultLanguage
 
   if (bestLanguageMatch && availableLanguages.includes(bestLanguageMatch.languageTag)) {
     translationToUse = bestLanguageMatch.languageTag
+  } */
+ 
+  let translationToUse = defaultLanguage
+  const language = await AsyncStorage.getItem(LocalStorageKeys.Languages)
+
+  if (language){
+    translationToUse = language.toString()
   }
 
   i18n.use(initReactI18next).init({
@@ -71,4 +78,4 @@ const getCurrentLanguage = (): string => {
   return i18n.language
 }
 
-export {i18n, initStoredLanguage, initLanguages, storeLanguage, currentLanguage, getCurrentLanguage}
+export { i18n, initStoredLanguage, initLanguages, storeLanguage, currentLanguage, getCurrentLanguage }
