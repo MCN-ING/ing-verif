@@ -2,8 +2,7 @@ import {RouteProp, useNavigation, useRoute} from '@react-navigation/native'
 import {StackNavigationProp} from '@react-navigation/stack'
 import {useLayoutEffect, useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import {Text, View, ScrollView, StyleSheet} from 'react-native'
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler'
+import {Text, View, ScrollView, StyleSheet, TouchableWithoutFeedback, TouchableOpacity} from 'react-native'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 
 import {AttributesList} from '../assets/attributesList'
@@ -82,75 +81,93 @@ export const RequestDetails = () => {
     navigation.navigate('QRCode' as never)
   }
 
-  const editHandler = () => {
+  const editHandler = (attribute: 'Title' | 'Description' | 'Attributes') => {
     //TODO: Go to screen for modifying the field clicked
+    navigation.navigate('EditRequest', {
+      itemId: item.id,
+      attribute: attribute,
+    })
+  }
+
+  const handleDelete = () => {
+    dispatch({
+      type: DispatchAction.DELETE_REQUEST,
+      payload: item.id,
+    })
+    navigation.goBack()
+  }
+
+  const dismissContextualMenuHandler = () => {
+    if (isOptionsVisible) setIsOptionsVisible(false)
   }
 
   return (
-    <View style={{padding: 10, flex: 1}}>
-      {isOptionsVisible && (
-        <View style={styles.moreActionContainer}>
-          <Text style={defaultStyles.text}>{t('RequestDetails.DeleteRequestButton')}</Text>
-        </View>
-      )}
-      <ScrollView contentContainerStyle={{margin: 10}}>
-        <RequestDetailItem
-          sectionLabel={t('RequestDetails.Name')}
-          actionLabel={t('RequestDetails.ModifyRequestButton')}
-          containerStyle={{marginBottom: 20}}
-          action={editHandler}>
-          <Text style={[defaultStyles.text, {maxWidth: '75%'}]}>{item.title}</Text>
-        </RequestDetailItem>
-        <RequestDetailItem
-          sectionLabel={t('RequestDetails.Description')}
-          containerStyle={{marginBottom: 20}}
-          actionLabel={t('RequestDetails.ModifyRequestButton')}
-          action={editHandler}>
-          <Text style={[defaultStyles.text, {maxWidth: '75%'}]}>{item.description}</Text>
-        </RequestDetailItem>
-        <RequestDetailItem
-          sectionLabel={t('RequestDetails.Attributes')}
-          containerStyle={{marginBottom: 20}}
-          actionLabel={t('RequestDetails.ModifyRequestButton')}
-          action={editHandler}>
-          <View>
-            {item.attributes && (
-              <View style={item.predicates && {marginBottom: 10}}>
-                {Object.keys(item.attributes).map((key, index) =>
-                  item.attributes?.[key].names?.map((attributeRawName) => (
-                    <Text key={index} style={[styles.attributePredicate, {marginTop: index === 0 ? 0 : 10}]}>
-                      {(attributes[attributeRawName] && attributes[attributeRawName].title) ?? attributeRawName}
-                    </Text>
-                  ))
-                )}
-              </View>
-            )}
-            {item.predicates && (
-              <View>
-                {Object.keys(item.predicates).map((key, index) => (
-                  <View key={index}>
-                    <Text style={[styles.attributePredicate, {marginBottom: 0, maxWidth: '75%'}]}>
-                      {(item.predicates?.[key].name && attributes[item.predicates?.[key].name]?.title) ??
-                        item.predicates?.[key].name}
-                    </Text>
-                    <Text style={[defaultStyles.requestDetailsBody, {maxWidth: '75%', color: ColorPallet.darkGray}]}>
-                      {t(`Attributes.Predicate.${key}.${item.predicates?.[key].predicateType}`, {
-                        value: item.predicates?.[key].predicateValue,
-                      })}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            )}
+    <TouchableWithoutFeedback onPress={dismissContextualMenuHandler}>
+      <View style={{padding: 10, flex: 1}}>
+        {isOptionsVisible && (
+          <TouchableOpacity style={styles.moreActionContainer} onPress={handleDelete}>
+            <Text style={defaultStyles.text}>{t('RequestDetails.DeleteRequestButton')}</Text>
+          </TouchableOpacity>
+        )}
+        <ScrollView contentContainerStyle={{margin: 10}}>
+          <RequestDetailItem
+            sectionLabel={t('RequestDetails.Name')}
+            actionLabel={t('RequestDetails.ModifyRequestButton')}
+            containerStyle={{marginBottom: 20}}
+            action={() => editHandler('Title')}>
+            <Text style={[defaultStyles.text, {maxWidth: '75%'}]}>{item.title}</Text>
+          </RequestDetailItem>
+          <RequestDetailItem
+            sectionLabel={t('RequestDetails.Description')}
+            containerStyle={{marginBottom: 20}}
+            actionLabel={t('RequestDetails.ModifyRequestButton')}
+            action={() => editHandler('Description')}>
+            <Text style={[defaultStyles.text, {maxWidth: '75%'}]}>{item.description}</Text>
+          </RequestDetailItem>
+          <RequestDetailItem
+            sectionLabel={t('RequestDetails.Attributes')}
+            containerStyle={{marginBottom: 20}}
+            actionLabel={t('RequestDetails.ModifyRequestButton')}
+            action={() => editHandler('Attributes')}>
+            <View>
+              {item.attributes && (
+                <View style={item.predicates && {marginBottom: 10}}>
+                  {Object.keys(item.attributes).map((key, index) =>
+                    item.attributes?.[key].names?.map((attributeRawName) => (
+                      <Text key={index} style={[styles.attributePredicate, {marginTop: index === 0 ? 0 : 10}]}>
+                        {(attributes[attributeRawName] && attributes[attributeRawName].title) ?? attributeRawName}
+                      </Text>
+                    ))
+                  )}
+                </View>
+              )}
+              {item.predicates && (
+                <View>
+                  {Object.keys(item.predicates).map((key, index) => (
+                    <View key={index}>
+                      <Text style={[styles.attributePredicate, {marginBottom: 0, maxWidth: '75%'}]}>
+                        {(item.predicates?.[key].name && attributes[item.predicates?.[key].name]?.title) ??
+                          item.predicates?.[key].name}
+                      </Text>
+                      <Text style={[defaultStyles.requestDetailsBody, {maxWidth: '75%', color: ColorPallet.darkGray}]}>
+                        {t(`Attributes.Predicate.${key}.${item.predicates?.[key].predicateType}`, {
+                          value: item.predicates?.[key].predicateValue,
+                        })}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+            </View>
+          </RequestDetailItem>
+        </ScrollView>
+        <View style={{marginBottom: 42}}>
+          <View style={{marginBottom: 24}}>
+            <LargeButton action={useRequestHandler} title={t('RequestDetails.UseRequestButton')} isPrimary />
           </View>
-        </RequestDetailItem>
-      </ScrollView>
-      <View>
-        <View style={{marginBottom: 20}}>
-          <LargeButton action={useRequestHandler} title={t('RequestDetails.UseRequestButton')} isPrimary />
+          <LargeButton title={t('RequestDetails.BackToRequestListButton')} action={() => navigation.goBack()} />
         </View>
-        <LargeButton title={t('RequestDetails.BackToRequestListButton')} action={() => navigation.goBack()} />
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }

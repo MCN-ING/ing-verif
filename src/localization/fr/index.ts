@@ -176,6 +176,15 @@ const translation = {
   ReportProblem: {
     Title: "Rapporter un problème",
   },
+  EditRequest: {
+    Title: 'Modifier le nom',
+    Description: 'Modifier la description',
+    Attributes: 'Modifier les attributs',
+    Cancel: 'Annuler la modification',
+    Save: 'Enregistrer les modifications',
+    CharacterCount: 'caractères',
+    TitleError: 'Le nom de la requête est obligatoire.',
+  },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",
     Description1: "Vérifiez qu'une personne est âgée de 18 ans ou plus.",
@@ -191,8 +200,8 @@ const translation = {
   },
   Error: {
     AddRequestError: 'Erreur',
-    EmptyTitle: 'Le nom ne peut pas être vide',
-    EmptyAttributes: 'La liste des attributs ne peut pas être vide',
+    EmptyTitle: 'Le nom de la requête est requis.',
+    EmptyAttributes: 'La liste des attributs ne peut pas être vide.',
   },
   TermsV2: {
     title: "Conditions d'utilisation",
@@ -279,8 +288,8 @@ const translation = {
     },
   },
   Attributes: {
-    given_name: 'Prénom',
-    family_name: 'Nom de famille',
+    given_names: 'Prénom',
+    family_name: 'Nom',
     birthdate_dateint: 'Vérification de la majorité',
     picture: 'Photo',
     issue_date_dateint: 'Date d’émission',

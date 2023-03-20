@@ -6,4 +6,8 @@ export type ManageRequestsParamList = {
   RequestDetails: {
     item: Request
   }
+  EditRequest: {
+    itemId: string
+    attribute: 'Title' | 'Description' | 'Attributes'
+  }
 }
