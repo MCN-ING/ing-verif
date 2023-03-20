@@ -17,7 +17,7 @@ type requestDetailsProp = StackNavigationProp<ManageRequestsParamList, 'RequestD
 
 export const ManageRequests = () => {
   const [state, dispatch] = useStore()
-  const [requests, setRequests] = useState(state.requests)
+  const [requests, setRequests] = useState<Request[]>([])
   const {t} = useTranslation()
   const {navigate} = useNavigation<requestDetailsProp>()
 
@@ -38,14 +38,6 @@ export const ManageRequests = () => {
       type: DispatchAction.DELETE_REQUEST,
       payload: item.id,
     })
-    if (state.proofRequest) {
-      if (item.id == state.proofRequest.id) {
-        dispatch({
-          type: DispatchAction.PROOF_REQUEST_CHANGED,
-          payload: undefined,
-        })
-      }
-    }
   }
 
   return (

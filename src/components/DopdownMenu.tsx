@@ -1,6 +1,6 @@
 import {t} from 'i18next'
 import React from 'react'
-import {KeyboardAvoidingView, Platform, StyleSheet, View} from 'react-native'
+import {KeyboardAvoidingView, Platform, StyleSheet, View, ViewStyle} from 'react-native'
 import {SelectList} from 'react-native-dropdown-select-list'
 
 import {useTheme} from '../contexts/theme'
@@ -18,9 +18,10 @@ type Props = {
   setPredicateValue: (value: number) => void
   data: Item[]
   current: lightAttributeDetails
+  containerStyles?: ViewStyle
 }
 
-export const DopdownMenu = ({setSelectedValue, setPredicateValue, data, current}: Props) => {
+export const DopdownMenu = ({setSelectedValue, setPredicateValue, data, current, containerStyles}: Props) => {
   const {ColorPallet} = useTheme()
 
   const styles = StyleSheet.create({
@@ -33,6 +34,7 @@ export const DopdownMenu = ({setSelectedValue, setPredicateValue, data, current}
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      ...containerStyles,
     },
     buttonStyle: {
       flex: 1,
@@ -54,6 +56,14 @@ export const DopdownMenu = ({setSelectedValue, setPredicateValue, data, current}
       borderBottomRightRadius: 4,
     },
   })
+
+  const defaultOption = (): {key: string; value: string} | undefined => {
+    if (current.title.length > 0) {
+      return {key: current.raw_name, value: current.title}
+    }
+    return undefined
+  }
+
   return (
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <View>
@@ -63,6 +73,7 @@ export const DopdownMenu = ({setSelectedValue, setPredicateValue, data, current}
           data={data}
           search={false}
           save="key"
+          defaultOption={defaultOption()}
           placeholder={t('Dropdown.Select')}
         />
         <InputPredicate current={current} setPredicate={setPredicateValue} />

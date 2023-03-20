@@ -22,6 +22,7 @@ import { DisplayLanguage } from '../screens/DisplayLanguage'
 import { HelpCenter } from '../screens/HelpCenter'
 import { Historic } from '../screens/Historic'
 import { ImproveApp } from '../screens/ImproveApp'
+import {EditRequest} from '../screens/EditRequest'
 import {ManageRequests} from '../screens/ManageRequests'
 import { Notification } from '../screens/Notification'
 import { Phone } from '../screens/Phone'
@@ -109,6 +110,17 @@ const RootStack = () => {
         component={RequestDetails}
         options={{
           title: t('Screens.RequestDetails'),
+          headerTintColor: ColorPallet.white,
+          headerShown: true,
+          gestureEnabled: true,
+          headerBackTitle: t('Global.Back') || '',
+        }}
+      />
+
+      <Stack.Screen
+        name="EditRequest"
+        component={EditRequest}
+        options={{
           headerTintColor: ColorPallet.white,
           headerShown: true,
           gestureEnabled: true,

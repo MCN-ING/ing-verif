@@ -40,13 +40,13 @@ export type AttributeDetails = {
   }
 }
 
-export type specificPredicatesDetails = {
+export type SpecificPredicatesDetails = {
   type: PREDICATE
   value: number
   operator: PredicateType
 }
 
-export type specificAttributesDetails = {
+export type SpecificAttributesDetails = {
   type: ATTRIBUTE
 }
 
@@ -55,7 +55,7 @@ export type lightAttributeDetails = {
   title: string
   raw_name: string
 
-  specific?: specificPredicatesDetails | specificAttributesDetails
+  specific?: SpecificPredicatesDetails | SpecificAttributesDetails
 }
 
 export interface Setting {
