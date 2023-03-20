@@ -46,8 +46,8 @@ const initLanguages = async (resources: TranslationResources) => {
   } */
  
   let translationToUse = defaultLanguage
+  
   const language = await AsyncStorage.getItem(LocalStorageKeys.Languages)
-
   if (language){
     translationToUse = language.toString()
   }
