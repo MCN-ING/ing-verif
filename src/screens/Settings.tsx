@@ -4,11 +4,9 @@ import {useTranslation} from 'react-i18next'
 import {ScrollView, StyleSheet, Text, View} from 'react-native'
 import { SettingsList } from '../assets/SettingsList'
 import {SettingItem} from '../components/SettingItem'
-import {useStore} from '../contexts/store'
 import {Setting} from '../contexts/types'
 
 export const Settings = () => {
-  const [state] = useStore()
   const {t} = useTranslation()
   const {navigate} = useNavigation()
   const settings = SettingsList(t)

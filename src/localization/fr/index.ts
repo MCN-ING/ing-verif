@@ -43,7 +43,7 @@ const translation = {
     Title: "Choix d'une requête",
   },
   Footer: {
-    Title: 'Gouvernement de Quèbec',
+    Title: 'Gouvernement de Québec',
   },
   ManageRequests: {
     Title: 'Liste des requêtes de présentation',

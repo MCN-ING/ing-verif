@@ -1,9 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useState } from "react"
+import React, {useState } from "react"
 import { useTranslation } from "react-i18next"
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { ScrollView, Text, TouchableOpacity, View } from "react-native"
 import Icon from 'react-native-vector-icons/Fontisto'
 import { LanguageList } from "../assets/LanguageList";
+import { DispatchAction } from "../contexts/reducers/store";
 import { useStore } from "../contexts/store";
 import { useTheme } from "../contexts/theme";
 import defaultComponentsThemes from "../defaultComponentsThemes";
@@ -12,39 +13,30 @@ import { LargeButton } from "./LargeButton";
 
 
 const LanguageSelector = () => {
-  const { i18n } = useTranslation();
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const selectedLanguageCode = i18n.language
   const { ColorPallet } = useTheme()
   const defaultStyles = defaultComponentsThemes()
   const languageList = LanguageList(t)
-  const [state] = useStore()
+  const [, dispatch] = useStore()
   const navigation = useNavigation()
-  const [languageCode, setLanguageCode] = useState('')
+  const [languageCode, setLanguageCode] = useState(selectedLanguageCode)
   const [updatedSetting, setUpdatedSetting] = useState(false)
 
-  const setLanguage = (label: string | undefined) => {
-    const index = languageList.findIndex(langue => langue.label === label)
-    state.langueApp = languageList[index].label
-    return i18n.changeLanguage(languageList[index].code);
+  const setLanguage = (code: string) => {
+    dispatch({
+      type: DispatchAction.UPDATE_LANGUAGE,
+      payload: code,
+    })
+    return i18n.changeLanguage(code);
   };
 
   const setSelectedLanguage = (code: string) => {
-    const index = languageList.findIndex(langue => langue.code === code)
-    state.langueApp = languageList[index].label
     setUpdatedSetting(true)
     setLanguageCode(code)
   };
-
-  useEffect(() => {
-    if (state.langueApp == null){
-      setLanguageCode(selectedLanguageCode)
-    } else {
-      const index = languageList.findIndex(langue => langue.label === state.langueApp)
-      setLanguageCode(languageList[index].code)
-    }
-  }, [state.langueApp])
   
+
   return (
 
     <ScrollView>
@@ -71,14 +63,18 @@ const LanguageSelector = () => {
         )
       })}
       {updatedSetting ? (
-      <View style={defaultStyles.buttonsContainer}>
-        <LargeButton title={t('SettingsList.SaveSettings')} action={() => setLanguage(state.langueApp?.toString())} isPrimary={true} />
-        <View style={{ height: 10 }} />
-        <LargeButton title={t('SettingsList.Cancel')} action={() => navigation.goBack()} />
-      </View>
+        <View style={defaultStyles.buttonsContainer}>
+          <LargeButton title={t('SettingsList.SaveSettings')} action={() => setLanguage(languageCode)} isPrimary={true} />
+          <View style={{ height: 10 }} />
+          <LargeButton title={t('SettingsList.Cancel')} action={() => navigation.goBack()} />
+        </View>
       ) : null}
     </ScrollView>
   )
 }
 
 export default LanguageSelector;
+
+function dispatch(arg0: { type: any; payload: string; }) {
+  throw new Error("Function not implemented.");
+}
