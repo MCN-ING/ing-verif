@@ -105,6 +105,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
         ...state,
         langueApp: language,
       }
+      AsyncStorage.setItem(LocalStorageKeys.Languages, newState.langueApp?.toString()!)
       return newState
     }
     case UpdateSettingState.UPDATE_HISTORY: {
@@ -113,6 +114,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
         ...state,
         history: history,
       }
+      AsyncStorage.setItem(LocalStorageKeys.Histories, newState.history?.toString()!)
       return newState
     }
     case RequestDispatchAction.UPDATE_REQUEST: {
