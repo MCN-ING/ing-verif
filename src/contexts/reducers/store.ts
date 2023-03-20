@@ -23,6 +23,7 @@ enum UpdateSettingState {
   UPDATE_HISTORY = 'history',
 }
 
+
 export type DispatchAction = OnboardingDispatchAction | ProofRequestDispatchAction | RequestDispatchAction | UpdateSettingState
 
 export const DispatchAction = {

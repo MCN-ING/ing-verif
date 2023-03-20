@@ -91,6 +91,7 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({children, initialSt
       }
     }
     getLanguage()
+    
   }, [])
 
   return <StoreContext.Provider value={[state, dispatch]}>{children}</StoreContext.Provider>
