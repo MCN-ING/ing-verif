@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {getFocusedRouteNameFromRoute} from '@react-navigation/native'
+import {getFocusedRouteNameFromRoute, NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {TFunction} from 'i18next'
 import React from 'react'
@@ -34,6 +34,7 @@ import { UserManual } from '../screens/UserManual'
 import { Vulnerability } from '../screens/Vulnerability'
 
 import TermsStack from './TermsStack'
+import SettingsStack from './SettingsStack'
 
 const getTitle = (route: any, t: TFunction<'translation', undefined, 'translation'>) => {
   const routeName = getFocusedRouteNameFromRoute(route)
@@ -55,6 +56,7 @@ const RootStack = () => {
   const {t} = useTranslation()
   const Stack = createStackNavigator()
   const {ColorPallet} = useTheme()
+  const settingsStack = SettingsStack(Stack)
 
   return (
     <Stack.Navigator
@@ -116,7 +118,6 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
-
       <Stack.Screen
         name="EditRequest"
         component={EditRequest}
@@ -127,7 +128,6 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
-
       <Stack.Screen
         name="QRCode"
         component={QRCodeScreen}
@@ -136,187 +136,6 @@ const RootStack = () => {
           headerTintColor: ColorPallet.white,
           headerShown: true,
           gestureEnabled: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen 
-        name="AppSettings" 
-        component={AppSettings} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="DisplayLanguage" 
-        component={DisplayLanguage} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="History" 
-        component={History} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="Notification" 
-        component={Notification} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="HelpCenter" 
-        component={HelpCenter} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="AppTutorial" 
-        component={AppTutorial} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="UserManual" 
-        component={UserManual} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="TransferWallet" 
-        component={TransferWalletApp} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="ImproveApp" 
-        component={ImproveApp} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-       <Stack.Screen 
-        name="About" 
-        component={About} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-       <Stack.Screen 
-        name="TermsUse" 
-        component={TermsUse} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="Confidentiality" 
-        component={Confidentiality} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="Vulnerability" 
-        component={Vulnerability} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="Accessibility" 
-        component={Accessibility} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-       <Stack.Screen 
-        name="ContactUs" 
-        component={ContactUs} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="Phone" 
-        component={Phone} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="ByEmail" 
-        component={ByEmail} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
-          headerBackTitle: t('Global.Back') || '',
-        }}
-      />
-      <Stack.Screen 
-        name="ReportProblem" 
-        component={ReportProblem} 
-        options={{
-          title: t('Screens.Settings') || '',
-          headerTintColor: ColorPallet.white,
-          headerShown: true,
           headerBackTitle: t('Global.Back') || '',
         }}
       />
@@ -343,7 +162,9 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
+      {settingsStack}
     </Stack.Navigator>
+
   )
 }
 

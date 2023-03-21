@@ -21,8 +21,8 @@ export const ContactUs = () => {
     <View>
       <Header title={t('ContactUsList.Title')} />
       <ScrollView style={{ padding: 10 }}>
-        {contactUs.map((item: AppSetting, index: number) => {
-          return <AppSettingItem key={index.toString()} item={item} action={() => handleSelection(item)} />
+        {contactUs.map((item: AppSetting) => {
+          return <AppSettingItem key={item.id} item={item} action={() => handleSelection(item)} />
         })}
       </ScrollView>
     </View>

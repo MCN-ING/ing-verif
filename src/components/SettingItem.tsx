@@ -40,24 +40,22 @@ export const SettingItem = ({item, action}: Props) => {
       borderColor: ColorPallet.primary,
       shadowColor: ColorPallet.secondary,
     },
-    textManaged: {
-      color: ColorPallet.primary,
-      textAlign: 'center',
-    },
     settingCard: {
       alignSelf: 'center',
+      flex: 2,
     },
     settingTitle: {
       fontWeight: 'bold',
       fontSize: 18,
-      color: ColorPallet.primaryText,
+      color: ColorPallet.primary,
+      textAlign: 'center',
     },
   })
 
   let content = (
     <TouchableOpacity style={[styles.container, styles.containerManaged]} onPress={action}>
-      <View style={[styles.settingCard, {flex: 2}]}>
-        <Text style={[defaultStyles.text, styles.settingTitle, styles.textManaged]}>{item.title}</Text>
+      <View style={styles.settingCard}>
+        <Text style={[defaultStyles.text, styles.settingTitle]}>{item.title}</Text>
       </View>
     </TouchableOpacity>
   )

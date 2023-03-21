@@ -29,8 +29,8 @@ export const Settings = () => {
   return (
     <View style={{justifyContent: 'center', alignContent: 'center', flex: 1}}>
       <ScrollView style={{padding: 10}}>
-        {settings.map((item: Setting, index: number) => {
-          return <SettingItem key={index.toString()} item={item} action={() => handleSelection(item)} />
+        {settings.map((item: Setting) => {
+          return <SettingItem key={item.id} item={item} action={() => handleSelection(item)} />
         })}
       </ScrollView>
       <View style={styles.headerFooterStyle}>
