@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { ScrollView, Text, TouchableOpacity, View } from "react-native"
 import Icon from 'react-native-vector-icons/Fontisto'
-import { HistoricList } from "../assets/HistoricList";
+import { HistoryList } from "../assets/HistoryList";
 import { defaultHistory } from "../constants";
 import { DispatchAction } from "../contexts/reducers/store";
 import { useStore } from "../contexts/store";
@@ -13,75 +13,65 @@ import { LargeButton } from "./LargeButton";
 
 
 
-const HistoricSelector = () => {
+const HistorySelector = () => {
   const { t } = useTranslation()
-  const historicList = HistoricList(t)
+  const historyList = HistoryList(t)
   const [state, dispatch] = useStore()
   const { ColorPallet } = useTheme()
   const defaultStyles = defaultComponentsThemes()
-  const [selectDefaultHistory, setSelectDefaultHistory] = useState(state.history?.toString()!)
+  const [selectDefaultHistory, setSelectDefaultHistory] = useState(state.history)
   const [updatedSetting, setUpdatedSetting] = useState(false)
   const navigation = useNavigation()
 
-  const setSelectedHistoric = (id: string) => {
+  const setSelectedHistory = (id: string) => {
     setSelectDefaultHistory(id)
     setUpdatedSetting(true)
   }
 
-  const setHistoric = (id: string) => {
+  const setHistory = (id: string) => {
     setSelectDefaultHistory(id)
     dispatch({
       type: DispatchAction.UPDATE_HISTORY,
       payload: id,
     })
     setSelectDefaultHistory(id)
+    navigation.goBack()
   }
-
-  useEffect(() => {
-    if (state.history==null){
-      setSelectDefaultHistory(defaultHistory)
-      dispatch({
-        type: DispatchAction.UPDATE_HISTORY,
-        payload: defaultHistory,
-      })
-    }
-  }, [state.history])
 
   return (
 
     <ScrollView>
       <View>
-        <Text style={[defaultStyles.text]}>{t('Historic.Body')}</Text>
+        <Text style={[defaultStyles.text]}>{t('History.Body')}</Text>
       </View>
       <View>
-        <Text style={defaultStyles.subtitle}>{t('Historic.Subtitle')}</Text>
+        <Text style={defaultStyles.subtitle}>{t('History.Subtitle')}</Text>
       </View>
-      {historicList.map((historic, index: number) => {
-        const selectedHistoric = historic.id == selectDefaultHistory
+      {historyList.map((history, index: number) => {
+        const selectedHistoric = history.type == selectDefaultHistory
         return (
           <View key={index} >
-            <TouchableOpacity style={defaultStyles.itemContainer} onPress={() => setSelectedHistoric(historic.id)}>
+            <TouchableOpacity style={defaultStyles.itemContainer} onPress={() => setSelectedHistory(history.type)}>
               <View style={defaultStyles.touchableStyle}>
                 {selectedHistoric ? (
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Icon name={'radio-btn-active'} size={20} color={ColorPallet.primary} />
-                    <Text style={[defaultStyles.text, { paddingLeft: 5, fontWeight: 'bold' }]}>{historic.label}</Text>
+                    <Text style={[defaultStyles.text, { paddingLeft: 5, fontWeight: 'bold' }]}>{history.label}</Text>
                   </View>
                 ) : (
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Icon name={'radio-btn-passive'} size={20} color={ColorPallet.primary} />
-                    <Text style={[defaultStyles.text, { paddingLeft: 5 }]}>{historic.label}</Text>
+                    <Text style={[defaultStyles.text, { paddingLeft: 5 }]}>{history.label}</Text>
                   </View>
                 )}
               </View>
             </TouchableOpacity>
-
           </View>
         )
       })}
       {updatedSetting ? (
         <View style={defaultStyles.buttonsContainer}>
-          <LargeButton title={t('SettingsList.SaveSettings')} action={() => setHistoric(selectDefaultHistory)} isPrimary={true} />
+          <LargeButton title={t('SettingsList.SaveSettings')} action={() => setHistory(selectDefaultHistory?.toString()!)} isPrimary={true} />
           <View style={{ height: 10 }} />
           <LargeButton title={t('SettingsList.Cancel')} action={() => navigation.goBack()} />
         </View>
@@ -90,4 +80,4 @@ const HistoricSelector = () => {
   )
 }
 
-export default HistoricSelector;
+export default HistorySelector;

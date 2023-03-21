@@ -7,22 +7,22 @@ export const AboutList = (t: any): AppSetting[] => {
   return [
     {
       id: uuid(),
-      title: t('AboutList.Title1'),
+      title: t('AboutList.TermsUse'),
       route: 'TermsUse',
     },
     {
       id: uuid(),
-      title: t('AboutList.Title2'),
+      title: t('AboutList.Confidentiality'),
       route: 'Confidentiality',
     },
     {
       id: uuid(),
-      title: t('AboutList.Title3'),
+      title: t('AboutList.Vulnerability'),
       route: 'Vulnerability',
     },
     {
       id: uuid(),
-      title: t('AboutList.Title4'),
+      title: t('AboutList.Accessibility'),
       route: 'Accessibility',
     },
   ]

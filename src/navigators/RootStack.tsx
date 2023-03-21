@@ -20,7 +20,7 @@ import { Confidentiality } from '../screens/Confidentiality'
 import { ContactUs } from '../screens/ContactUs'
 import { DisplayLanguage } from '../screens/DisplayLanguage'
 import { HelpCenter } from '../screens/HelpCenter'
-import { Historic } from '../screens/Historic'
+import { History } from '../screens/History'
 import { ImproveApp } from '../screens/ImproveApp'
 import {EditRequest} from '../screens/EditRequest'
 import {ManageRequests} from '../screens/ManageRequests'
@@ -161,8 +161,8 @@ const RootStack = () => {
         }}
       />
       <Stack.Screen 
-        name="Historic" 
-        component={Historic} 
+        name="History" 
+        component={History} 
         options={{
           title: t('Screens.Settings') || '',
           headerTintColor: ColorPallet.white,

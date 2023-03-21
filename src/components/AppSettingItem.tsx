@@ -28,17 +28,16 @@ export const AppSettingItem = ({ item, action }: Props) => {
     if (item.route == null) {
       setNavigate(false)
     }
-  }, [state.langueApp])
+  }, [state.language])
 
   if (item.name == 'langue') {
     const index = languageList.findIndex(langue => langue.code === selectedLanguageCode)
-    item.defaultValue = languageList[index].label
+    item.defaultValue = index >= 0 ? languageList[index].label : defaultLanguage
   } else {
     if (item.defaultValue == null) {
       item.defaultValue = ''
     }
   }
-
 
   if (!navigate) {
     action = () => void {}
@@ -53,11 +52,10 @@ export const AppSettingItem = ({ item, action }: Props) => {
           <View style={{ paddingRight: 5 }}>
             <Text style={defaultStyles.text}>{item.defaultValue}</Text>
           </View>
-          {navigate ? (
+          {navigate &&
             <View>
               <Icon name="angle-right" size={20} color={ColorPallet.primaryText} />
-            </View>
-          ) : null}
+            </View>}
         </View>
       </View>
     </TouchableOpacity >

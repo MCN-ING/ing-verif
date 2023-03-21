@@ -5,22 +5,22 @@ export const SettingsList = (t: any): Setting[] => {
   return [
     {
       id: uuid(),
-      title: t('SettingsList.Title1'),
+      title: t('SettingsList.AppSetting'),
       route : 'AppSettings'
     },
     {
       id: uuid(),
-      title: t('SettingsList.Title2'),
+      title: t('SettingsList.HelpCenter'),
       route : 'HelpCenter'
     },
     {
       id: uuid(),
-      title: t('SettingsList.Title3'),
+      title: t('SettingsList.About'),
       route : 'About'
     },
     {
       id: uuid(),
-      title: t('SettingsList.Title4'),
+      title: t('SettingsList.ContactUs'),
       route : 'ContactUs'
     },
   ]
