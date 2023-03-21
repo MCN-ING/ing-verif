@@ -7,22 +7,22 @@ export const HelpCenterList = (t: any): AppSetting[] => {
   return [
     {
       id: uuid(),
-      title: t('HelpCenterList.Title1'),
+      title: t('HelpCenterList.AppTutorial'),
       route: 'AppTutorial',
     },
     {
       id: uuid(),
-      title: t('HelpCenterList.Title2'),
+      title: t('HelpCenterList.UserManual'),
       route: 'UserManual',
     },
     {
       id: uuid(),
-      title: t('HelpCenterList.Title3'),
+      title: t('HelpCenterList.TransferWallet'),
       route: 'TransferWallet',
     },
     {
       id: uuid(),
-      title: t('HelpCenterList.Title4'),
+      title: t('HelpCenterList.ImproveApp'),
       route: 'ImproveApp',
     },
   ]

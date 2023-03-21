@@ -19,12 +19,16 @@ enum RequestDispatchAction {
 }
 
 enum UpdateSettingState {
-  UPDATE_LANGUAGE = 'langue',
+  UPDATE_LANGUAGE = 'language',
   UPDATE_HISTORY = 'history',
 }
 
 
-export type DispatchAction = OnboardingDispatchAction | ProofRequestDispatchAction | RequestDispatchAction | UpdateSettingState
+export type DispatchAction =
+  | OnboardingDispatchAction
+  | ProofRequestDispatchAction
+  | RequestDispatchAction
+  | UpdateSettingState
 
 export const DispatchAction = {
   ...OnboardingDispatchAction,
@@ -104,9 +108,9 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
       const language = action.payload
       const newState = {
         ...state,
-        langueApp: language,
+        language: language,
       }
-      AsyncStorage.setItem(LocalStorageKeys.Languages, newState.langueApp?.toString()!)
+      AsyncStorage.setItem(LocalStorageKeys.Language, language?.toString() ?? '')
       return newState
     }
     case UpdateSettingState.UPDATE_HISTORY: {
@@ -115,7 +119,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
         ...state,
         history: history,
       }
-      AsyncStorage.setItem(LocalStorageKeys.Histories, newState.history?.toString()!)
+      AsyncStorage.setItem(LocalStorageKeys.History, history?.toString() ?? '')
       return newState
     }
     case RequestDispatchAction.UPDATE_REQUEST: {

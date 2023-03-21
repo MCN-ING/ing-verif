@@ -28,7 +28,8 @@ const LanguageSelector = () => {
       type: DispatchAction.UPDATE_LANGUAGE,
       payload: code,
     })
-    return i18n.changeLanguage(code);
+    i18n.changeLanguage(code)
+    navigation.goBack()
   };
 
   const setSelectedLanguage = (code: string) => {
@@ -75,6 +76,3 @@ const LanguageSelector = () => {
 
 export default LanguageSelector;
 
-function dispatch(arg0: { type: any; payload: string; }) {
-  throw new Error("Function not implemented.");
-}

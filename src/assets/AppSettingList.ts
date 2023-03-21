@@ -9,7 +9,7 @@ export const AppSettingList = (t: any): AppSetting[] => {
   return [
     {
       id: uuid(),
-      title: t('AppSettingsList.Title1'),
+      title: t('AppSettingsList.DisplayLanguage'),
       route: 'DisplayLanguage',
       name: 'langue',
       defaultValue: defaultLanguage,
@@ -17,17 +17,17 @@ export const AppSettingList = (t: any): AppSetting[] => {
     },
     {
       id: uuid(),
-      title: t('AppSettingsList.Title2'),
-      route: 'Historic',
+      title: t('AppSettingsList.History'),
+      route: 'History',
     },
     {
       id: uuid(),
-      title: t('AppSettingsList.Title3'),
+      title: t('AppSettingsList.Notification'),
       route: 'Notification',
     },
     {
       id: uuid(),
-      title: t('AppSettingsList.Title4'),
+      title: t('AppSettingsList.AppVersion'),
       name: 'appVersion',
       defaultValue: VersionNumber.appVersion + '(' + VersionNumber.buildVersion + ')'
     },

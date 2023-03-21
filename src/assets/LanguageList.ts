@@ -5,11 +5,11 @@ export const LanguageList = (t: any): Languages[] => {
     return [
         {
             code: 'en',
-            label: t('LanguageList.Title1'),
+            label: t('LanguageList.English'),
         },
         {
             code: 'fr',
-            label: t('LanguageList.Title2'),
+            label: t('LanguageList.French'),
         },
     ]
 }

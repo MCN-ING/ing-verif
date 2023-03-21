@@ -1,4 +1,4 @@
-import { PredicateType, ProofAttributeInfo, ProofPredicateInfo } from '@aries-framework/core'
+import {PredicateType, ProofAttributeInfo, ProofPredicateInfo} from '@aries-framework/core'
 
 export type ATTRIBUTE = 'Attribute'
 export type PREDICATE = 'Predicate'
@@ -27,7 +27,7 @@ export interface State {
   onboarding: Onboarding
   proofRequest?: Request
   requests: Request[]
-  langueApp?: String
+  language?: String
   history?: String
 }
 
@@ -75,8 +75,8 @@ export interface Languages {
   code: string
   label: string
 }
-export interface Historic {
-  id: string
+export interface History {
+  type: string
   label: string
 }
 

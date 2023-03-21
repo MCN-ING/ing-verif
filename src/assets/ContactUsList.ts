@@ -7,17 +7,17 @@ export const ContactUsList = (t: any): AppSetting[] => {
   return [
     {
       id: uuid(),
-      title: t('ContactUsList.Title1'),
+      title: t('ContactUsList.Phone'),
       route: 'Phone',
     },
     {
       id: uuid(),
-      title: t('ContactUsList.Title2'),
+      title: t('ContactUsList.ByEmail'),
       route: 'ByEmail',
     },
     {
       id: uuid(),
-      title: t('ContactUsList.Title3'),
+      title: t('ContactUsList.ReportProblem'),
       route: 'ReportProblem',
     },
   ]

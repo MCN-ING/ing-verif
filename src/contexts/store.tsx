@@ -22,7 +22,7 @@ export const defaultState: State = {
   },
   proofRequest: undefined,
   requests: RequestsList(t),
-  langueApp: defaultLanguage,
+  language: defaultLanguage,
   history: defaultHistory,
 }
 
@@ -82,15 +82,28 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({children, initialSt
 
   useEffect(() => {
     const getLanguage = async () => {
-      const language = await AsyncStorage.getItem(LocalStorageKeys.Languages)
+      const language = await AsyncStorage.getItem(LocalStorageKeys.Language)
       if (language) {
         dispatch({
           type: DispatchAction.UPDATE_LANGUAGE,
-          payload: language
+          payload: language,
         })
       }
     }
     getLanguage()
+  }, [])
+
+  useEffect(() => {
+    const getHistory = async () => {
+      const history = await AsyncStorage.getItem(LocalStorageKeys.History)
+      if (history) {
+        dispatch({
+          type: DispatchAction.UPDATE_HISTORY,
+          payload: history
+        })
+      }
+    }
+    getHistory()
     
   }, [])
 
