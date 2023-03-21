@@ -20,8 +20,8 @@ export const HelpCenter = () => {
     <View>
       <Header title={t('HelpCenterList.Title')} />
       <ScrollView style={{ padding: 10 }}>
-        {helpCenter.map((item: AppSetting, index: number) => {
-          return <AppSettingItem key={index.toString()} item={item} action={() => handleSelection(item)} />
+        {helpCenter.map((item: AppSetting) => {
+          return <AppSettingItem key={item.id} item={item} action={() => handleSelection(item)} />
         })}
       </ScrollView>
     </View>
