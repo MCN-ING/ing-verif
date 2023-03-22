@@ -18,7 +18,7 @@ enum RequestDispatchAction {
   UPDATE_REQUEST = 'request/edit',
 }
 
-enum UpdateSettingState {
+enum UpdateSettingAction {
   UPDATE_LANGUAGE = 'language',
   UPDATE_HISTORY = 'history',
 }
@@ -28,13 +28,13 @@ export type DispatchAction =
   | OnboardingDispatchAction
   | ProofRequestDispatchAction
   | RequestDispatchAction
-  | UpdateSettingState
+  | UpdateSettingAction
 
 export const DispatchAction = {
   ...OnboardingDispatchAction,
   ...ProofRequestDispatchAction,
   ...RequestDispatchAction,
-  ...UpdateSettingState,
+  ...UpdateSettingAction,
 }
 
 export interface ReducerAction<R> {
@@ -104,7 +104,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
       AsyncStorage.setItem(LocalStorageKeys.Requests, JSON.stringify(newState.requests))
       return newState
     }
-    case UpdateSettingState.UPDATE_LANGUAGE: {
+    case UpdateSettingAction.UPDATE_LANGUAGE: {
       const language = action.payload
       const newState = {
         ...state,
@@ -113,7 +113,7 @@ export const reducer = <S extends State>(state: S, action: ReducerAction<Dispatc
       AsyncStorage.setItem(LocalStorageKeys.Language, language?.toString() ?? '')
       return newState
     }
-    case UpdateSettingState.UPDATE_HISTORY: {
+    case UpdateSettingAction.UPDATE_HISTORY: {
       const history = action.payload
       const newState = {
         ...state,
