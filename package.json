@@ -43,6 +43,7 @@
     "react-native-svg": "^13.7.0",
     "react-native-toast-message": "^2.1.5",
     "react-native-vector-icons": "^9.2.0",
+    "react-native-version-number": "^0.3.6",
     "rxjs": "^7.8.0"
   },
   "devDependencies": {

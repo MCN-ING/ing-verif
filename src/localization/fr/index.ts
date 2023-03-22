@@ -42,6 +42,9 @@ const translation = {
   Request: {
     Title: "Choix d'une requête",
   },
+  Footer: {
+    Title: 'Gouvernement de Québec',
+  },
   ManageRequests: {
     Title: 'Liste des requêtes de présentation',
     AddButtonText: 'Ajouter une nouvelle requête',
@@ -78,15 +81,109 @@ const translation = {
     ManageRequests: 'Gestion des requêtes',
     AddRequest: 'Ajouter une requête',
     RequestDetails: 'Détails de la requête',
-    EditRequest: {
-      Title: 'Modifier le nom',
-      Description: 'Modifier la description',
-      Attributes: 'Modifier les attributs',
-      Cancel: 'Annuler la modification',
-      Save: 'Enregistrer les modifications',
-      CharacterCount: 'caractères',
-      TitleError: 'Le nom de la requête est obligatoire.',
-    },
+    Settings: "Plus d'option",
+  },
+  SettingsList: {
+    Title: "Plus d'option",
+    AppSetting: "Paramètres de l'application",
+    HelpCenter: "Centre d'aide",
+    About: 'À propos',
+    ContactUs: 'Nous joindre',
+    SaveSettings: 'Enregistrer la modification',
+    Cancel: 'Annuler',
+  },
+  AppSettingsList: {
+    Title: "Paramètres de l'application",
+    DisplayLanguage: "Langue d'affichage",
+    History: "L'historique",
+    Notification: 'Les notifications',
+    AppVersion: "Version de l'application",
+  },
+  DisplayLanguage: {
+    Title: "Langue d'affichage",
+  },
+  LanguageList: {
+    English: "Anglais",
+    French: "Français",
+  },
+  History: {
+    Title: "L'historique",
+    Body: "Combien de temps souhaitez vous que l’historique des opérations soient enregistrée gardé en mémoire?",
+    Subtitle: "Durée de l’historique",
+  },
+  HistoryList: {
+    None: "Ne pas enregistré l’historique",
+    Week: "7 jours",
+    HalfMonth: "15 jours",
+    Month: '30 jours (défaut)',
+    Quarter: "90 jours",
+    Year: "365 jours",
+    All: "Garder toute l’historique",
+  },
+  Notification: {
+    Title: "Les notifications",
+  },
+  HelpCenterList: {
+    Title: "Centre d'aide",
+    AppTutorial: "Le tutoriel de l’application",
+    UserManual: "Guide d’utilisation",
+    TransferWallet: 'Comment transférer mon portefeuille sur un autre appareil',
+    ImproveApp: 'Aidez nous à améliorer l’application',
+  },
+  AppTutorial: {
+    Title: "Le tutoriel de l’application",
+  },
+  UserManual: {
+    Title: "Guide d’utilisation",
+  },
+  TransferWalletApp: {
+    Title: "Comment transférer mon portefeuille sur un autre appareil",
+  },
+  ImproveApp: {
+    Title: "Aidez nous à améliorer l’application",
+  },
+  AboutList: {
+    Title: "À propos",
+    TermsUse: "Conditions d’utilisation",
+    Confidentiality: "Déclaration de confidentialité",
+    Vulnerability: 'Politique de divulgation des vulnérabilités',
+    Accessibility: 'Accessibilité',
+  },
+  TermsUse: {
+    Title: "Conditions d’utilisation",
+  },
+  Confidentiality: {
+    Title: "Déclaration de confidentialité",
+  },
+  Vulnerability: {
+    Title: "Politique de divulgation des vulnérabilités",
+  },
+  Accessibility: {
+    Title: "Accessibilité",
+  },
+  ContactUsList: {
+    Title: "Nous joindre",
+    Phone: "Téléphone",
+    ByEmail: "Par courriel",
+    ReportProblem: 'Rapporter un problème',
+  },
+  Phone: {
+    Title: "Téléphone",
+  },
+  ByEmail: {
+    Title: "Par courriel",
+  },
+  ReportProblem: {
+    Title: "Rapporter un problème",
+  },
+  EditRequest: {
+    Title: 'Modifier le nom',
+    Description: 'Modifier la description',
+    Attributes: 'Modifier les attributs',
+    Cancel: 'Annuler la modification',
+    Save: 'Enregistrer les modifications',
+    CharacterCount: 'caractères',
+    TitleError: 'Le nom de la requête est obligatoire.',
   },
   RequestsList: {
     Title1: "Vérification de l'âge (18+)",

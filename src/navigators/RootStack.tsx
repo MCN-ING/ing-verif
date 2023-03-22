@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {getFocusedRouteNameFromRoute} from '@react-navigation/native'
+import {getFocusedRouteNameFromRoute, NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {TFunction} from 'i18next'
 import React from 'react'
@@ -10,12 +10,31 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import {useTheme} from '../contexts/theme'
 import DefaultComponentsThemes from '../defaultComponentsThemes'
 import {Home, Settings, QRCodeScreen, ValidationResult, Splash, Requests} from '../screens'
+import { About } from '../screens/About'
+import { Accessibility } from '../screens/Accessibility'
 import {AddRequest} from '../screens/AddRequest'
+import { AppSettings } from '../screens/AppSettings'
+import { AppTutorial } from '../screens/AppTutorial'
+import { ByEmail } from '../screens/ByEmail'
+import { Confidentiality } from '../screens/Confidentiality'
+import { ContactUs } from '../screens/ContactUs'
+import { DisplayLanguage } from '../screens/DisplayLanguage'
+import { HelpCenter } from '../screens/HelpCenter'
+import { History } from '../screens/History'
+import { ImproveApp } from '../screens/ImproveApp'
 import {EditRequest} from '../screens/EditRequest'
 import {ManageRequests} from '../screens/ManageRequests'
+import { Notification } from '../screens/Notification'
+import { Phone } from '../screens/Phone'
+import { ReportProblem } from '../screens/ReportProblem'
 import {RequestDetails} from '../screens/RequestDetails'
+import { TermsUse } from '../screens/TermsUse'
+import { TransferWalletApp } from '../screens/TransferWalletApp'
+import { UserManual } from '../screens/UserManual'
+import { Vulnerability } from '../screens/Vulnerability'
 
 import TermsStack from './TermsStack'
+import SettingsStack from './SettingsStack'
 
 const getTitle = (route: any, t: TFunction<'translation', undefined, 'translation'>) => {
   const routeName = getFocusedRouteNameFromRoute(route)
@@ -26,6 +45,8 @@ const getTitle = (route: any, t: TFunction<'translation', undefined, 'translatio
       return t('Screens.Requests') || ''
     case 'ManageRequests':
       return t('Screens.ManageRequests') || ''
+    case 'Settings':
+        return t('Screens.Settings') || ''
     default:
       return t('Screens.Home') || ''
   }
@@ -35,6 +56,7 @@ const RootStack = () => {
   const {t} = useTranslation()
   const Stack = createStackNavigator()
   const {ColorPallet} = useTheme()
+  const settingsStack = SettingsStack(Stack)
 
   return (
     <Stack.Navigator
@@ -96,7 +118,6 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
-
       <Stack.Screen
         name="EditRequest"
         component={EditRequest}
@@ -107,7 +128,6 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
-
       <Stack.Screen
         name="QRCode"
         component={QRCodeScreen}
@@ -119,7 +139,6 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
-      <Stack.Screen name="Settings" component={Settings} />
       <Stack.Screen
         name="ValidationResult"
         component={ValidationResult}
@@ -143,7 +162,9 @@ const RootStack = () => {
           headerBackTitle: t('Global.Back') || '',
         }}
       />
+      {settingsStack}
     </Stack.Navigator>
+
   )
 }
 
@@ -201,6 +222,25 @@ const BottomNav = () => {
           ),
         }}
       />
+      <Tab.Screen
+        name={'Settings'}
+        component={Settings}
+        options={{
+          title: t('Screens.Settings') || '',
+          tabBarIcon: ({focused}) => (
+            <View style={{width: '100%', height: '100%'}}>
+              {focused && <View style={styles.tabBarActive} />}
+              <Icon
+                style={styles.tabBarIcone}
+                name={'ellipsis-h'}
+                color={focused ? ColorPallet.primary : ColorPallet.lightGray}
+                size={20}
+              />
+            </View>
+          ),
+        }}
+      />
+      
     </Tab.Navigator>
   )
 }

@@ -41,6 +41,9 @@ const translation = {
   Request: {
     Title: 'Choice of a request',
   },
+  Footer: {
+    Title: 'Government of Quebec',
+  },
   Dropdown: {
     Select: 'Select an attribute',
   },
@@ -80,14 +83,108 @@ const translation = {
     ManageRequests: 'Request Management',
     AddRequest: 'Add a request',
     RequestDetails: 'Request Details',
-    EditRequest: {
-      Title: 'Modify The Name',
-      Description: 'Modify The Description',
-      Attributes: 'Modify The Attributes',
-      Cancel: 'Cancel Change',
-      Save: 'Save Changes',
-      CharacterCount: 'characters',
-    },
+    Settings: 'More option',
+  },
+  SettingsList: {
+    Title: "More option",
+    AppSetting: "App Settings",
+    HelpCenter: "Help Center",
+    About: 'About',
+    ContactUs: 'Contact US',
+    SaveSettings: 'Save Update',
+    Cancel: 'Cancel',
+  },
+  AppSettingsList: {
+    Title: "App Settings",
+    DisplayLanguage: "Display language",
+    History: "History",
+    Notification: 'The notifications',
+    AppVersion: 'App version',
+  },
+  DisplayLanguage: {
+    Title: "Display language",
+  },
+  LanguageList: {
+    English: "English",
+    French: "French",
+  },
+  History: {
+    Title: "History",
+    Body: "How long do you want the transaction history to be stored in memory?",
+    Subtitle: "History duration",
+  },
+  HistoryList: {
+    None: "Do not save history",
+    Week: "7 days",
+    HalfMonth: "15 days",
+    Month: '30 days (default)',
+    Quarter: "90 days",
+    Year: "365 days",
+    All: "Keep all history",
+  },
+  Notification: {
+    Title: "The notifications",
+  },
+  HelpCenterList: {
+    Title: "Help Center",
+    AppTutorial: "The app tutorial",
+    UserManual: "User manual",
+    TransferWallet: 'How to transfer my wallet to another device',
+    ImproveApp: 'Help us improve the app',
+  },
+  AppTutorial: {
+    Title: "The app tutorial",
+  },
+  UserManual: {
+    Title: "User manual",
+  },
+  TransferWalletApp: {
+    Title: "How to transfer my wallet to another device",
+  },
+  ImproveApp: {
+    Title: "Help us improve the app",
+  },
+  AboutList: {
+    Title: "About",
+    TermsUse: "Terms of use",
+    Confidentiality: "Confidentiality declaration",
+    Vulnerability: 'Vulnerability Disclosure Policy',
+    Accessibility: 'Accessibility',
+  },
+  TermsUse: {
+    Title: "Terms of use",
+  },
+  Confidentiality: {
+    Title: "Confidentiality declaration",
+  },
+  Vulnerability: {
+    Title: "Vulnerability Disclosure Policy",
+  },
+  Accessibility: {
+    Title: "Accessibility",
+  },
+  ContactUsList: {
+    Title: "Contact Us",
+    Phone: "Phone",
+    ByEmail: "By email",
+    ReportProblem: 'Report a problem',
+  },
+  Phone: {
+    Title: "Phone",
+  },
+  ByEmail: {
+    Title: "By email",
+  },
+  ReportProblem: {
+    Title: "Report a problem",
+  },
+  EditRequest: {
+    Title: 'Modify The Name',
+    Description: 'Modify The Description',
+    Attributes: 'Modify The Attributes',
+    Cancel: 'Cancel Change',
+    Save: 'Save Changes',
+    CharacterCount: 'characters',
   },
   RequestsList: {
     Title1: 'Validation of age (18+)',
