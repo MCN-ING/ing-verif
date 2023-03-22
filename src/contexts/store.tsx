@@ -3,7 +3,7 @@ import {t} from 'i18next'
 import React, {createContext, Dispatch, useContext, useEffect, useReducer} from 'react'
 
 import {RequestsList} from '../assets/RequestsList'
-import {LocalStorageKeys} from '../constants'
+import {defaultHistory, defaultLanguage, LocalStorageKeys} from '../constants'
 
 import _defaultReducer, {DispatchAction, ReducerAction} from './reducers/store'
 import {Request, State} from './types'
@@ -22,6 +22,8 @@ export const defaultState: State = {
   },
   proofRequest: undefined,
   requests: RequestsList(t),
+  language: defaultLanguage,
+  history: defaultHistory,
 }
 
 export const StoreContext = createContext<[State, Dispatch<ReducerAction<any>>]>([
@@ -76,6 +78,33 @@ export const StoreProvider: React.FC<StoreProviderProps> = ({children, initialSt
       }
     }
     getRequests()
+  }, [])
+
+  useEffect(() => {
+    const getLanguage = async () => {
+      const language = await AsyncStorage.getItem(LocalStorageKeys.Language)
+      if (language) {
+        dispatch({
+          type: DispatchAction.UPDATE_LANGUAGE,
+          payload: language,
+        })
+      }
+    }
+    getLanguage()
+  }, [])
+
+  useEffect(() => {
+    const getHistory = async () => {
+      const history = await AsyncStorage.getItem(LocalStorageKeys.History)
+      if (history) {
+        dispatch({
+          type: DispatchAction.UPDATE_HISTORY,
+          payload: history
+        })
+      }
+    }
+    getHistory()
+    
   }, [])
 
   return <StoreContext.Provider value={[state, dispatch]}>{children}</StoreContext.Provider>

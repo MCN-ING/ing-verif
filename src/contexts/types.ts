@@ -27,6 +27,8 @@ export interface State {
   onboarding: Onboarding
   proofRequest?: Request
   requests: Request[]
+  language?: String
+  history?: String
 }
 
 export type AttributeDetails = {
@@ -55,3 +57,26 @@ export type lightAttributeDetails = {
 
   specific?: SpecificPredicatesDetails | SpecificAttributesDetails
 }
+
+export interface Setting {
+  id: string
+  title: string
+  route: string
+}
+export interface AppSetting {
+  id: string
+  title: string
+  route?: string
+  name?: string
+  defaultValue?: string
+}
+
+export interface Languages {
+  code: string
+  label: string
+}
+export interface History {
+  type: string
+  label: string
+}
+

@@ -1,19 +1,41 @@
 import {useNavigation} from '@react-navigation/native'
 import React from 'react'
-import {View, Text} from 'react-native'
-import {TouchableOpacity} from 'react-native-gesture-handler'
+import {useTranslation} from 'react-i18next'
+import {ScrollView, StyleSheet, Text, View} from 'react-native'
+import { SettingsList } from '../assets/SettingsList'
+import {SettingItem} from '../components/SettingItem'
+import {Setting} from '../contexts/types'
 
 export const Settings = () => {
-  const navigation = useNavigation()
+  const {t} = useTranslation()
+  const {navigate} = useNavigation()
+  const settings = SettingsList(t)
+
+  function handleSelection(item: Setting) {
+    navigate(item.route as never)
+  }
+
+  const styles = StyleSheet.create({
+    headerFooterStyle: {
+      width: '100%',
+      height: 45,
+    },
+    textStyle: {
+      fontSize: 16,
+      padding: 7,
+    },
+  });
+
   return (
-    <View>
-      <Text>Settings</Text>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('Confirmation' as never)
-        }}>
-        <Text>Confirmnation</Text>
-      </TouchableOpacity>
+    <View style={{justifyContent: 'center', alignContent: 'center', flex: 1}}>
+      <ScrollView style={{padding: 10}}>
+        {settings.map((item: Setting) => {
+          return <SettingItem key={item.id} item={item} action={() => handleSelection(item)} />
+        })}
+      </ScrollView>
+      <View style={styles.headerFooterStyle}>
+        <Text style={styles.textStyle}>{'\u00A9'} {t('Footer.Title')}</Text>
+      </View>
     </View>
   )
 }

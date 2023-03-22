@@ -57,6 +57,31 @@ const DefaultComponentsThemes = () => {
       justifyContent: 'center',
       alignItems: 'center',
     },
+    itemContainer: {
+      marginHorizontal: 15,
+      borderBottomWidth: 0.2,
+      borderBottomStyle: 'solid',
+      paddingBottom: 10,
+    },
+    touchableStyle: {
+      flex: 1,
+      height: '100%',
+      paddingTop: 10,
+      flexDirection: "row",
+      justifyContent: 'space-between',
+    },
+    rightSectRowContainer: {
+      flexDirection: "row",
+      justifyContent: 'flex-start',
+    },
+    leftSectRowContainer: {
+      flexDirection: "row",
+      justifyContent: 'flex-end',
+    },
+    buttonsContainer: {
+      paddingBottom: 10,
+      paddingTop: 24,
+    },
   })
 }
 
